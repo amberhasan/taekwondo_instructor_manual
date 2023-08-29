@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, FlatList, StyleSheet} from 'react-native';
-import FormMenuItem from '../components/FormMenuItem'; // Import the component
+import FormMenuItem from '../components/FormMenuItem';
 
 const TaegeukListScreen = ({navigation}) => {
   const taegeukForms = [
@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop: 20, // Adjust the marginTop value as needed
   },
 });
 

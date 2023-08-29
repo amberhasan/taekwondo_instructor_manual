@@ -1,8 +1,9 @@
 import React from 'react';
 import {View, Text, TouchableOpacity, FlatList, StyleSheet} from 'react-native';
+import FormMenuItem from '../components/FormMenuItem';
 
 const PalgwaeListScreen = ({navigation}) => {
-  const taegeukForms = [
+  const palgwaeForms = [
     'Palgwae 1',
     'Palgwae 2',
     'Palgwae 3',
@@ -18,17 +19,13 @@ const PalgwaeListScreen = ({navigation}) => {
   };
 
   const renderItem = ({item}) => (
-    <TouchableOpacity
-      style={styles.button}
-      onPress={() => handleRowPress(item)}>
-      <Text style={styles.buttonText}>{item}</Text>
-    </TouchableOpacity>
+    <FormMenuItem item={item} handleRowPress={handleRowPress} />
   );
 
   return (
     <View style={styles.container}>
       <FlatList
-        data={taegeukForms}
+        data={palgwaeForms}
         renderItem={renderItem}
         keyExtractor={item => item}
       />
@@ -41,6 +38,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop: 20, // Adjust the marginTop value as needed
   },
   button: {
     width: '100%',

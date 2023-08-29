@@ -12,10 +12,8 @@ const TaegeukDetailsScreen = ({route}) => {
   const currentMove = form.moves[currentMoveIndex];
 
   const handleNext = () => {
-    const nextMoveIndex = currentMoveIndex + 1;
-    if (nextMoveIndex < form.moves.length) {
-      setCurrentMoveIndex(nextMoveIndex);
-    }
+    const nextMoveIndex = (currentMoveIndex + 1) % form.moves.length;
+    setCurrentMoveIndex(nextMoveIndex);
   };
   const handleReset = () => {
     setCurrentMoveIndex(0);

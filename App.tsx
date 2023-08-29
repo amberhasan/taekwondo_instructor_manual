@@ -15,12 +15,12 @@ const TaegeukTab = () => (
     <Tab.Screen
       name="TaegeukList"
       component={TaegeukListScreen}
-      options={{tabBarLabel: 'Taegeuk Forms'}}
+      options={{tabBarLabel: 'Taegeuk'}} // Change tab label to "Taegeuk"
     />
     <Tab.Screen
       name="PalgwaeList"
       component={PalgwaeListScreen}
-      options={{tabBarLabel: 'Palgwae Forms'}}
+      options={{tabBarLabel: 'Palgwae'}} // Change tab label to "Palgwae"
     />
     {/* Add other tab screens if needed */}
   </Tab.Navigator>
@@ -34,6 +34,16 @@ const AppNavigator = () => {
           name="Home"
           component={TaegeukTab}
           options={{headerShown: false}} // Hide the header for the home screen
+        />
+        <Stack.Screen
+          name="TaegeukList"
+          component={TaegeukListScreen}
+          options={{title: 'Taegeuk Forms'}} // Change header title to "Taegeuk Forms"
+        />
+        <Stack.Screen
+          name="PalgwaeList"
+          component={PalgwaeListScreen}
+          options={{title: 'Palgwae Forms'}} // Change header title to "Palgwae Forms"
         />
         <Stack.Screen
           name="TaegeukDetail"
