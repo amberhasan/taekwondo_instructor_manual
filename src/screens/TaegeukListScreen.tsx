@@ -14,12 +14,12 @@ const TaegeukListScreen = ({navigation}) => {
     'Taegeuk 8',
   ];
 
-  const handleRowPress = form => {
-    navigation.navigate('TaegeukDetail', {selectedForm: form});
+  const handleRowPress = formIndex => {
+    navigation.navigate('TaegeukDetail', {selectedFormIndex: formIndex + 1});
   };
 
-  const renderItem = ({item}) => (
-    <FormMenuItem item={item} handleRowPress={handleRowPress} />
+  const renderItem = ({item, index}) => (
+    <FormMenuItem item={item} handleRowPress={() => handleRowPress(index)} />
   );
 
   return (

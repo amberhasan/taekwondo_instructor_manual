@@ -1,10 +1,9 @@
 import * as React from 'react';
-import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
 import PalgwaeListScreen from './src/screens/PalgwaeListScreen';
 import TaegeukDetailsScreen from './src/screens/TaegeukDetailsScreen';
 import TaegeukListScreen from './src/screens/TaegeukListScreen';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
 
 const Tab = createBottomTabNavigator();
@@ -13,12 +12,12 @@ const Stack = createStackNavigator();
 const TaegeukTab = () => (
   <Tab.Navigator>
     <Tab.Screen
-      name="TaegeukList"
+      name="Taegeuk Forms"
       component={TaegeukListScreen}
       options={{tabBarLabel: 'Taegeuk'}} // Change tab label to "Taegeuk"
     />
     <Tab.Screen
-      name="PalgwaeList"
+      name="Palgwae Forms"
       component={PalgwaeListScreen}
       options={{tabBarLabel: 'Palgwae'}} // Change tab label to "Palgwae"
     />
@@ -48,8 +47,11 @@ const AppNavigator = () => {
         <Stack.Screen
           name="TaegeukDetail"
           component={TaegeukDetailsScreen}
-          options={{title: 'Taegeuk Detail'}} // Customize the header title
+          options={({route}) => ({
+            title: `Taegeuk ${route.params.selectedFormIndex}`,
+          })}
         />
+
         {/* Add other shared stack screens if needed */}
       </Stack.Navigator>
     </NavigationContainer>
