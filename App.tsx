@@ -5,12 +5,41 @@ import PalgwaeListScreen from './src/screens/PalgwaeListScreen';
 import TaegeukDetailsScreen from './src/screens/TaegeukDetailsScreen';
 import TaegeukListScreen from './src/screens/TaegeukListScreen';
 import {createStackNavigator} from '@react-navigation/stack';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
 const TaegeukTab = () => (
-  <Tab.Navigator>
+  <Tab.Navigator
+    screenOptions={({route}) => ({
+      tabBarIcon: ({focused, color, size}) => {
+        let iconName;
+        if (route.name === 'Taegeuk Forms') {
+          iconName = 'tune-vertical';
+        } else if (route.name === 'Palgwae Forms') {
+          iconName = 'tune-variant';
+        }
+        return (
+          <MaterialCommunityIcons name={iconName} size={size} color={color} />
+        );
+      },
+      tabBarLabelStyle: {
+        fontSize: 15,
+        fontWeight: 'bold',
+      },
+      tabBarActiveTintColor: 'tomato',
+      tabBarInactiveTintColor: 'gray',
+      tabBarStyle: {
+        backgroundColor: '#f0f0f0',
+        borderTopWidth: 1,
+        borderTopColor: '#ccc',
+      },
+      tabBarItemStyle: {
+        borderRightWidth: 1,
+        borderRightColor: '#ccc',
+      },
+    })}>
     <Tab.Screen
       name="Taegeuk Forms"
       component={TaegeukListScreen}
@@ -38,6 +67,9 @@ const AppNavigator = () => {
           component={TaegeukDetailsScreen}
           options={({route}) => ({
             title: `Taegeuk ${route.params.selectedFormIndex}`,
+            headerStyle: {
+              backgroundColor: '#f0f0f0', // Customize header background color
+            },
           })}
         />
       </Stack.Navigator>
