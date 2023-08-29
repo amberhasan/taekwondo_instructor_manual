@@ -14,14 +14,13 @@ const TaegeukTab = () => (
     <Tab.Screen
       name="Taegeuk Forms"
       component={TaegeukListScreen}
-      options={{tabBarLabel: 'Taegeuk'}} // Change tab label to "Taegeuk"
+      options={{tabBarLabel: 'Taegeuk'}}
     />
     <Tab.Screen
       name="Palgwae Forms"
       component={PalgwaeListScreen}
-      options={{tabBarLabel: 'Palgwae'}} // Change tab label to "Palgwae"
+      options={{tabBarLabel: 'Palgwae'}}
     />
-    {/* Add other tab screens if needed */}
   </Tab.Navigator>
 );
 
@@ -32,17 +31,7 @@ const AppNavigator = () => {
         <Stack.Screen
           name="Home"
           component={TaegeukTab}
-          options={{headerShown: false}} // Hide the header for the home screen
-        />
-        <Stack.Screen
-          name="TaegeukList"
-          component={TaegeukListScreen}
-          options={{title: 'Taegeuk Forms'}} // Change header title to "Taegeuk Forms"
-        />
-        <Stack.Screen
-          name="PalgwaeList"
-          component={PalgwaeListScreen}
-          options={{title: 'Palgwae Forms'}} // Change header title to "Palgwae Forms"
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name="TaegeukDetail"
@@ -51,8 +40,6 @@ const AppNavigator = () => {
             title: `Taegeuk ${route.params.selectedFormIndex}`,
           })}
         />
-
-        {/* Add other shared stack screens if needed */}
       </Stack.Navigator>
     </NavigationContainer>
   );
