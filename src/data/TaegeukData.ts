@@ -437,7 +437,7 @@ const TaegeukData = [
       {
         id: 5,
         image: require('../assets/images/taegeuk1/move1.png'),
-        moveDescription: 'Chop High Block + Chop Next',
+        moveDescription: 'Chop High Block + Chop Neck',
         stance: 'Front Stance',
         kiyap: false,
       },
@@ -500,7 +500,7 @@ const TaegeukData = [
       {
         id: 14,
         image: require('../assets/images/taegeuk1/move1.png'),
-        moveDescription: 'Chop High Block + Chop Next',
+        moveDescription: 'Chop High Block + Chop Neck',
         stance: 'Front Stance',
         kiyap: false,
       },

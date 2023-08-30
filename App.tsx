@@ -14,14 +14,18 @@ const TaegeukTab = () => (
   <Tab.Navigator
     screenOptions={({route}) => ({
       tabBarIcon: ({focused, color, size}) => {
-        let iconName;
-        if (route.name === 'Taegeuk Forms') {
-          iconName = 'tune-vertical';
-        } else if (route.name === 'Palgwae Forms') {
-          iconName = 'tune-variant';
-        }
+        let iconName = 'tune-vertical';
+        // if (route.name === 'Taegeuk Forms') {
+        //   iconName = 'tune-vertical';
+        // } else if (route.name === 'Palgwae Forms') {
+        //   iconName = 'tune-variant';
+        // }
         return (
-          <MaterialCommunityIcons name={iconName} size={size} color={color} />
+          <MaterialCommunityIcons
+            name={'tune-vertical'}
+            size={size}
+            color={color}
+          />
         );
       },
       tabBarLabelStyle: {

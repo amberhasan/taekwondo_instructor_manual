@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Video from 'react-native-video';
 
 const TaegeukDetailsComponent = ({
   currentMove,
@@ -12,18 +13,24 @@ const TaegeukDetailsComponent = ({
 }) => {
   return (
     <View style={styles.container}>
-      <View style={styles.moveContainer}>
+      <Video
+        source={require('./test.mp4')}
+        style={{
+          width: 1000,
+          height: 1000,
+          flex: 1,
+        }}
+        resizeMode={'stretch'}
+      />
+
+      {/* <View style={styles.moveContainer}>
         <Text style={styles.formText}>
           {currentMove.id}. {currentMove.moveDescription}
         </Text>
         <Text style={styles.descriptionText}>({currentMove.stance})</Text>
       </View>
       <View style={styles.imageContainer}>
-        <Image
-          source={currentMove.image}
-          style={styles.video}
-          resizeMode="cover"
-        />
+        <Video source={require('./test.mp4')} style={styles.video} />
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
@@ -41,7 +48,7 @@ const TaegeukDetailsComponent = ({
           disabled={isNextDisabled}>
           <MaterialIcons name="keyboard-arrow-right" size={24} color="white" />
         </TouchableOpacity>
-      </View>
+      </View> */}
     </View>
   );
 };
@@ -49,9 +56,9 @@ const TaegeukDetailsComponent = ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#f7f7f7',
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    // backgroundColor: '#f7f7f7',
   },
   moveContainer: {
     alignItems: 'center',
@@ -67,7 +74,10 @@ const styles = StyleSheet.create({
     color: '#666',
   },
   imageContainer: {
-    backgroundColor: '#fff',
+    flex: 1,
+    width: 300,
+    height: 200,
+    backgroundColor: 'red',
     borderRadius: 10,
     elevation: 5,
     shadowColor: '#000',
@@ -77,9 +87,14 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   video: {
-    width: 300,
-    height: 200,
-    borderRadius: 10,
+    // width: '100%',
+    // height: '100%',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+    zIndex: 100,
   },
   buttonContainer: {
     flexDirection: 'row',
