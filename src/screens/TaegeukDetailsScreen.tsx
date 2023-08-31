@@ -4,8 +4,9 @@ import TaegeukDetailsComponent from '../components/TaegeukDetailsComponent';
 import TaegeukData from '../data/TaegeukData';
 
 const TaegeukDetailsScreen = ({route}) => {
-  const {selectedForm} = route.params;
-  const selectedFormIndex = 0; // TODO: Replace this with the index of the selected form you want to display
+  const {selectedFormIndex} = route.params;
+  console.log('selectedFormIndex', selectedFormIndex);
+  // const selectedFormIndex = 0; // TODO: Replace this with the index of the selected form you want to display
   const form = TaegeukData[selectedFormIndex];
 
   const [currentMoveIndex, setCurrentMoveIndex] = useState(0);

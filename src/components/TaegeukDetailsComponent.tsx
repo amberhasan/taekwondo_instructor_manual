@@ -11,6 +11,7 @@ const TaegeukDetailsComponent = ({
   isPreviousDisabled,
   isNextDisabled,
 }) => {
+  const playerRef = useRef(null);
   return (
     <View style={styles.container}>
       <View style={styles.moveContainer}>
@@ -20,7 +21,7 @@ const TaegeukDetailsComponent = ({
         <Text style={styles.descriptionText}>({currentMove.stance})</Text>
       </View>
       <View style={styles.imageContainer}>
-        <VideoPlayer source={currentMove.video} />
+        <VideoPlayer ref={playerRef} source={currentMove.video} />
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
@@ -31,6 +32,15 @@ const TaegeukDetailsComponent = ({
         </TouchableOpacity>
         <TouchableOpacity style={styles.resetButton} onPress={handleReset}>
           <Text style={styles.resetButtonText}>Reset</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.resetButton}
+          onPress={async () => {
+            if (playerRef.current) {
+              await playerRef.current.resetVideo();
+            }
+          }}>
+          <Text style={styles.resetButtonText}>Replay</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.sideButton}

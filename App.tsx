@@ -66,7 +66,7 @@ const AppNavigator = () => {
           name="TaegeukDetail"
           component={TaegeukDetailsScreen}
           options={({route}) => ({
-            title: `Taegeuk ${route.params.selectedFormIndex}`,
+            title: `Taegeuk ${route.params.selectedFormIndex + 1}`,
             headerStyle: {
               backgroundColor: '#f0f0f0', // Customize header background color
             },

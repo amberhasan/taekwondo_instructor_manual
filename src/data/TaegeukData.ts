@@ -140,6 +140,8 @@ const TaegeukData = [
       {
         id: 1,
         image: require('../assets/images/taegeuk1/move1.png'),
+        video: require('../assets/videos/taegeuk1/taegeuk1-1.mp4'),
+
         moveDescription: 'Low Block',
         stance: 'Walking Stance',
         kiyap: false,
@@ -147,6 +149,8 @@ const TaegeukData = [
       {
         id: 2,
         image: require('../assets/images/taegeuk1/move2.png'),
+        video: require('../assets/videos/taegeuk1/taegeuk1-1.mp4'),
+
         moveDescription: 'Punch',
         stance: 'Front Stance',
         kiyap: false,

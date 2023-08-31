@@ -15,7 +15,7 @@ const PalgwaeListScreen = ({navigation}) => {
   ];
 
   const handleRowPress = form => {
-    navigation.navigate('TaegeukDetail', {selectedForm: form});
+    navigation.navigate('TaegeukDetail', {selectedFormIndex: form});
   };
 
   const renderItem = ({item}) => (

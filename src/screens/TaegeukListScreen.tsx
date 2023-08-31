@@ -15,7 +15,8 @@ const TaegeukListScreen = ({navigation}) => {
   ];
 
   const handleRowPress = formIndex => {
-    navigation.navigate('TaegeukDetail', {selectedFormIndex: formIndex + 1});
+    navigation.navigate('TaegeukDetail', {selectedFormIndex: formIndex});
+    console.log(formIndex);
   };
 
   const renderItem = ({item, index}) => (
