@@ -6,6 +6,8 @@ import TaegeukDetailsScreen from './src/screens/TaegeukDetailsScreen';
 import TaegeukListScreen from './src/screens/TaegeukListScreen';
 import {createStackNavigator} from '@react-navigation/stack';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import taegeukForms from './src/data/taegeukForms';
+import palgwaeForms from './src/data/palgwaeForms';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -41,13 +43,15 @@ const TaegeukTab = () => (
       },
     })}>
     <Tab.Screen
+      initialParams={{forms: taegeukForms}}
       name="Taegeuk Forms"
       component={TaegeukListScreen}
       options={{tabBarLabel: 'Taegeuk'}}
     />
     <Tab.Screen
+      initialParams={{forms: palgwaeForms}}
       name="Palgwae Forms"
-      component={PalgwaeListScreen}
+      component={TaegeukListScreen}
       options={{tabBarLabel: 'Palgwae'}}
     />
   </Tab.Navigator>

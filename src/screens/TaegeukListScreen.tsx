@@ -2,18 +2,9 @@ import React from 'react';
 import {View, FlatList, StyleSheet} from 'react-native';
 import FormMenuItem from '../components/FormMenuItem';
 
-const TaegeukListScreen = ({navigation}) => {
-  const taegeukForms = [
-    'Taegeuk 1 (Il-Jang)',
-    'Taegeuk 2 (I-Jang)',
-    'Taegeuk 3 (Sam-Jang)',
-    'Taegeuk 4 (Sa-Jang)',
-    'Taegeuk 5 (Oh-Jang)',
-    'Taegeuk 6 (Yook-Jang)',
-    'Taegeuk 7 (Chil-Jang)',
-    'Taegeuk 8 (Pal-Jang)',
-  ];
-
+const TaegeukListScreen = ({navigation, route}) => {
+  console.log(route.params.forms);
+  const forms = route.params.forms;
   const handleRowPress = formIndex => {
     navigation.navigate('TaegeukDetail', {selectedFormIndex: formIndex});
     console.log(formIndex);
@@ -26,7 +17,7 @@ const TaegeukListScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <FlatList
-        data={taegeukForms}
+        data={forms}
         renderItem={renderItem}
         keyExtractor={item => item}
       />
