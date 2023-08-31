@@ -1,13 +1,17 @@
 import React, {useState} from 'react';
 import {View} from 'react-native';
-import TaegeukDetailsComponent from '../components/TaegeukDetailsComponent';
+import DetailsComponent from '../components/DetailsComponent';
 import TaegeukData from '../data/TaegeukData';
+import PalgwaeData from '../data/PalgwaeData';
 
-const TaegeukDetailsScreen = ({route}) => {
-  const {selectedFormIndex} = route.params;
+const DetailsScreen = ({route}) => {
+  const {selectedFormIndex, formType} = route.params;
   console.log('selectedFormIndex', selectedFormIndex);
   // const selectedFormIndex = 0; // TODO: Replace this with the index of the selected form you want to display
-  const form = TaegeukData[selectedFormIndex];
+  const form =
+    formType == 'taegeuk'
+      ? TaegeukData[selectedFormIndex]
+      : PalgwaeData[selectedFormIndex];
 
   const [currentMoveIndex, setCurrentMoveIndex] = useState(0);
   const currentMove = form.moves[currentMoveIndex];
@@ -29,7 +33,7 @@ const TaegeukDetailsScreen = ({route}) => {
   };
 
   return (
-    <TaegeukDetailsComponent
+    <DetailsComponent
       currentMove={currentMove}
       handlePrevious={handlePrevious}
       handleReset={handleReset}
@@ -40,4 +44,4 @@ const TaegeukDetailsScreen = ({route}) => {
   );
 };
 
-export default TaegeukDetailsScreen;
+export default DetailsScreen;

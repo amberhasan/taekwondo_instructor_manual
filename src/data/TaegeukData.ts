@@ -6,7 +6,7 @@ const TaegeukData = [
       {
         id: 1,
         image: require('../assets/images/taegeuk1/move1.png'),
-        video: require('../assets/videos/taegeuk1/taegeuk1-1.mp4'),
+        video: require('../assets/videos/taegeuk/taegeuk1/taegeuk1-1.mp4'),
         moveDescription: 'Low Block',
         stance: 'Walking Stance',
         kiyap: false,
@@ -14,7 +14,7 @@ const TaegeukData = [
       {
         id: 2,
         image: require('../assets/images/taegeuk1/move2.png'),
-        video: require('../assets/videos/taegeuk1/taegeuk1-2.mp4'),
+        video: require('../assets/videos/taegeuk/taegeuk1/taegeuk1-2.mp4'),
         moveDescription: 'Punch',
         stance: 'Walking Stance',
         kiyap: false,
@@ -22,7 +22,7 @@ const TaegeukData = [
       {
         id: 3,
         image: require('../assets/images/taegeuk1/move1.png'),
-        video: require('../assets/videos/taegeuk1/taegeuk1-3.mp4'),
+        video: require('../assets/videos/taegeuk/taegeuk1/taegeuk1-3.mp4'),
         moveDescription: 'Low Block',
         stance: 'Walking Stance',
         kiyap: false,
@@ -30,7 +30,7 @@ const TaegeukData = [
       {
         id: 4,
         image: require('../assets/images/taegeuk1/move1.png'),
-        video: require('../assets/videos/taegeuk1/taegeuk1-4.mp4'),
+        video: require('../assets/videos/taegeuk/taegeuk1/taegeuk1-4.mp4'),
         moveDescription: 'Punch Block',
         stance: 'Walking Stance',
         kiyap: false,
@@ -38,7 +38,7 @@ const TaegeukData = [
       {
         id: 5,
         image: require('../assets/images/taegeuk1/move1.png'),
-        video: require('../assets/videos/taegeuk1/taegeuk1-5.mp4'),
+        video: require('../assets/videos/taegeuk/taegeuk1/taegeuk1-5.mp4'),
         moveDescription: 'Low Block, Punch',
         stance: 'Front Stance',
         kiyap: false,
@@ -46,7 +46,7 @@ const TaegeukData = [
       {
         id: 6,
         image: require('../assets/images/taegeuk1/move1.png'),
-        video: require('../assets/videos/taegeuk1/taegeuk1-6.mp4'),
+        video: require('../assets/videos/taegeuk/taegeuk1/taegeuk1-6.mp4'),
         moveDescription: 'Middle Block',
         stance: 'Walking Stance',
         kiyap: false,
@@ -54,7 +54,7 @@ const TaegeukData = [
       {
         id: 7,
         image: require('../assets/images/taegeuk1/move1.png'),
-        video: require('../assets/videos/taegeuk1/taegeuk1-7.mp4'),
+        video: require('../assets/videos/taegeuk/taegeuk1/taegeuk1-7.mp4'),
         moveDescription: 'Punch',
         stance: 'Walking Stance',
         kiyap: false,
@@ -62,7 +62,7 @@ const TaegeukData = [
       {
         id: 8,
         image: require('../assets/images/taegeuk1/move1.png'),
-        video: require('../assets/videos/taegeuk1/taegeuk1-8.mp4'),
+        video: require('../assets/videos/taegeuk/taegeuk1/taegeuk1-8.mp4'),
         moveDescription: 'Middle Block',
         stance: 'Walking Stance',
         kiyap: false,
@@ -70,7 +70,7 @@ const TaegeukData = [
       {
         id: 9,
         image: require('../assets/images/taegeuk1/move1.png'),
-        video: require('../assets/videos/taegeuk1/taegeuk1-9.mp4'),
+        video: require('../assets/videos/taegeuk/taegeuk1/taegeuk1-9.mp4'),
         moveDescription: 'Punch',
         stance: 'Walking Stance',
         kiyap: false,
@@ -78,7 +78,7 @@ const TaegeukData = [
       {
         id: 10,
         image: require('../assets/images/taegeuk1/move1.png'),
-        video: require('../assets/videos/taegeuk1/taegeuk1-10.mp4'),
+        video: require('../assets/videos/taegeuk/taegeuk1/taegeuk1-10.mp4'),
         moveDescription: 'Low Block, Punch',
         stance: 'Front Stance',
         kiyap: false,
@@ -86,7 +86,7 @@ const TaegeukData = [
       {
         id: 11,
         image: require('../assets/images/taegeuk1/move1.png'),
-        video: require('../assets/videos/taegeuk1/taegeuk1-11.mp4'),
+        video: require('../assets/videos/taegeuk/taegeuk1/taegeuk1-11.mp4'),
         moveDescription: 'High Block',
         stance: 'Walking Stance',
         kiyap: false,
@@ -94,7 +94,7 @@ const TaegeukData = [
       {
         id: 12,
         image: require('../assets/images/taegeuk1/move1.png'),
-        video: require('../assets/videos/taegeuk1/taegeuk1-12.mp4'),
+        video: require('../assets/videos/taegeuk/taegeuk1/taegeuk1-12.mp4'),
         moveDescription: 'Punch',
         stance: 'Walking Stance',
         kiyap: false,
@@ -102,7 +102,7 @@ const TaegeukData = [
       {
         id: 13,
         image: require('../assets/images/taegeuk1/move1.png'),
-        video: require('../assets/videos/taegeuk1/taegeuk1-13.mp4'),
+        video: require('../assets/videos/taegeuk/taegeuk1/taegeuk1-13.mp4'),
         moveDescription: 'High Block',
         stance: 'Walking Stance',
         kiyap: false,
@@ -110,7 +110,7 @@ const TaegeukData = [
       {
         id: 14,
         image: require('../assets/images/taegeuk1/move1.png'),
-        video: require('../assets/videos/taegeuk1/taegeuk1-14.mp4'),
+        video: require('../assets/videos/taegeuk/taegeuk1/taegeuk1-14.mp4'),
         moveDescription: 'Punch',
         stance: 'Walking Stance',
         kiyap: false,
@@ -118,7 +118,7 @@ const TaegeukData = [
       {
         id: 15,
         image: require('../assets/images/taegeuk1/move1.png'),
-        video: require('../assets/videos/taegeuk1/taegeuk1-15.mp4'),
+        video: require('../assets/videos/taegeuk/taegeuk1/taegeuk1-15.mp4'),
         moveDescription: 'Low Block',
         stance: 'Front Stance',
         kiyap: false,
@@ -126,7 +126,7 @@ const TaegeukData = [
       {
         id: 16,
         image: require('../assets/images/taegeuk1/move1.png'),
-        video: require('../assets/videos/taegeuk1/taegeuk1-16.mp4'),
+        video: require('../assets/videos/taegeuk/taegeuk1/taegeuk1-16.mp4'),
         moveDescription: 'Punch',
         stance: 'Front Stance',
         kiyap: true,
@@ -140,7 +140,7 @@ const TaegeukData = [
       {
         id: 1,
         image: require('../assets/images/taegeuk1/move1.png'),
-        video: require('../assets/videos/taegeuk1/taegeuk1-1.mp4'),
+        video: require('../assets/videos/taegeuk/taegeuk1/taegeuk1-1.mp4'),
 
         moveDescription: 'Low Block',
         stance: 'Walking Stance',
@@ -149,7 +149,7 @@ const TaegeukData = [
       {
         id: 2,
         image: require('../assets/images/taegeuk1/move2.png'),
-        video: require('../assets/videos/taegeuk1/taegeuk1-1.mp4'),
+        video: require('../assets/videos/taegeuk/taegeuk1/taegeuk1-1.mp4'),
 
         moveDescription: 'Punch',
         stance: 'Front Stance',

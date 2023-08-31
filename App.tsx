@@ -2,12 +2,14 @@ import * as React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
 import PalgwaeListScreen from './src/screens/PalgwaeListScreen';
-import TaegeukDetailsScreen from './src/screens/TaegeukDetailsScreen';
-import TaegeukListScreen from './src/screens/TaegeukListScreen';
+import DetailsScreen from './src/screens/DetailsScreen';
+import ListScreen from './src/screens/ListScreen';
 import {createStackNavigator} from '@react-navigation/stack';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import taegeukForms from './src/data/taegeukForms';
 import palgwaeForms from './src/data/palgwaeForms';
+import PalgwaeData from './src/data/PalgwaeData';
+import TaegeukData from './src/data/TaegeukData';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -43,15 +45,15 @@ const TaegeukTab = () => (
       },
     })}>
     <Tab.Screen
-      initialParams={{forms: taegeukForms}}
+      initialParams={{forms: taegeukForms, formType: 'taegeuk'}}
       name="Taegeuk Forms"
-      component={TaegeukListScreen}
+      component={ListScreen}
       options={{tabBarLabel: 'Taegeuk'}}
     />
     <Tab.Screen
-      initialParams={{forms: palgwaeForms}}
+      initialParams={{forms: palgwaeForms, formType: 'palgwae'}}
       name="Palgwae Forms"
-      component={TaegeukListScreen}
+      component={ListScreen}
       options={{tabBarLabel: 'Palgwae'}}
     />
   </Tab.Navigator>
@@ -67,10 +69,14 @@ const AppNavigator = () => {
           options={{headerShown: false}}
         />
         <Stack.Screen
-          name="TaegeukDetail"
-          component={TaegeukDetailsScreen}
+          name="DetailsScreen"
+          component={DetailsScreen}
           options={({route}) => ({
-            title: `Taegeuk ${route.params.selectedFormIndex + 1}`,
+            title: `${
+              route.params.formType.charAt(0).toUpperCase() +
+              route.params.formType.slice(1)
+            } ${route.params.selectedFormIndex + 1}`,
+
             headerStyle: {
               backgroundColor: '#f0f0f0', // Customize header background color
             },

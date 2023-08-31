@@ -2,11 +2,16 @@ import React from 'react';
 import {View, FlatList, StyleSheet} from 'react-native';
 import FormMenuItem from '../components/FormMenuItem';
 
-const TaegeukListScreen = ({navigation, route}) => {
+const ListScreen = ({navigation, route}) => {
   console.log(route.params.forms);
   const forms = route.params.forms;
+  const formType = route.params.formType;
+
   const handleRowPress = formIndex => {
-    navigation.navigate('TaegeukDetail', {selectedFormIndex: formIndex});
+    navigation.navigate('DetailsScreen', {
+      selectedFormIndex: formIndex,
+      formType: formType,
+    });
     console.log(formIndex);
   };
 
@@ -34,4 +39,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default TaegeukListScreen;
+export default ListScreen;

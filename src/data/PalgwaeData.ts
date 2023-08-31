@@ -6,6 +6,7 @@ const PalgwaeData = [
       {
         id: 1,
         image: require('../assets/images/taegeuk1/move1.png'),
+        video: require('../assets/videos/palgwae/palgwae1/palgwae_test.mp4'),
         moveDescription: 'Low Block',
         stance: 'Front Stance',
         kiyap: false,
@@ -13,6 +14,7 @@ const PalgwaeData = [
       {
         id: 2,
         image: require('../assets/images/taegeuk1/move2.png'),
+        video: require('../assets/videos/palgwae/palgwae1/palgwae_test.mp4'),
         moveDescription: 'Middle Block',
         stance: 'Front Stance',
         kiyap: false,
@@ -20,6 +22,7 @@ const PalgwaeData = [
       {
         id: 3,
         image: require('../assets/images/taegeuk1/move1.png'),
+        video: require('../assets/videos/palgwae/palgwae1/palgwae_test.mp4'),
         moveDescription: 'Low Block',
         stance: 'Front Stance',
         kiyap: false,

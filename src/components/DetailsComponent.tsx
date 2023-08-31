@@ -3,7 +3,7 @@ import {View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import VideoPlayer from './VideoPlayer';
 
-const TaegeukDetailsComponent = ({
+const DetailsComponent = ({
   currentMove,
   handlePrevious,
   handleReset,
@@ -115,4 +115,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default TaegeukDetailsComponent;
+export default DetailsComponent;
