@@ -4,14 +4,14 @@ import FormMenuItem from '../components/FormMenuItem';
 
 const TaegeukListScreen = ({navigation}) => {
   const taegeukForms = [
-    'Taegeuk 1',
-    'Taegeuk 2',
-    'Taegeuk 3',
-    'Taegeuk 4',
-    'Taegeuk 5',
-    'Taegeuk 6',
-    'Taegeuk 7',
-    'Taegeuk 8',
+    'Taegeuk 1 (Il-Jang)',
+    'Taegeuk 2 (I-Jang)',
+    'Taegeuk 3 (Sam-Jang)',
+    'Taegeuk 4 (Sa-Jang)',
+    'Taegeuk 5 (Oh-Jang)',
+    'Taegeuk 6 (Yook-Jang)',
+    'Taegeuk 7 (Chil-Jang)',
+    'Taegeuk 8 (Pal-Jang)',
   ];
 
   const handleRowPress = formIndex => {

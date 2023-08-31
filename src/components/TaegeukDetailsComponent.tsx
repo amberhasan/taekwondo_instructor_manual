@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   imageContainer: {
     width: 300,
     height: 200,
-    backgroundColor: 'red',
+    backgroundColor: 'white',
     borderRadius: 10,
     elevation: 5,
     shadowColor: '#000',
