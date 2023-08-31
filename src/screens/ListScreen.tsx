@@ -1,9 +1,13 @@
 import React from 'react';
-import {View, FlatList, StyleSheet} from 'react-native';
-import FormMenuItem from '../components/FormMenuItem';
+import {
+  View,
+  FlatList,
+  StyleSheet,
+  TouchableHighlight,
+  Text,
+} from 'react-native';
 
 const ListScreen = ({navigation, route}) => {
-  console.log(route.params.forms);
   const forms = route.params.forms;
   const formType = route.params.formType;
 
@@ -12,11 +16,17 @@ const ListScreen = ({navigation, route}) => {
       selectedFormIndex: formIndex,
       formType: formType,
     });
-    console.log(formIndex);
   };
 
   const renderItem = ({item, index}) => (
-    <FormMenuItem item={item} handleRowPress={() => handleRowPress(index)} />
+    <TouchableHighlight
+      underlayColor="#3498db" // Change this color to match your design
+      onPress={() => handleRowPress(index)}
+      style={styles.row}>
+      <View>
+        <Text style={styles.title}>{item.title}</Text>
+      </View>
+    </TouchableHighlight>
   );
 
   return (
@@ -24,7 +34,7 @@ const ListScreen = ({navigation, route}) => {
       <FlatList
         data={forms}
         renderItem={renderItem}
-        keyExtractor={item => item}
+        keyExtractor={item => item.id.toString()} // Use a unique keyExtractor
       />
     </View>
   );
@@ -36,6 +46,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 20, // Adjust the marginTop value as needed
+  },
+  row: {
+    marginBottom: 10,
+    backgroundColor: '#3498db', // Change this color to match your design
+    padding: 10,
+    borderRadius: 5,
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: 'white', // Change this color to match your design
   },
 });
 

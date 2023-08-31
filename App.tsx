@@ -45,13 +45,13 @@ const TaegeukTab = () => (
       },
     })}>
     <Tab.Screen
-      initialParams={{forms: taegeukForms, formType: 'taegeuk'}}
+      initialParams={{forms: TaegeukData, formType: 'taegeuk'}}
       name="Taegeuk Forms"
       component={ListScreen}
       options={{tabBarLabel: 'Taegeuk'}}
     />
     <Tab.Screen
-      initialParams={{forms: palgwaeForms, formType: 'palgwae'}}
+      initialParams={{forms: PalgwaeData, formType: 'palgwae'}}
       name="Palgwae Forms"
       component={ListScreen}
       options={{tabBarLabel: 'Palgwae'}}
