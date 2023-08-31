@@ -1,7 +1,7 @@
-import React, {useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import {Video} from 'expo-av';
+import VideoPlayer from './VideoPlayer';
 
 const TaegeukDetailsComponent = ({
   currentMove,
@@ -11,7 +11,6 @@ const TaegeukDetailsComponent = ({
   isPreviousDisabled,
   isNextDisabled,
 }) => {
-  const playerRef = useRef(null);
   return (
     <View style={styles.container}>
       <View style={styles.moveContainer}>
@@ -21,14 +20,7 @@ const TaegeukDetailsComponent = ({
         <Text style={styles.descriptionText}>({currentMove.stance})</Text>
       </View>
       <View style={styles.imageContainer}>
-        <Video
-          ref={playerRef} // Store reference
-          source={{
-            uri: 'https://file-examples.com/storage/fead1d809b64e7bcd9ab4f1/2017/04/file_example_MP4_480_1_5MG.mp4',
-          }}
-          shouldPlay={true}
-          style={styles.video}
-        />
+        <VideoPlayer source={currentMove.video} />
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
@@ -83,10 +75,7 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     marginBottom: 20,
   },
-  video: {
-    width: '100%',
-    height: '100%',
-  },
+
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
