@@ -1,5 +1,5 @@
-import React, {useEffect, useRef, useState} from 'react';
-import {View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
+import React, {useRef} from 'react';
+import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import VideoPlayer from './VideoPlayer';
 
@@ -12,6 +12,7 @@ const DetailsComponent = ({
   isNextDisabled,
 }) => {
   const playerRef = useRef(null);
+
   return (
     <View style={styles.container}>
       <View style={styles.moveContainer}>
@@ -30,9 +31,6 @@ const DetailsComponent = ({
           disabled={isPreviousDisabled}>
           <MaterialIcons name="keyboard-arrow-left" size={24} color="white" />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.resetButton} onPress={handleReset}>
-          <Text style={styles.resetButtonText}>Reset</Text>
-        </TouchableOpacity>
         <TouchableOpacity
           style={styles.resetButton}
           onPress={async () => {
@@ -40,7 +38,7 @@ const DetailsComponent = ({
               await playerRef.current.resetVideo();
             }
           }}>
-          <Text style={styles.resetButtonText}>Replay</Text>
+          <MaterialIcons name="replay" size={20} color="white" />
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.sideButton}
@@ -49,6 +47,9 @@ const DetailsComponent = ({
           <MaterialIcons name="keyboard-arrow-right" size={24} color="white" />
         </TouchableOpacity>
       </View>
+      <TouchableOpacity style={styles.resetFormButton} onPress={handleReset}>
+        <Text style={styles.resetFormButtonText}>Reset Whole Form</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -74,8 +75,8 @@ const styles = StyleSheet.create({
     color: '#666',
   },
   imageContainer: {
-    width: 300,
-    height: 200,
+    width: 420,
+    height: 240,
     backgroundColor: 'white',
     borderRadius: 10,
     elevation: 5,
@@ -85,13 +86,12 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     marginBottom: 20,
   },
-
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingHorizontal: '5%', // Add horizontal padding to distribute buttons evenly
-    width: '90%', // Take up 90% of the screen width
-    alignSelf: 'center', // Center the button container horizontally
+    paddingHorizontal: '5%',
+    width: '90%',
+    alignSelf: 'center',
     marginTop: 20,
   },
   sideButton: {
@@ -108,7 +108,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#333',
     borderRadius: 5,
   },
-  resetButtonText: {
+  resetFormButton: {
+    marginTop: 20,
+    paddingHorizontal: 15,
+    paddingVertical: 10,
+    backgroundColor: '#333',
+    borderRadius: 5,
+    alignSelf: 'center',
+  },
+  resetFormButtonText: {
     color: 'white',
     fontSize: 14,
     fontWeight: 'bold',

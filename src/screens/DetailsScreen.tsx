@@ -1,15 +1,13 @@
 import React, {useState} from 'react';
-import {View} from 'react-native';
+import {View, StyleSheet, SafeAreaView} from 'react-native';
 import DetailsComponent from '../components/DetailsComponent';
 import TaegeukData from '../data/TaegeukData';
 import PalgwaeData from '../data/PalgwaeData';
 
 const DetailsScreen = ({route}) => {
   const {selectedFormIndex, formType} = route.params;
-  console.log('selectedFormIndex', selectedFormIndex);
-  // const selectedFormIndex = 0; // TODO: Replace this with the index of the selected form you want to display
   const form =
-    formType == 'taegeuk'
+    formType === 'taegeuk'
       ? TaegeukData[selectedFormIndex]
       : PalgwaeData[selectedFormIndex];
 
@@ -33,15 +31,24 @@ const DetailsScreen = ({route}) => {
   };
 
   return (
-    <DetailsComponent
-      currentMove={currentMove}
-      handlePrevious={handlePrevious}
-      handleReset={handleReset}
-      handleNext={handleNext}
-      isPreviousDisabled={currentMoveIndex === 0}
-      isNextDisabled={currentMoveIndex === form.moves.length - 1}
-    />
+    <SafeAreaView style={styles.container}>
+      <DetailsComponent
+        currentMove={currentMove}
+        handlePrevious={handlePrevious}
+        handleReset={handleReset}
+        handleNext={handleNext}
+        isPreviousDisabled={currentMoveIndex === 0}
+        isNextDisabled={currentMoveIndex === form.moves.length - 1}
+      />
+    </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#f0f0f0', // Set an appropriate background color
+  },
+});
 
 export default DetailsScreen;

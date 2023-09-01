@@ -1,7 +1,7 @@
 const TaegeukData = [
   {
     title: 'Taegeuk 1',
-    titleKorean: 'Taegeuk Il-Jang (태극 1장)',
+    titleKorean: 'Il-Jang',
     id: 1,
     moves: [
       {
@@ -32,7 +32,7 @@ const TaegeukData = [
         id: 4,
         image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/taegeuk/taegeuk1/taegeuk1-4.mp4'),
-        moveDescription: 'Punch Block',
+        moveDescription: 'Punch',
         stance: 'Walking Stance',
         kiyap: false,
       },
@@ -136,7 +136,7 @@ const TaegeukData = [
   },
   {
     title: 'Taegeuk 2',
-    titleKorean: 'Taegeuk I-Jang (태극 2장)',
+    titleKorean: 'I-Jang',
     id: 2,
     moves: [
       {
@@ -280,7 +280,7 @@ const TaegeukData = [
   },
   {
     title: 'Taegeuk 3',
-    titleKorean: 'Taegeuk Sam-Jang (태극 3장)',
+    titleKorean: 'Sam-Jang',
     id: 3,
     moves: [
       {
@@ -427,7 +427,7 @@ const TaegeukData = [
   },
   {
     title: 'Taegeuk 4',
-    titleKorean: 'Taegeuk Sa-Jang (태극 4장)',
+    titleKorean: 'Sa-Jang',
     id: 4,
     moves: [
       {
@@ -574,7 +574,7 @@ const TaegeukData = [
   },
   {
     title: 'Taegeuk 5',
-    titleKorean: 'Taegeuk Oh-Jang (태극 5장)',
+    titleKorean: 'Oh-Jang',
     id: 5,
     moves: [
       {
@@ -721,7 +721,7 @@ const TaegeukData = [
   },
   {
     title: 'Taegeuk 6',
-    titleKorean: 'Taegeuk Yuk-Jang (태극 6장)',
+    titleKorean: 'Yuk-Jang',
     id: 6,
     moves: [
       {
@@ -882,7 +882,7 @@ const TaegeukData = [
   },
   {
     title: 'Taegeuk 7',
-    titleKorean: 'Taegeuk Chil-Jang (태극 7장)',
+    titleKorean: 'Chil-Jang',
     id: 7,
     moves: [
       {
@@ -1036,7 +1036,7 @@ const TaegeukData = [
   },
   {
     title: 'Taegeuk 8',
-    titleKorean: 'Taegeuk Pal-Jang (태극 8장)',
+    titleKorean: 'Pal-Jang',
     id: 8,
     moves: [
       {

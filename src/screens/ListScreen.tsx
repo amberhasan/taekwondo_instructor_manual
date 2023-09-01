@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  View,
-  FlatList,
-  StyleSheet,
-  TouchableHighlight,
-  Text,
-} from 'react-native';
+import {View, FlatList, StyleSheet, TouchableOpacity, Text} from 'react-native';
 
 const ListScreen = ({navigation, route}) => {
   const forms = route.params.forms;
@@ -19,17 +13,14 @@ const ListScreen = ({navigation, route}) => {
   };
 
   const renderItem = ({item, index}) => (
-    <TouchableHighlight
-      underlayColor="#3498db"
+    <TouchableOpacity
       onPress={() => handleRowPress(index)}
-      style={styles.row}>
+      style={styles.button}>
       <View>
         <Text style={styles.title}>{item.title}</Text>
-        <View style={styles.titleContainer}>
-          <Text style={styles.titleKorean}>{item.titleKorean}</Text>
-        </View>
+        <Text style={styles.titleKorean}>({item.titleKorean})</Text>
       </View>
-    </TouchableHighlight>
+    </TouchableOpacity>
   );
 
   return (
@@ -38,6 +29,7 @@ const ListScreen = ({navigation, route}) => {
         data={forms}
         renderItem={renderItem}
         keyExtractor={item => item.id.toString()}
+        contentContainerStyle={styles.contentContainer}
       />
     </View>
   );
@@ -48,13 +40,21 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 20,
+    backgroundColor: '#f0f0f0',
   },
-  row: {
+  contentContainer: {
+    flexGrow: 1,
+    justifyContent: 'center',
+    paddingHorizontal: 20,
+  },
+  button: {
     marginBottom: 10,
+    paddingVertical: 15,
+    paddingHorizontal: 40, // Adjust this value for wider buttons
+    borderRadius: 10,
     backgroundColor: '#3498db',
-    padding: 10,
-    borderRadius: 5,
+    justifyContent: 'center',
+    alignSelf: 'stretch',
   },
   title: {
     fontSize: 18,
@@ -62,12 +62,10 @@ const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center',
   },
-  titleContainer: {
-    alignItems: 'center', // Center the Korean title
-  },
   titleKorean: {
     fontSize: 14,
-    color: '#a5a5a5', // A more subtle color for the Korean title
+    color: '#a5a5a5',
+    textAlign: 'center',
   },
 });
 

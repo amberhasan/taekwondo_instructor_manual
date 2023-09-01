@@ -1,6 +1,7 @@
 const PalgwaeData = [
   {
     title: 'Palgwae 1',
+    titleKorean: 'Il-Jang',
     id: 1,
     moves: [
       {
@@ -150,6 +151,7 @@ const PalgwaeData = [
   },
   {
     title: 'Palgwae 2',
+    titleKorean: 'I-Jang',
     id: 2,
     moves: [
       {
@@ -296,6 +298,7 @@ const PalgwaeData = [
   },
   {
     title: 'Palgwae 3',
+    titleKorean: 'Sam-Jang',
     id: 3,
     moves: [
       {
@@ -456,6 +459,7 @@ const PalgwaeData = [
   },
   {
     title: 'Palgwae 4',
+    titleKorean: 'Sa-Jang',
     id: 4,
     moves: [
       {
@@ -602,6 +606,7 @@ const PalgwaeData = [
   },
   {
     title: 'Palgwae 5',
+    titleKorean: 'Oh-Jang',
     id: 5,
     moves: [
       {
@@ -847,6 +852,7 @@ const PalgwaeData = [
   },
   {
     title: 'Palgwae 6',
+    titleKorean: 'Yuk-Jang',
     id: 6,
     moves: [
       {
@@ -979,6 +985,7 @@ const PalgwaeData = [
   },
   {
     title: 'Palgwae 7',
+    titleKorean: 'Chil-Jang',
     id: 7,
     moves: [
       {
@@ -1139,6 +1146,7 @@ const PalgwaeData = [
   },
   {
     title: 'Palgwae 8',
+    titleKorean: 'Pal-Jang',
     id: 8,
     moves: [
       {
