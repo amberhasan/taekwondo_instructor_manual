@@ -39,6 +39,7 @@ const DetailsScreen = ({route}) => {
   return (
     <SafeAreaView style={styles.container}>
       <SegmentedButtons
+        style={styles.segmentedButtonContainer}
         value={value}
         onValueChange={setValue}
         buttons={[
@@ -72,6 +73,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f0f0f0', // Set an appropriate background color
+  },
+  segmentedButtonContainer: {
+    padding: 16, // Add padding to the container
   },
 });
 
