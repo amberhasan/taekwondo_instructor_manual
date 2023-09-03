@@ -3,9 +3,14 @@ import {View, StyleSheet, SafeAreaView} from 'react-native';
 import DetailsComponent from '../components/DetailsComponent';
 import TaegeukData from '../data/TaegeukData';
 import PalgwaeData from '../data/PalgwaeData';
+import {SegmentedButtons} from 'react-native-paper';
+import VideoPlayer from '../components/VideoPlayer';
+import FullVideoComponent from '../components/FullVideoComponent';
 
 const DetailsScreen = ({route}) => {
   const {selectedFormIndex, formType} = route.params;
+  const [value, setValue] = React.useState('breakdown');
+
   const form =
     formType === 'taegeuk'
       ? TaegeukData[selectedFormIndex]
@@ -13,6 +18,7 @@ const DetailsScreen = ({route}) => {
 
   const [currentMoveIndex, setCurrentMoveIndex] = useState(0);
   const currentMove = form.moves[currentMoveIndex];
+  const fullVideo = TaegeukData[0].fullVideo;
 
   const handleNext = () => {
     const nextMoveIndex = (currentMoveIndex + 1) % form.moves.length;
@@ -32,14 +38,32 @@ const DetailsScreen = ({route}) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <DetailsComponent
-        currentMove={currentMove}
-        handlePrevious={handlePrevious}
-        handleReset={handleReset}
-        handleNext={handleNext}
-        isPreviousDisabled={currentMoveIndex === 0}
-        isNextDisabled={currentMoveIndex === form.moves.length - 1}
+      <SegmentedButtons
+        value={value}
+        onValueChange={setValue}
+        buttons={[
+          {
+            value: 'breakdown',
+            label: 'Breakdown',
+          },
+          {
+            value: 'full',
+            label: 'Full Video',
+          },
+        ]}
       />
+      {value === 'breakdown' ? (
+        <DetailsComponent
+          currentMove={currentMove}
+          handlePrevious={handlePrevious}
+          handleReset={handleReset}
+          handleNext={handleNext}
+          isPreviousDisabled={currentMoveIndex === 0}
+          isNextDisabled={currentMoveIndex === form.moves.length - 1}
+        />
+      ) : (
+        <FullVideoComponent fullVideo={fullVideo} />
+      )}
     </SafeAreaView>
   );
 };

@@ -1,15 +1,13 @@
 import * as React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
-import PalgwaeListScreen from './src/screens/PalgwaeListScreen';
 import DetailsScreen from './src/screens/DetailsScreen';
 import ListScreen from './src/screens/ListScreen';
 import {createStackNavigator} from '@react-navigation/stack';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import taegeukForms from './src/data/taegeukForms';
-import palgwaeForms from './src/data/palgwaeForms';
 import PalgwaeData from './src/data/PalgwaeData';
 import TaegeukData from './src/data/TaegeukData';
+import {PaperProvider} from 'react-native-paper';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -61,29 +59,31 @@ const TaegeukTab = () => (
 
 const AppNavigator = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={TaegeukTab}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="DetailsScreen"
-          component={DetailsScreen}
-          options={({route}) => ({
-            title: `${
-              route.params.formType.charAt(0).toUpperCase() +
-              route.params.formType.slice(1)
-            } ${route.params.selectedFormIndex + 1}`,
+    <PaperProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Home"
+            component={TaegeukTab}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="DetailsScreen"
+            component={DetailsScreen}
+            options={({route}) => ({
+              title: `${
+                route.params.formType.charAt(0).toUpperCase() +
+                route.params.formType.slice(1)
+              } ${route.params.selectedFormIndex + 1}`,
 
-            headerStyle: {
-              backgroundColor: '#f0f0f0', // Customize header background color
-            },
-          })}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+              headerStyle: {
+                backgroundColor: '#f0f0f0', // Customize header background color
+              },
+            })}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </PaperProvider>
   );
 };
 

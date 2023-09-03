@@ -3,6 +3,7 @@ const TaegeukData = [
     title: 'Taegeuk 1',
     titleKorean: 'Il-Jang',
     id: 1,
+    fullVideo: require('../assets/videos/taegeuk/taegeuk1/taegeuk1-full.mp4'),
     moves: [
       {
         id: 1,
@@ -138,6 +139,7 @@ const TaegeukData = [
     title: 'Taegeuk 2',
     titleKorean: 'I-Jang',
     id: 2,
+    fullVideo: require('../assets/videos/taegeuk/taegeuk1/taegeuk1-full.mp4'),
     moves: [
       {
         id: 1,
@@ -281,6 +283,7 @@ const TaegeukData = [
   {
     title: 'Taegeuk 3',
     titleKorean: 'Sam-Jang',
+    fullVideo: require('../assets/videos/taegeuk/taegeuk1/taegeuk1-full.mp4'),
     id: 3,
     moves: [
       {
@@ -429,6 +432,7 @@ const TaegeukData = [
     title: 'Taegeuk 4',
     titleKorean: 'Sa-Jang',
     id: 4,
+    fullVideo: require('../assets/videos/taegeuk/taegeuk1/taegeuk1-full.mp4'),
     moves: [
       {
         id: 1,
