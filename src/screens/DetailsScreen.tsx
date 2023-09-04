@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {View, StyleSheet, SafeAreaView} from 'react-native';
-import DetailsComponent from '../components/DetailsComponent';
+import BreakdownComponent from '../components/BreakdownComponent';
 import TaegeukData from '../data/TaegeukData';
 import PalgwaeData from '../data/PalgwaeData';
 import {SegmentedButtons} from 'react-native-paper';
@@ -54,7 +54,7 @@ const DetailsScreen = ({route}) => {
         ]}
       />
       {value === 'breakdown' ? (
-        <DetailsComponent
+        <BreakdownComponent
           currentMove={currentMove}
           handlePrevious={handlePrevious}
           handleReset={handleReset}
