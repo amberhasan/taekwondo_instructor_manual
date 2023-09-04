@@ -17,7 +17,6 @@ const VideoPlayer = forwardRef(({source}, ref) => {
     async function loadVideoAsset() {
       const asset = Asset.fromModule(source);
       await asset.downloadAsync();
-      console.log('asset', asset);
       setVideoURI(asset);
     }
 
