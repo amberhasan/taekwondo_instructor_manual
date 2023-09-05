@@ -18,7 +18,7 @@ const DetailsScreen = ({route}) => {
 
   const [currentMoveIndex, setCurrentMoveIndex] = useState(0);
   const currentMove = form.moves[currentMoveIndex];
-  const fullVideo = TaegeukData[0].fullVideo;
+  const fullVideo = form.fullVideo;
 
   const handleNext = () => {
     const nextMoveIndex = (currentMoveIndex + 1) % form.moves.length;
