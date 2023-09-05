@@ -3,6 +3,18 @@ import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import VideoPlayer from './VideoPlayer';
 
+export function generateRandomColor() {
+  // Generate random values for red, green, and blue channels
+  const red = Math.floor(Math.random() * 128); // Limiting to a darker range (0-127)
+  const green = Math.floor(Math.random() * 128); // Limiting to a darker range (0-127)
+  const blue = Math.floor(Math.random() * 128); // Limiting to a darker range (0-127)
+
+  // Create a CSS color string in the format "rgb(r, g, b)"
+  const randomDarkColor = `rgb(${red}, ${green}, ${blue})`;
+
+  return randomDarkColor;
+}
+
 const BreakdownComponent = ({
   currentMove,
   handlePrevious,
@@ -10,16 +22,17 @@ const BreakdownComponent = ({
   handleNext,
   isPreviousDisabled,
   isNextDisabled,
+  form,
 }) => {
   const playerRef = useRef(null);
 
   return (
     <View style={styles.container}>
       <View style={styles.moveContainer}>
-        <Text style={styles.formText}>
+        <Text style={styles.moveText}>
           {currentMove.id}. {currentMove.moveDescription}
         </Text>
-        <Text style={styles.descriptionText}>({currentMove.stance})</Text>
+        <Text style={styles.stanceText}>({currentMove.stance})</Text>
       </View>
       <View style={styles.imageContainer}>
         <VideoPlayer ref={playerRef} source={currentMove.video} />
@@ -51,22 +64,13 @@ const BreakdownComponent = ({
         </TouchableOpacity>
       </View>
 
-      <View style={styles.descriptionContainer}>
-        <Text style={styles.aboutTitle}>About Taegeuk 1:</Text>
+      <View
+        style={[
+          styles.descriptionContainer,
+          {backgroundColor: generateRandomColor()},
+        ]}>
         <Text style={styles.descriptionText}>
-          Taegeuk 1, or "Taegeuk Il Jang," is the first foundational form in
-          Taekwondo. It teaches beginners fundamental stances, blocks, and
-          strikes, setting the groundwork for their martial arts journey.
-        </Text>
-        <Text style={styles.descriptionTitle}>Key Points:</Text>
-        <Text style={styles.descriptionText}>
-          - Focuses on balance and coordination.
-        </Text>
-        <Text style={styles.descriptionText}>
-          - Introduces basic stances, blocks, and strikes.
-        </Text>
-        <Text style={styles.descriptionText}>
-          - Represents the beginning of a Taekwondo practitioner's journey.
+          {form.facts[Math.floor(Math.random() * 20)]}
         </Text>
       </View>
     </View>
@@ -83,14 +87,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 20,
   },
-  formText: {
+  moveText: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#333',
+    color: 'black',
+  },
+  stanceText: {
+    fontSize: 18,
+    color: 'black',
   },
   descriptionText: {
-    fontSize: 18,
-    color: '#666',
+    color: 'white',
+    fontSize: 20, // Increase the font size
+    textAlign: 'center', // Center the text
   },
   imageContainer: {
     width: '100%',
@@ -134,23 +143,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   descriptionContainer: {
-    backgroundColor: '#D4E79E', // Light Green
     padding: 20,
     borderRadius: 10,
     marginTop: 20,
-  },
-  descriptionTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#333',
-    marginBottom: 10,
-  },
-  aboutTitle: {
-    // Add a new style for the "About Taegeuk 1" title
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#333',
-    marginBottom: 10,
   },
 });
 

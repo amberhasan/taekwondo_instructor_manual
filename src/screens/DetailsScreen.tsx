@@ -61,6 +61,7 @@ const DetailsScreen = ({route}) => {
           handleNext={handleNext}
           isPreviousDisabled={currentMoveIndex === 0}
           isNextDisabled={currentMoveIndex === form.moves.length - 1}
+          form={form}
         />
       ) : (
         <FullVideoComponent fullVideo={fullVideo} />
