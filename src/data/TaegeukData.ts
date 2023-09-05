@@ -3,6 +3,8 @@ const TaegeukData = [
     title: 'Taegeuk 1',
     titleKorean: 'Il-Jang',
     id: 1,
+    description:
+      'Taegeuk 1, also known as "Il-Jang," is the first form in the Taegeuk series of Taekwondo. It serves as the foundation for beginners, teaching them fundamental stances, blocks, and strikes. Practitioners learn the basics of balance and coordination as they embark on their Taekwondo journey.',
     fullVideo: require('../assets/videos/taegeuk/taegeuk1/taegeuk1-full.mp4'),
     moves: [
       {

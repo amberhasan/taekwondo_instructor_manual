@@ -32,13 +32,16 @@ const BreakdownComponent = ({
           <MaterialIcons name="keyboard-arrow-left" size={24} color="white" />
         </TouchableOpacity>
         <TouchableOpacity
-          style={styles.resetButton}
+          style={styles.resetFormButton}
           onPress={async () => {
             if (playerRef.current) {
               await playerRef.current.resetVideo();
             }
           }}>
-          <MaterialIcons name="replay" size={20} color="white" />
+          <Text style={styles.resetFormButtonText}>Replay</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.resetFormButton} onPress={handleReset}>
+          <Text style={styles.resetFormButtonText}>Reset</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.sideButton}
@@ -47,9 +50,25 @@ const BreakdownComponent = ({
           <MaterialIcons name="keyboard-arrow-right" size={24} color="white" />
         </TouchableOpacity>
       </View>
-      <TouchableOpacity style={styles.resetFormButton} onPress={handleReset}>
-        <Text style={styles.resetFormButtonText}>Reset Whole Form</Text>
-      </TouchableOpacity>
+
+      <View style={styles.descriptionContainer}>
+        <Text style={styles.aboutTitle}>About Taegeuk 1:</Text>
+        <Text style={styles.descriptionText}>
+          Taegeuk 1, or "Taegeuk Il Jang," is the first foundational form in
+          Taekwondo. It teaches beginners fundamental stances, blocks, and
+          strikes, setting the groundwork for their martial arts journey.
+        </Text>
+        <Text style={styles.descriptionTitle}>Key Points:</Text>
+        <Text style={styles.descriptionText}>
+          - Focuses on balance and coordination.
+        </Text>
+        <Text style={styles.descriptionText}>
+          - Introduces basic stances, blocks, and strikes.
+        </Text>
+        <Text style={styles.descriptionText}>
+          - Represents the beginning of a Taekwondo practitioner's journey.
+        </Text>
+      </View>
     </View>
   );
 };
@@ -57,9 +76,8 @@ const BreakdownComponent = ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#f7f7f7',
+    padding: 20,
   },
   moveContainer: {
     alignItems: 'center',
@@ -75,8 +93,8 @@ const styles = StyleSheet.create({
     color: '#666',
   },
   imageContainer: {
-    width: 420,
-    height: 240,
+    width: '100%',
+    aspectRatio: 16 / 9,
     backgroundColor: 'white',
     borderRadius: 10,
     elevation: 5,
@@ -89,10 +107,9 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingHorizontal: '5%',
-    width: '90%',
-    alignSelf: 'center',
-    marginTop: 20,
+    alignItems: 'center',
+    width: '100%',
+    marginBottom: 20,
   },
   sideButton: {
     width: 40,
@@ -102,24 +119,38 @@ const styles = StyleSheet.create({
     backgroundColor: '#333',
     borderRadius: 20,
   },
-  resetButton: {
-    paddingHorizontal: 15,
-    paddingVertical: 10,
-    backgroundColor: '#333',
-    borderRadius: 5,
-  },
   resetFormButton: {
-    marginTop: 20,
-    paddingHorizontal: 15,
-    paddingVertical: 10,
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 10,
     backgroundColor: '#333',
     borderRadius: 5,
-    alignSelf: 'center',
+    marginHorizontal: 10,
   },
   resetFormButtonText: {
     color: 'white',
     fontSize: 14,
     fontWeight: 'bold',
+  },
+  descriptionContainer: {
+    backgroundColor: '#D4E79E', // Light Green
+    padding: 20,
+    borderRadius: 10,
+    marginTop: 20,
+  },
+  descriptionTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#333',
+    marginBottom: 10,
+  },
+  aboutTitle: {
+    // Add a new style for the "About Taegeuk 1" title
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#333',
+    marginBottom: 10,
   },
 });
 
