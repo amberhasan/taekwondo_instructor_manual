@@ -1,5 +1,25 @@
 import React from 'react';
-import {View, FlatList, StyleSheet, TouchableOpacity, Text} from 'react-native';
+import {
+  View,
+  FlatList,
+  StyleSheet,
+  TouchableOpacity,
+  Text,
+  Dimensions,
+} from 'react-native';
+const {height, width} = Dimensions.get('window');
+
+function generateRandomColor() {
+  // Generate random values for red, green, and blue channels
+  const red = Math.floor(Math.random() * 128); // Limiting to a darker range (0-127)
+  const green = Math.floor(Math.random() * 128); // Limiting to a darker range (0-127)
+  const blue = Math.floor(Math.random() * 128); // Limiting to a darker range (0-127)
+
+  // Create a CSS color string in the format "rgb(r, g, b)"
+  const randomDarkColor = `rgb(${red}, ${green}, ${blue})`;
+
+  return randomDarkColor;
+}
 
 const ListScreen = ({navigation, route}) => {
   const forms = route.params.forms;
@@ -15,7 +35,7 @@ const ListScreen = ({navigation, route}) => {
   const renderItem = ({item, index}) => (
     <TouchableOpacity
       onPress={() => handleRowPress(index)}
-      style={styles.button}>
+      style={[styles.button, {backgroundColor: generateRandomColor()}]}>
       <View>
         <Text style={styles.title}>{item.title}</Text>
         <Text style={styles.titleKorean}>({item.titleKorean})</Text>
@@ -30,6 +50,7 @@ const ListScreen = ({navigation, route}) => {
         renderItem={renderItem}
         keyExtractor={item => item.id.toString()}
         contentContainerStyle={styles.contentContainer}
+        numColumns={2}
       />
     </View>
   );
@@ -40,21 +61,19 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f0f0f0',
+    backgroundColor: 'white',
   },
   contentContainer: {
     flexGrow: 1,
     justifyContent: 'center',
-    paddingHorizontal: 20,
   },
   button: {
-    marginBottom: 10,
-    paddingVertical: 15,
-    paddingHorizontal: 40, // Adjust this value for wider buttons
+    width: width / 2 - 10,
+    height: height / 5 - 10,
     borderRadius: 10,
-    backgroundColor: '#3498db',
     justifyContent: 'center',
     alignSelf: 'stretch',
+    margin: 5,
   },
   title: {
     fontSize: 18,
