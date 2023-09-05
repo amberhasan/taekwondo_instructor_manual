@@ -51,10 +51,10 @@ const BreakdownComponent = ({
               await playerRef.current.resetVideo();
             }
           }}>
-          <Text style={styles.resetFormButtonText}>Replay</Text>
+          <MaterialIcons name="replay" size={24} color="white" />
         </TouchableOpacity>
         <TouchableOpacity style={styles.resetFormButton} onPress={handleReset}>
-          <Text style={styles.resetFormButtonText}>Reset</Text>
+          <Text style={styles.resetFormButtonText}>Start Over</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.sideButton}
