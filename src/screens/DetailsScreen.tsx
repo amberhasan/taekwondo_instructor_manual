@@ -9,7 +9,7 @@ import FullVideoComponent from '../components/FullVideoComponent';
 
 const DetailsScreen = ({route}) => {
   const {selectedFormIndex, formType} = route.params;
-  const [value, setValue] = React.useState('breakdown');
+  const [viewType, setViewType] = useState('breakdown'); // Added state for view type
 
   const form =
     formType === 'taegeuk'
@@ -21,8 +21,20 @@ const DetailsScreen = ({route}) => {
   const fullVideo = form.fullVideo;
 
   const handleNext = () => {
-    const nextMoveIndex = (currentMoveIndex + 1) % form.moves.length;
-    setCurrentMoveIndex(nextMoveIndex);
+    let nextMoveIndex = (currentMoveIndex + 1) % form.moves.length;
+    if (nextMoveIndex === form.moves.length - 1) {
+      // If it's the first move again, reset the index to 0
+      setCurrentMoveIndex(0);
+    } else {
+      setCurrentMoveIndex(nextMoveIndex);
+    }
+  };
+
+  const handleViewTypeChange = newViewType => {
+    // Use newViewType to set the value
+    setViewType(newViewType);
+    // When the view type changes, reset the index to 0
+    setCurrentMoveIndex(0);
   };
 
   const handleReset = () => {
@@ -30,18 +42,24 @@ const DetailsScreen = ({route}) => {
   };
 
   const handlePrevious = () => {
-    const previousMoveIndex = currentMoveIndex - 1;
-    if (previousMoveIndex >= 0) {
-      setCurrentMoveIndex(previousMoveIndex);
+    let previousMoveIndex = currentMoveIndex - 1;
+    console.log(previousMoveIndex);
+
+    if (previousMoveIndex < 0) {
+      // If it's going to be negative, set it to the last move
+      previousMoveIndex = form.moves.length - 1;
     }
+    console.log(previousMoveIndex);
+
+    setCurrentMoveIndex(previousMoveIndex);
   };
 
   return (
     <SafeAreaView style={styles.container}>
       <SegmentedButtons
         style={styles.segmentedButtonContainer}
-        value={value}
-        onValueChange={setValue}
+        value={viewType}
+        onValueChange={handleViewTypeChange}
         buttons={[
           {
             value: 'breakdown',
@@ -53,14 +71,14 @@ const DetailsScreen = ({route}) => {
           },
         ]}
       />
-      {value === 'breakdown' ? (
+      {viewType === 'breakdown' ? (
         <BreakdownComponent
           currentMove={currentMove}
           handlePrevious={handlePrevious}
           handleReset={handleReset}
           handleNext={handleNext}
-          isPreviousDisabled={currentMoveIndex === 0}
-          isNextDisabled={currentMoveIndex === form.moves.length - 1}
+          isPreviousDisabled={false}
+          isNextDisabled={false}
           form={form}
         />
       ) : (
