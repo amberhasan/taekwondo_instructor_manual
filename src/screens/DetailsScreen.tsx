@@ -6,6 +6,8 @@ import PalgwaeData from '../data/PalgwaeData';
 import {SegmentedButtons} from 'react-native-paper';
 import VideoPlayer from '../components/VideoPlayer';
 import FullVideoComponent from '../components/FullVideoComponent';
+import QuizComponent from '../components/QuizComponent';
+import taegeuk1Quiz from '../data/quizzes/taegeuk/taegeuk1Quiz';
 
 const DetailsScreen = ({route}) => {
   const {selectedFormIndex, formType} = route.params;
@@ -69,6 +71,10 @@ const DetailsScreen = ({route}) => {
             value: 'full',
             label: 'Full Video',
           },
+          {
+            value: 'quiz',
+            label: 'Quiz',
+          },
         ]}
       />
       {viewType === 'breakdown' ? (
@@ -81,6 +87,8 @@ const DetailsScreen = ({route}) => {
           isNextDisabled={false}
           form={form}
         />
+      ) : viewType === 'quiz' ? (
+        <QuizComponent quizData={taegeuk1Quiz} />
       ) : (
         <FullVideoComponent fullVideo={fullVideo} form={form} />
       )}

@@ -51,10 +51,7 @@ const BreakdownComponent = ({
               await playerRef.current.resetVideo();
             }
           }}>
-          <MaterialIcons name="replay" size={24} color="white" />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.resetFormButton} onPress={handleReset}>
-          <Text style={styles.resetFormButtonText}>Start Over</Text>
+          <Text style={styles.resetFormButtonText}>Replay</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.sideButton}
@@ -90,16 +87,16 @@ const styles = StyleSheet.create({
   moveText: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: 'black',
+    color: '#333',
   },
   stanceText: {
     fontSize: 18,
-    color: 'black',
+    color: '#666',
   },
   descriptionText: {
     color: 'white',
-    fontSize: 20, // Increase the font size
-    textAlign: 'center', // Center the text
+    fontSize: 18,
+    textAlign: 'center',
   },
   imageContainer: {
     width: '100%',
@@ -112,6 +109,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3,
     shadowRadius: 4,
     marginBottom: 20,
+    overflow: 'hidden', // Clip the content within the container
   },
   buttonContainer: {
     flexDirection: 'row',
@@ -139,7 +137,7 @@ const styles = StyleSheet.create({
   },
   resetFormButtonText: {
     color: 'white',
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: 'bold',
   },
   descriptionContainer: {
