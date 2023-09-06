@@ -82,7 +82,7 @@ const DetailsScreen = ({route}) => {
           form={form}
         />
       ) : (
-        <FullVideoComponent fullVideo={fullVideo} />
+        <FullVideoComponent fullVideo={fullVideo} form={form} />
       )}
     </SafeAreaView>
   );

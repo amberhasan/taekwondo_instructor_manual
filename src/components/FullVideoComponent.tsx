@@ -3,7 +3,7 @@ import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import VideoPlayer from './VideoPlayer';
 
-const FullVideoComponent = ({fullVideo}) => {
+const FullVideoComponent = ({fullVideo, form}) => {
   const playerRef = useRef(null);
 
   return (
@@ -20,8 +20,11 @@ const FullVideoComponent = ({fullVideo}) => {
               await playerRef.current.resetVideo();
             }
           }}>
-          <MaterialIcons name="replay" size={20} color="white" />
+          <Text style={styles.resetButtonText}>Replay</Text>
         </TouchableOpacity>
+      </View>
+      <View style={styles.descriptionContainer}>
+        <Text style={styles.descriptionText}>{form.description}</Text>
       </View>
     </View>
   );
@@ -43,9 +46,18 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#333',
   },
+  descriptionContainer: {
+    backgroundColor: 'lightblue', // Background color for the container
+    padding: 10, // Padding for the container
+    borderRadius: 10, // Border radius for the container
+    borderWidth: 2, // Border width
+    borderColor: 'blue', // Border color
+    marginTop: 20,
+  },
   descriptionText: {
     fontSize: 18,
     color: '#666',
+    textAlign: 'center',
   },
   imageContainer: {
     width: 420,
@@ -61,11 +73,10 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     paddingHorizontal: '5%',
     width: '90%',
     alignSelf: 'center',
-    marginTop: 20,
   },
   sideButton: {
     width: 40,
@@ -79,7 +90,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     paddingVertical: 10,
     backgroundColor: '#333',
+    justifyContent: 'center',
+    alignItems: 'center',
     borderRadius: 5,
+  },
+  resetButtonText: {
+    color: 'white',
+    fontSize: 15, // Adjust the font size
+    fontWeight: 'bold',
   },
   resetFormButton: {
     marginTop: 20,

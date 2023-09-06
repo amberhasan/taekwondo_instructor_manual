@@ -3,6 +3,8 @@ const PalgwaeData = [
     title: 'Palgwae 1',
     titleKorean: 'Il-Jang',
     id: 1,
+    description:
+      'Palgwae 1 introduces students to the world of traditional martial arts. This foundational form emphasizes fundamental stances, strikes, and blocks while instilling discipline and respect. Palgwae 1 lays the groundwork for a lifelong journey of self-improvement through martial arts.',
     facts: [
       'Palgwae 1 is the first pattern in the Palgwae series of Taekwondo forms.',
       "It represents the beginning of a student's journey in Palgwae forms.",
@@ -193,6 +195,8 @@ const PalgwaeData = [
     title: 'Palgwae 2',
     titleKorean: 'I-Jang',
     id: 2,
+    description:
+      'Palgwae 2 builds on the skills acquired in the first form. Students refine their techniques, focusing on precision and control. This form encourages practitioners to deepen their understanding of martial arts philosophy and the importance of mental fortitude.',
     facts: [
       "Palgwae 2, also known as 'Ee Jang' in Korean, is the second pattern in the Palgwae series of Taekwondo forms.",
       'It builds upon the foundational skills learned in Palgwae 1, introducing more complex movements and techniques.',
@@ -383,6 +387,8 @@ const PalgwaeData = [
     title: 'Palgwae 3',
     titleKorean: 'Sam-Jang',
     id: 3,
+    description:
+      'Palgwae 3 introduces more complex patterns and movements, challenging students to expand their capabilities. This form emphasizes the balance between offense and defense, preparing practitioners for more advanced techniques in their martial arts journey.',
     facts: [
       "Palgwae 3, also known as 'Sam Jang' in Korean, is the third pattern in the Palgwae series of Taekwondo forms.",
       'It builds upon the skills learned in Palgwae 2, introducing more advanced techniques and combinations.',
@@ -589,6 +595,8 @@ const PalgwaeData = [
     title: 'Palgwae 4',
     titleKorean: 'Sa-Jang',
     id: 4,
+    description:
+      "Palgwae 4 marks a significant milestone in a martial artist's development. Students learn intricate combinations of strikes and blocks, requiring heightened coordination and concentration. This form represents the continued growth and dedication of the practitioner.",
     facts: [
       "Palgwae 4, also known as 'Sa Jang' in Korean, is the fourth pattern in the Palgwae series of Taekwondo forms.",
       'It builds upon the skills learned in Palgwae 3, introducing more advanced techniques and intricate combinations.',
@@ -779,6 +787,8 @@ const PalgwaeData = [
     title: 'Palgwae 5',
     titleKorean: 'Oh-Jang',
     id: 5,
+    description:
+      'Palgwae 5 delves deeper into the philosophy of martial arts. Practitioners focus on the connection between mind and body, striving for fluidity in their techniques. This form encourages students to embrace the principles of respect and discipline.',
     facts: [
       "Palgwae 5, also known as 'O Jang' in Korean, is the fifth pattern in the Palgwae series of Taekwondo forms.",
       'It builds upon the skills learned in Palgwae 4, introducing more advanced techniques, complex combinations, and intricate movements.',
@@ -1082,6 +1092,8 @@ const PalgwaeData = [
     title: 'Palgwae 6',
     titleKorean: 'Yuk-Jang',
     id: 6,
+    description:
+      'Palgwae 6 challenges students to refine their techniques and enhance their power and speed. This advanced form incorporates dynamic movements and intricate footwork, pushing practitioners to excel in their martial arts journey.',
     facts: [
       "Palgwae 6, also known as 'Yook Jang' in Korean, is the sixth pattern in the Palgwae series of Taekwondo forms.",
       'It builds upon the skills learned in Palgwae 5, introducing more advanced techniques, complex combinations, and intricate movements.',
@@ -1256,6 +1268,8 @@ const PalgwaeData = [
     title: 'Palgwae 7',
     titleKorean: 'Chil-Jang',
     id: 7,
+    description:
+      "Palgwae 7 symbolizes the practitioner's journey towards mastery. Students execute complex techniques with precision and grace. This form represents the culmination of years of training and dedication to the martial arts.",
     facts: [
       "Palgwae 7, also known as 'Chil Jang' in Korean, is the seventh pattern in the Palgwae series of Taekwondo forms.",
       'It builds upon the skills learned in Palgwae 6, introducing more advanced techniques, complex combinations, and intricate movements.',
@@ -1462,6 +1476,8 @@ const PalgwaeData = [
     title: 'Palgwae 8',
     titleKorean: 'Pal-Jang',
     id: 8,
+    description:
+      "Palgwae 8 is the pinnacle of the Palgwae forms. Practitioners demonstrate their expertise by performing advanced techniques with confidence and control. This form embodies the martial artist's commitment to self-improvement and the pursuit of excellence.",
     facts: [
       "Palgwae 8, also known as 'Pal Jang' in Korean, is the eighth and final pattern in the Palgwae series of Taekwondo forms.",
       "It represents the culmination of the student's journey in the Palgwae series, incorporating advanced techniques, complex combinations, and intricate movements.",
