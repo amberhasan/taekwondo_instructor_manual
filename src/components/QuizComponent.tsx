@@ -7,6 +7,7 @@ import {
   ScrollView,
   Alert,
 } from 'react-native';
+import {RadioButton} from 'react-native-paper';
 
 export interface QuizQuestion {
   question: string;
@@ -26,6 +27,7 @@ const QuizComponent: React.FC<QuizComponentProps> = ({quizData}) => {
   const [showResults, setShowResults] = useState(false);
   const [showCorrectAnswers, setShowCorrectAnswers] = useState(false); // Added state for showing correct answers
 
+  const isTesting = 'true';
   const handleAnswerChange = (selectedOptionIndex: number) => {
     const updatedAnswers = [...userAnswers];
     updatedAnswers[currentQuestionIndex] = selectedOptionIndex;
@@ -35,7 +37,7 @@ const QuizComponent: React.FC<QuizComponentProps> = ({quizData}) => {
   const handleNextQuestion = () => {
     if (currentQuestionIndex < quizData.length - 1) {
       // Check if the user has answered the current question
-      if (userAnswers[currentQuestionIndex] === -1) {
+      if (!isTesting && userAnswers[currentQuestionIndex] === -1) {
         // User hasn't answered the current question, show a message
         Alert.alert('Please complete the current question before proceeding.');
       } else {
@@ -79,7 +81,6 @@ const QuizComponent: React.FC<QuizComponentProps> = ({quizData}) => {
   };
 
   const currentQuestion = quizData[currentQuestionIndex];
-
   const renderQuestion = () => {
     return (
       <View style={styles.questionContainer}>
@@ -88,25 +89,23 @@ const QuizComponent: React.FC<QuizComponentProps> = ({quizData}) => {
           <Text style={styles.questionText}>{currentQuestion.question}</Text>
         </View>
         <View style={styles.questionBorder}>
-          {currentQuestion.options.map((option, optionIndex) => (
-            <TouchableOpacity
-              key={optionIndex}
-              style={[
-                styles.option,
-                userAnswers[currentQuestionIndex] === optionIndex &&
-                  styles.selectedOption,
-              ]}
-              onPress={() => handleAnswerChange(optionIndex)}>
-              <View
+          <RadioButton.Group
+            onValueChange={newValue => handleAnswerChange(Number(newValue))}
+            value={String(userAnswers[currentQuestionIndex])}>
+            {currentQuestion.options.map((option, optionIndex) => (
+              <TouchableOpacity
+                onPress={() => handleAnswerChange(optionIndex)}
+                key={optionIndex}
                 style={[
-                  styles.bubble,
+                  styles.option,
                   userAnswers[currentQuestionIndex] === optionIndex &&
-                    styles.bubbleFilled,
-                ]}
-              />
-              <Text style={styles.optionText}>{option}</Text>
-            </TouchableOpacity>
-          ))}
+                    styles.selectedOption,
+                ]}>
+                <RadioButton value={String(optionIndex)} />
+                <Text style={styles.optionText}>{option}</Text>
+              </TouchableOpacity>
+            ))}
+          </RadioButton.Group>
         </View>
       </View>
     );
@@ -223,6 +222,7 @@ const styles = StyleSheet.create({
   navigationButtons: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    backgroundColor: 'white',
   },
   button: {
     backgroundColor: 'blue',
@@ -232,6 +232,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     flex: 0,
     marginRight: 10,
+    alignSelf: 'stretch',
   },
   buttonText: {
     color: 'white',
