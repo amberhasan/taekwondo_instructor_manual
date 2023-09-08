@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   StyleSheet,
   ScrollView,
+  Alert,
 } from 'react-native';
 
 export interface QuizQuestion {
@@ -33,7 +34,14 @@ const QuizComponent: React.FC<QuizComponentProps> = ({quizData}) => {
 
   const handleNextQuestion = () => {
     if (currentQuestionIndex < quizData.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      // Check if the user has answered the current question
+      if (userAnswers[currentQuestionIndex] === -1) {
+        // User hasn't answered the current question, show a message
+        Alert.alert('Please complete the current question before proceeding.');
+      } else {
+        // User has answered the current question, proceed to the next one
+        setCurrentQuestionIndex(currentQuestionIndex + 1);
+      }
     }
   };
 
