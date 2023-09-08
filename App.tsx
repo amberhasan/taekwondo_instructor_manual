@@ -8,7 +8,8 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import PalgwaeData from './src/data/PalgwaeData';
 import TaegeukData from './src/data/TaegeukData';
 import {PaperProvider} from 'react-native-paper';
-
+import {Provider} from 'react-redux';
+import configureStore from './src/store/configureStore';
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
@@ -59,31 +60,33 @@ const TaegeukTab = () => (
 
 const AppNavigator = () => {
   return (
-    <PaperProvider>
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen
-            name="Home"
-            component={TaegeukTab}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
-            name="DetailsScreen"
-            component={DetailsScreen}
-            options={({route}) => ({
-              title: `${
-                route.params.formType.charAt(0).toUpperCase() +
-                route.params.formType.slice(1)
-              } ${route.params.selectedFormIndex + 1}`,
+    <Provider store={configureStore()}>
+      <PaperProvider>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen
+              name="Home"
+              component={TaegeukTab}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="DetailsScreen"
+              component={DetailsScreen}
+              options={({route}) => ({
+                title: `${
+                  route.params.formType.charAt(0).toUpperCase() +
+                  route.params.formType.slice(1)
+                } ${route.params.selectedFormIndex + 1}`,
 
-              headerStyle: {
-                backgroundColor: '#f0f0f0', // Customize header background color
-              },
-            })}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </PaperProvider>
+                headerStyle: {
+                  backgroundColor: '#f0f0f0', // Customize header background color
+                },
+              })}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </PaperProvider>
+    </Provider>
   );
 };
 
