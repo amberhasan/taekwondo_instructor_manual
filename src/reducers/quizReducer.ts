@@ -1,25 +1,14 @@
-// Define the initial state for the example reducer
+import palgwaeQuizSet from '../data/palgwaeQuizSet';
+import taegeukQuizSet from '../data/taegeukQuizSet';
+
 const initialState = {
-  counter: 0,
+  taegeuk: taegeukQuizSet,
+  palgwae: palgwaeQuizSet,
 };
 
 // Define the reducer function
 const quizReducer = (state = initialState, action) => {
-  //   switch (action.type) {
-  //     case INCREMENT:
-  //       return {
-  //         ...state,
-  //         counter: state.counter + 1,
-  //       };
-  //     case DECREMENT:
-  //       return {
-  //         ...state,
-  //         counter: state.counter - 1,
-  //       };
-  //     default:
-  //       return state;
-  //   }
-  return initialState;
+  return state;
 };
 
 export default quizReducer;

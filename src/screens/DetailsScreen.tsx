@@ -4,24 +4,20 @@ import BreakdownComponent from '../components/BreakdownComponent';
 import TaegeukData from '../data/TaegeukData';
 import PalgwaeData from '../data/PalgwaeData';
 import {SegmentedButtons} from 'react-native-paper';
-import VideoPlayer from '../components/VideoPlayer';
 import FullVideoComponent from '../components/FullVideoComponent';
 import QuizComponent from '../components/QuizComponent';
-import taegeuk1Quiz from '../data/quizzes/taegeuk/taegeuk1Quiz';
-import taegeukQuizSet from '../data/taegeukQuizSet';
-import palgwaeQuizSet from '../data/palgwaeQuizSet';
-import getQuiz from '../utils/getQuiz';
+import {useSelector} from 'react-redux';
 
 const DetailsScreen = ({route}) => {
   const {selectedFormIndex, formType} = route.params;
   const [viewType, setViewType] = useState('breakdown'); // Added state for view type
-
+  const quizSet = useSelector(state => state.quiz);
   const form =
     formType === 'taegeuk'
       ? TaegeukData[selectedFormIndex]
       : PalgwaeData[selectedFormIndex];
 
-  const quiz = getQuiz(selectedFormIndex, formType);
+  const quiz = quizSet[formType][selectedFormIndex];
   console.log(quiz);
 
   const [currentMoveIndex, setCurrentMoveIndex] = useState(0);

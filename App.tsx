@@ -10,6 +10,10 @@ import TaegeukData from './src/data/TaegeukData';
 import {PaperProvider} from 'react-native-paper';
 import {Provider} from 'react-redux';
 import configureStore from './src/store/configureStore';
+if (__DEV__) {
+  import('./ReactotronConfig').then(() => console.log('Reactotron Configured'));
+}
+
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
