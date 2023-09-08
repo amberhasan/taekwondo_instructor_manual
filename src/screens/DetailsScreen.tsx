@@ -8,6 +8,9 @@ import VideoPlayer from '../components/VideoPlayer';
 import FullVideoComponent from '../components/FullVideoComponent';
 import QuizComponent from '../components/QuizComponent';
 import taegeuk1Quiz from '../data/quizzes/taegeuk/taegeuk1Quiz';
+import taegeukQuizSet from '../data/taegeukQuizSet';
+import palgwaeQuizSet from '../data/palgwaeQuizSet';
+import getQuiz from '../utils/getQuiz';
 
 const DetailsScreen = ({route}) => {
   const {selectedFormIndex, formType} = route.params;
@@ -17,6 +20,9 @@ const DetailsScreen = ({route}) => {
     formType === 'taegeuk'
       ? TaegeukData[selectedFormIndex]
       : PalgwaeData[selectedFormIndex];
+
+  const quiz = getQuiz(selectedFormIndex, formType);
+  console.log(quiz);
 
   const [currentMoveIndex, setCurrentMoveIndex] = useState(0);
   const currentMove = form.moves[currentMoveIndex];
@@ -88,7 +94,7 @@ const DetailsScreen = ({route}) => {
           form={form}
         />
       ) : viewType === 'quiz' ? (
-        <QuizComponent quizData={taegeuk1Quiz} />
+        <QuizComponent quizData={quiz} />
       ) : (
         <FullVideoComponent fullVideo={fullVideo} form={form} />
       )}
