@@ -7,13 +7,13 @@ import {
   ScrollView,
 } from 'react-native';
 
-interface QuizQuestion {
+export interface QuizQuestion {
   question: string;
   options: string[];
   correctAnswerIndex: number;
 }
 
-interface QuizComponentProps {
+export interface QuizComponentProps {
   quizData: QuizQuestion[];
 }
 
@@ -156,7 +156,8 @@ const QuizComponent: React.FC<QuizComponentProps> = ({quizData}) => {
               <Text style={styles.correctAnswer}>
                 Correct Answer: {question.options[question.correctAnswerIndex]}
               </Text>
-              {userAnswers[index] !== -1 && (
+
+              {question.correctAnswerIndex != userAnswers[index] && (
                 <Text style={styles.incorrectAnswer}>
                   Your Answer: {question.options[userAnswers[index]]}
                 </Text>
@@ -183,8 +184,10 @@ const QuizComponent: React.FC<QuizComponentProps> = ({quizData}) => {
       {showResults && (
         <TouchableOpacity
           style={styles.button}
-          onPress={() => setShowCorrectAnswers(true)}>
-          <Text style={styles.buttonText}>Show Correct Answers</Text>
+          onPress={() => setShowCorrectAnswers(!showCorrectAnswers)}>
+          <Text style={styles.buttonText}>{`${
+            showCorrectAnswers ? 'Hide' : 'Show'
+          } Correct Answers`}</Text>
         </TouchableOpacity>
       )}
       {renderCorrectAnswers()}
@@ -219,7 +222,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     alignItems: 'center',
     marginVertical: 10,
-    flex: 1,
+    flex: 0,
     marginRight: 10,
   },
   buttonText: {
