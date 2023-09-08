@@ -1,5 +1,3 @@
-import taegeuk3Quiz from './quizzes/taegeuk/taegeuk3Quiz';
-
 const taegeukQuizSet = [
   {
     taegeuk1: [
