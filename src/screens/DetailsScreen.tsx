@@ -11,7 +11,7 @@ import {useSelector} from 'react-redux';
 const DetailsScreen = ({route}) => {
   const {selectedFormIndex, formType} = route.params;
   const [viewType, setViewType] = useState('breakdown'); // Added state for view type
-  const quizSet = useSelector(state => state.quiz);
+  const quizSet = useSelector(state => state.quiz); // state.quiz
   const form =
     formType === 'taegeuk'
       ? TaegeukData[selectedFormIndex]
