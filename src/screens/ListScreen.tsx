@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   FlatList,
@@ -7,6 +7,8 @@ import {
   Text,
   Dimensions,
 } from 'react-native';
+import {FontAwesome} from '@expo/vector-icons'; // Import FontAwesome for the star icon
+
 const {height, width} = Dimensions.get('window');
 
 function generateRandomColor() {
@@ -32,13 +34,41 @@ const ListScreen = ({navigation, route}) => {
     });
   };
 
+  const [favorites, setFavorites] = useState([]); // State to track favorites
+
+  const toggleFavorite = formIndex => {
+    // Check if the formIndex is in the favorites array
+    if (favorites.includes(formIndex)) {
+      // If it's already a favorite, remove it
+      setFavorites(favorites.filter(index => index !== formIndex));
+    } else {
+      // If it's not a favorite, add it
+      setFavorites([...favorites, formIndex]);
+      console.log('adding', formIndex);
+    }
+    console.log('Favorited Forms:', favorites);
+  };
+
+  const isFavorite = formIndex => favorites.includes(formIndex); // Helper function to check if an item is a favorite
+
   const renderItem = ({item, index}) => (
     <TouchableOpacity
       onPress={() => handleRowPress(index)}
       style={[styles.button, {backgroundColor: generateRandomColor()}]}>
-      <View>
-        <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.titleKorean}>({item.titleKorean})</Text>
+      <View style={styles.itemContainer}>
+        <View>
+          <Text style={styles.title}>{item.title}</Text>
+          <Text style={styles.titleKorean}>({item.titleKorean})</Text>
+        </View>
+        <TouchableOpacity
+          onPress={() => toggleFavorite(index)}
+          style={styles.favoriteIcon}>
+          <FontAwesome
+            name={isFavorite(index) ? 'star' : 'star-o'}
+            size={24}
+            color={isFavorite(index) ? 'gold' : '#ccc'}
+          />
+        </TouchableOpacity>
       </View>
     </TouchableOpacity>
   );
@@ -67,13 +97,16 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     justifyContent: 'center',
   },
+  itemContainer: {
+    flexDirection: 'row', // Row layout for item container
+    alignItems: 'center', // Center vertically within the item
+    justifyContent: 'space-between', // Add space between text and star icon
+    width: width / 2 - 50, // Adjust width based on your design
+    margin: 10,
+  },
   button: {
-    width: width / 2 - 10,
-    height: height / 5 - 10,
     borderRadius: 10,
-    justifyContent: 'center',
-    alignSelf: 'stretch',
-    margin: 5,
+    padding: 10, // Adjust padding for better spacing
   },
   title: {
     fontSize: 18,
@@ -85,6 +118,11 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#a5a5a5',
     textAlign: 'center',
+  },
+  favoriteIcon: {
+    position: 'absolute',
+    top: 5, // Adjust top position for better alignment
+    right: 5, // Adjust right position for better alignment
   },
 });
 
