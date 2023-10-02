@@ -1,14 +1,28 @@
 import React, {useState} from 'react';
-import {Text, View, TextInput, Button, StyleSheet} from 'react-native';
+import {Text, View, TextInput, Button, StyleSheet, Alert} from 'react-native';
+import auth from '@react-native-firebase/auth';
 
 const Register = () => {
   const [displayName, setDisplayName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleRegister = () => {
+  const handleRegister = async () => {
     // You can add your registration logic here
     // For simplicity, we'll just log the entered data for now
+    try {
+      if (email && password) {
+        const user = await auth().createUserWithEmailAndPassword(
+          email,
+          password,
+        );
+      } else {
+        Alert.alert('Error', 'Email and password is required');
+      }
+    } catch (err) {
+      console.error('error', err);
+    }
+
     console.log('Display Name:', displayName);
     console.log('Email:', email);
     console.log('Password:', password);

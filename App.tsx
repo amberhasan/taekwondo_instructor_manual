@@ -12,6 +12,7 @@ import {Provider} from 'react-redux';
 import configureStore from './src/store/configureStore';
 import Login from './src/screens/Login';
 import Register from './src/screens/Register';
+import auth from '@react-native-firebase/auth';
 if (__DEV__) {
   import('./ReactotronConfig').then(() => console.log('Reactotron Configured'));
 }
@@ -128,7 +129,22 @@ const TaegeukTab = () => (
 );
 
 const AppNavigator = ({navigation}) => {
-  const [isAuthenticated, setIsAuthenticated] = React.useState(true);
+  const [isAuthenticated, setIsAuthenticated] = React.useState(false);
+  // Handle user state changes
+  function onAuthStateChanged(user) {
+    if (user) {
+      setIsAuthenticated(true);
+    } else {
+      setIsAuthenticated(false);
+    }
+  }
+
+  React.useEffect(() => {
+    const unsubscribe = auth().onAuthStateChanged(onAuthStateChanged); //reference to the listener, subscriber is a function //mount
+    return () => {
+      unsubscribe();
+    }; // unsubscribe on unmount
+  }, []);
   return (
     <Provider store={configureStore()}>
       <PaperProvider>

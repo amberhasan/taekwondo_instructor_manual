@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Text, View, TextInput, Button, StyleSheet} from 'react-native';
 
-const Login = () => {
+const Login = ({navigation}) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -10,6 +10,12 @@ const Login = () => {
     // For simplicity, we'll just log the username and password for now
     console.log('Username:', username);
     console.log('Password:', password);
+  };
+
+  const handleRegister = () => {
+    // You can add your authentication logic here
+    // For simplicity, we'll just log the username and password for now
+    navigation.navigate('Register');
   };
 
   return (
@@ -29,6 +35,7 @@ const Login = () => {
         value={password}
       />
       <Button title="Login" onPress={handleLogin} />
+      <Button title="Register" onPress={handleRegister} />
     </View>
   );
 };
