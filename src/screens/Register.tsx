@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Text, View, TextInput, Button, StyleSheet, Alert} from 'react-native';
 import auth from '@react-native-firebase/auth';
 
-const Register = () => {
+const Register = ({navigation}) => {
   const [displayName, setDisplayName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -16,6 +16,7 @@ const Register = () => {
           email,
           password,
         );
+        navigation.navigate('Login');
       } else {
         Alert.alert('Error', 'Email and password is required');
       }
@@ -28,6 +29,11 @@ const Register = () => {
     console.log('Password:', password);
   };
 
+  const handleLogin = () => {
+    // You can add your authentication logic here
+    // For simplicity, we'll just log the username and password for now
+    navigation.navigate('Login');
+  };
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Register</Text>
@@ -52,6 +58,7 @@ const Register = () => {
         value={password}
       />
       <Button title="Register" onPress={handleRegister} />
+      <Button title="Login" onPress={handleLogin} />
     </View>
   );
 };

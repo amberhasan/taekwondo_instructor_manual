@@ -1,14 +1,22 @@
 import React, {useState} from 'react';
-import {Text, View, TextInput, Button, StyleSheet} from 'react-native';
+import {Text, View, TextInput, Button, StyleSheet, Alert} from 'react-native';
+import auth from '@react-native-firebase/auth';
 
 const Login = ({navigation}) => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
-    // You can add your authentication logic here
-    // For simplicity, we'll just log the username and password for now
-    console.log('Username:', username);
+  const handleLogin = async () => {
+    try {
+      if (email && password) {
+        const user = await auth().signInWithEmailAndPassword(email, password);
+      } else {
+        Alert.alert('Error', 'Email and password is required');
+      }
+    } catch (err) {
+      console.error('error', err);
+    }
+    console.log('Username:', email);
     console.log('Password:', password);
   };
 
@@ -23,9 +31,9 @@ const Login = ({navigation}) => {
       <Text style={styles.title}>Login</Text>
       <TextInput
         style={styles.input}
-        placeholder="Username"
-        onChangeText={text => setUsername(text)}
-        value={username}
+        placeholder="Email"
+        onChangeText={text => setEmail(text)}
+        value={email}
       />
       <TextInput
         style={styles.input}

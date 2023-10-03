@@ -13,6 +13,7 @@ import configureStore from './src/store/configureStore';
 import Login from './src/screens/Login';
 import Register from './src/screens/Register';
 import auth from '@react-native-firebase/auth';
+import ProfileScreen from './src/screens/ProfileScreen';
 if (__DEV__) {
   import('./ReactotronConfig').then(() => console.log('Reactotron Configured'));
 }
@@ -46,7 +47,7 @@ const AuthStackNavigator = () => {
 const HomeStackNavigator = ({navigation}) => {
   // Function to open the sidebar when the button is pressed
   const openSidebar = () => {
-    navigation.openDrawer();
+    navigation.navigate('ProfileScreen'); //TODO: navigation is not working
   };
   return (
     <HomeStack.Navigator>
@@ -57,7 +58,7 @@ const HomeStackNavigator = ({navigation}) => {
           headerShown: true,
           headerLeft: () => (
             <MaterialCommunityIcons
-              name="menu"
+              name="earth"
               size={30}
               style={{marginLeft: 10}}
               onPress={openSidebar}
@@ -129,6 +130,7 @@ const TaegeukTab = () => (
 );
 
 const AppNavigator = ({navigation}) => {
+  //Test@gmail.com and Test123!!
   const [isAuthenticated, setIsAuthenticated] = React.useState(false);
   // Handle user state changes
   function onAuthStateChanged(user) {

@@ -8,6 +8,7 @@ import {
   Dimensions,
 } from 'react-native';
 import {FontAwesome} from '@expo/vector-icons'; // Import FontAwesome for the star icon
+import auth from '@react-native-firebase/auth';
 
 const {height, width} = Dimensions.get('window');
 
@@ -22,7 +23,6 @@ function generateRandomColor() {
 
   return randomDarkColor;
 }
-
 const ListScreen = ({navigation, route}) => {
   const forms = route.params.forms;
   const formType = route.params.formType;
@@ -51,6 +51,13 @@ const ListScreen = ({navigation, route}) => {
 
   const isFavorite = formIndex => favorites.includes(formIndex); // Helper function to check if an item is a favorite
 
+  const handleSignOut = async () => {
+    try {
+      await auth().signOut(); // Sign out the user using your authentication library
+    } catch (error) {
+      console.error('Sign-out error:', error);
+    }
+  };
   const renderItem = ({item, index}) => (
     <TouchableOpacity
       onPress={() => handleRowPress(index)}
@@ -75,6 +82,9 @@ const ListScreen = ({navigation, route}) => {
 
   return (
     <View style={styles.container}>
+      <TouchableOpacity onPress={handleSignOut} style={styles.signOutButton}>
+        <Text style={styles.signOutButtonText}>Sign Out</Text>
+      </TouchableOpacity>
       <FlatList
         data={forms}
         renderItem={renderItem}
