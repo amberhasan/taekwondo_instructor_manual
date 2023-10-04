@@ -1,14 +1,75 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  Platform,
+  Alert,
+} from 'react-native';
 import auth from '@react-native-firebase/auth';
+import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
+import storage from '@react-native-firebase/storage';
 
 const ProfileScreen = () => {
   const user = auth().currentUser;
-  const [profilePicture, setProfilePicture] = useState(null);
+  console.log('user', user.photoURL);
+  const [profilePicture, setProfilePicture] = useState(user.photoURL);
 
-  const handleProfilePictureUpload = () => {
-    // Implement logic to open a file picker or camera access for image upload
-    // Once the user selects/upload a picture, update the profilePicture state
+  const uploadImage = async (filename: string, uploadUri: string) => {
+    // const filename = uri.substring(uri.lastIndexOf('/') + 1);
+    // const uploadUri = Platform.OS === 'ios' ? uri.replace('file://', '') : uri;
+    // setUploading(true);
+    // setTransferred(0);
+    const filePath = `profile/photos/${filename}`;
+    const task = storage().ref(filePath).putFile(uploadUri);
+    // set progress state
+    // task.on('state_changed', snapshot => {
+    //   setTransferred(
+    //     Math.round(snapshot.bytesTransferred / snapshot.totalBytes) * 10000
+    //   );
+    // });
+    try {
+      await task;
+    } catch (e) {
+      console.error(e);
+    }
+
+    const url = storage().ref(filePath).getDownloadURL();
+    // setUploading(false);
+    Alert.alert(
+      'Photo uploaded!',
+      'Your photo has been uploaded to Firebase Cloud Storage!',
+    );
+    return url;
+    // setImage(null);
+  };
+
+  const handleProfilePictureUpload = async () => {
+    console.log('image picker');
+    try {
+      const result = await launchImageLibrary({
+        mediaType: 'photo',
+      });
+      if (result.didCancel) {
+        // user cancelled the image picker
+        return;
+      }
+
+      console.log('result', result);
+      const fileName = result.assets[0].fileName;
+      const uri = result.assets[0].uri || '';
+      const url = await uploadImage(String(new Date().getTime()), uri);
+      auth().currentUser?.updateProfile({
+        displayName: user?.displayName,
+        photoURL: url,
+      });
+      setProfilePicture(url);
+      console.log('url', url);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   const handleSignOut = async () => {
