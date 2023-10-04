@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1068753919122",
+    "project_id": "taekwondo-instructor-manual",
+    "storage_bucket": "taekwondo-instructor-manual.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1068753919122:android:41ebeee706d40d0c951a4b",
+        "android_client_info": {
+          "package_name": "com.instructormanual"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0bqYgELpu3AQxCFzW5U5ptg4Z_gRb3hE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
