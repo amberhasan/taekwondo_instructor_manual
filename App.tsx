@@ -93,6 +93,8 @@ const TaegeukTab = () => (
           iconName = 'karate';
         } else if (route.name === 'Palgwae Forms') {
           iconName = 'earth';
+        } else if (route.name === 'Profile') {
+          iconName = 'account';
         }
         return (
           <MaterialCommunityIcons name={iconName} size={size} color={color} />
@@ -126,6 +128,11 @@ const TaegeukTab = () => (
       component={ListScreen}
       options={{headerShown: false, tabBarLabel: 'Palgwae'}}
     />
+    <Tab.Screen
+      name="Profile"
+      component={ProfileScreen}
+      options={{headerShown: false, tabBarLabel: 'Profile'}}
+    />
   </Tab.Navigator>
 );
 
@@ -134,6 +141,7 @@ const AppNavigator = ({navigation}) => {
   const [isAuthenticated, setIsAuthenticated] = React.useState(false);
   // Handle user state changes
   function onAuthStateChanged(user) {
+    console.log('user', user);
     if (user) {
       setIsAuthenticated(true);
     } else {
