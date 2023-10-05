@@ -56,14 +56,6 @@ const HomeStackNavigator = ({navigation}) => {
         component={TaegeukTab}
         options={{
           headerShown: true,
-          headerLeft: () => (
-            <MaterialCommunityIcons
-              name="earth"
-              size={30}
-              style={{marginLeft: 10}}
-              onPress={openSidebar}
-            />
-          ),
         }}
       />
       <HomeStack.Screen

@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Platform,
   Alert,
+  TextInput,
 } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
@@ -14,50 +15,36 @@ import storage from '@react-native-firebase/storage';
 
 const ProfileScreen = () => {
   const user = auth().currentUser;
-  console.log('user', user.photoURL);
   const [profilePicture, setProfilePicture] = useState(user.photoURL);
+  const [description, setDescription] = useState('');
 
   const uploadImage = async (filename: string, uploadUri: string) => {
-    // const filename = uri.substring(uri.lastIndexOf('/') + 1);
-    // const uploadUri = Platform.OS === 'ios' ? uri.replace('file://', '') : uri;
-    // setUploading(true);
-    // setTransferred(0);
     const filePath = `profile/photos/${filename}`;
     const task = storage().ref(filePath).putFile(uploadUri);
-    // set progress state
-    // task.on('state_changed', snapshot => {
-    //   setTransferred(
-    //     Math.round(snapshot.bytesTransferred / snapshot.totalBytes) * 10000
-    //   );
-    // });
+
     try {
       await task;
     } catch (e) {
       console.error(e);
     }
 
-    const url = storage().ref(filePath).getDownloadURL();
-    // setUploading(false);
+    const url = await storage().ref(filePath).getDownloadURL();
     Alert.alert(
       'Photo uploaded!',
       'Your photo has been uploaded to Firebase Cloud Storage!',
     );
     return url;
-    // setImage(null);
   };
 
   const handleProfilePictureUpload = async () => {
-    console.log('image picker');
     try {
       const result = await launchImageLibrary({
         mediaType: 'photo',
       });
       if (result.didCancel) {
-        // user cancelled the image picker
         return;
       }
 
-      console.log('result', result);
       const fileName = result.assets[0].fileName;
       const uri = result.assets[0].uri || '';
       const url = await uploadImage(String(new Date().getTime()), uri);
@@ -66,7 +53,6 @@ const ProfileScreen = () => {
         photoURL: url,
       });
       setProfilePicture(url);
-      console.log('url', url);
     } catch (err) {
       console.error(err);
     }
@@ -74,7 +60,7 @@ const ProfileScreen = () => {
 
   const handleSignOut = async () => {
     try {
-      await auth().signOut(); // Sign out the user using your authentication library
+      await auth().signOut();
     } catch (error) {
       console.error('Sign-out error:', error);
     }
@@ -82,8 +68,6 @@ const ProfileScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Profile</Text>
-
       <TouchableOpacity
         style={styles.avatarContainer}
         onPress={handleProfilePictureUpload}>
@@ -106,6 +90,14 @@ const ProfileScreen = () => {
         <Text style={styles.fieldValue}>{user?.displayName}</Text>
       </View>
 
+      <TextInput
+        style={styles.descriptionInput}
+        placeholder="Add a description about yourself"
+        value={description}
+        onChangeText={text => setDescription(text)}
+        multiline={true}
+      />
+
       <TouchableOpacity onPress={handleSignOut} style={styles.signOutButton}>
         <Text style={styles.signOutButtonText}>Sign Out</Text>
       </TouchableOpacity>
@@ -116,20 +108,13 @@ const ProfileScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'flex-start', // Move content to the top
+    justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: '#F5F5F5',
-    paddingHorizontal: 20, // Added padding on the sides
-    paddingTop: 30, // Added padding at the top
-  },
-  title: {
-    fontSize: 24,
-    marginBottom: 20,
-    fontWeight: 'bold',
-    color: '#333', // Darker text color
+    padding: 20,
+    paddingTop: 30,
   },
   avatarContainer: {
-    marginBottom: 20,
     alignItems: 'center',
   },
   avatarPlaceholder: {
@@ -166,10 +151,20 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#555',
   },
+  descriptionInput: {
+    width: '100%',
+    height: 100,
+    borderWidth: 1,
+    borderColor: '#E1E1E1',
+    borderRadius: 8,
+    padding: 10,
+    marginBottom: 20,
+  },
   signOutButton: {
     backgroundColor: '#007AFF',
     padding: 10,
     borderRadius: 8,
+    marginBottom: 20,
   },
   signOutButtonText: {
     color: '#FFF',

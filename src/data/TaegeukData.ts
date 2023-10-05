@@ -3,6 +3,7 @@ const TaegeukData = [
     title: 'Taegeuk 1',
     titleKorean: 'Il-Jang',
     id: 1,
+    image: require('../assets/images/background_photos/taegeuk/taegeuk1_heaven.png'),
     description:
       'Taegeuk 1, also known as "Il-Jang," is the first form in the Taegeuk series of Taekwondo. It serves as the foundation for beginners, teaching them fundamental stances, blocks, and strikes. Practitioners learn the basics of balance and coordination as they embark on their Taekwondo journey.',
     facts: [
@@ -27,6 +28,7 @@ const TaegeukData = [
       "It incorporates various stances, including the 'ap seogi' or front stance and the 'gunnun seogi' or sitting stance.",
       'Taegeuk 1 is a fundamental pattern that lays the groundwork for more advanced forms in Taekwondo.',
     ],
+
     fullVideo: require('../assets/videos/taegeuk/taegeuk1/taegeuk1-full.mp4'),
     moves: [
       {
@@ -163,6 +165,7 @@ const TaegeukData = [
     title: 'Taegeuk 2',
     titleKorean: 'I-Jang',
     id: 2,
+    image: require('../assets/images/background_photos/taegeuk/taegeuk2_joy.png'),
     description:
       'Taegeuk 2, also known as "Ee-Jang," follows the foundational principles of the first form. In this form, practitioners continue to refine their stances, blocks, and strikes, building on the skills learned in Taegeuk 1. Ee-Jang introduces new techniques and patterns, enhancing balance and agility as students progress in their Taekwondo journey.',
     facts: [
@@ -345,6 +348,8 @@ const TaegeukData = [
   {
     title: 'Taegeuk 3',
     titleKorean: 'Sam-Jang',
+    id: 3,
+    image: require('../assets/images/background_photos/taegeuk/taegeuk3_fire.png'),
     description:
       "Sam-Jang, or Taegeuk 3, emphasizes fluidity and precision. Practitioners advance their understanding of Taekwondo's core movements while learning intricate combinations of strikes and blocks. This form encourages students to focus on the connection between body and mind, refining their techniques and deepening their martial arts journey.",
     facts: [
@@ -369,7 +374,6 @@ const TaegeukData = [
       'As with all forms in Taekwondo, Taegeuk 3 encourages students to focus on the mental aspects of the art, including respect and humility.',
     ],
     fullVideo: require('../assets/videos/taegeuk/taegeuk3/taegeuk3-full.mp4'),
-    id: 3,
     moves: [
       {
         id: 1,
@@ -537,6 +541,7 @@ const TaegeukData = [
     title: 'Taegeuk 4',
     titleKorean: 'Sa-Jang',
     id: 4,
+    image: require('../assets/images/background_photos/taegeuk/taegeuk4_thunder.png'),
     description:
       'Taegeuk 4, known as "Sa-Jang," continues to build on the foundations laid in previous forms. This form incorporates more complex patterns and movements, challenging students to maintain poise and control. Sa-Jang emphasizes the importance of discipline and concentration, helping practitioners progress in their Taekwondo skills.',
     facts: [
@@ -728,6 +733,7 @@ const TaegeukData = [
     title: 'Taegeuk 5',
     titleKorean: 'Oh-Jang',
     id: 5,
+    image: require('../assets/images/background_photos/taegeuk/taegeuk5_wind.png'),
     description:
       'Taegeuk 5, or "Oh-Jang," introduces circular motions and intricate footwork into the practice. Students learn to flow seamlessly from one technique to another, enhancing their ability to adapt to different situations. Oh-Jang emphasizes the harmony of movement and the development of a martial artist\'s fluidity.',
     facts: [
@@ -919,6 +925,7 @@ const TaegeukData = [
     title: 'Taegeuk 6',
     titleKorean: 'Yuk-Jang',
     id: 6,
+    image: require('../assets/images/background_photos/taegeuk/taegeuk6_water.png'),
     description:
       "Yook-Jang, also known as Taegeuk 6, focuses on refining the practitioner's techniques and building speed and power. This form incorporates advanced kicks and strikes, challenging students to push their limits and harness their inner strength. Yook-Jang symbolizes the continued growth of a Taekwondo practitioner.",
     facts: [
@@ -1126,6 +1133,7 @@ const TaegeukData = [
     title: 'Taegeuk 7',
     titleKorean: 'Chil-Jang',
     id: 7,
+    image: require('../assets/images/background_photos/taegeuk/taegeuk7_mountain.png'),
     description:
       "Chil-Jang, the seventh form in the Taegeuk series, emphasizes precision, balance, and control. Students practice intricate movements and powerful strikes while maintaining grace and composure. Chil-Jang represents the practitioner's journey towards mastery and the deeper understanding of Taekwondo's philosophy.",
     facts: [
@@ -1325,6 +1333,8 @@ const TaegeukData = [
     title: 'Taegeuk 8',
     titleKorean: 'Pal-Jang',
     id: 8,
+    image: require('../assets/images/background_photos/taegeuk/taegeuk8_earth.png'),
+
     description:
       'Taegeuk 8, also known as "Pal-Jang," represents the pinnacle of the Taegeuk forms. Practitioners demonstrate their mastery of Taekwondo by executing complex techniques with fluidity and confidence. Pal-Jang symbolizes the culmination of years of dedication and hard work in the martial arts.',
     facts: [
