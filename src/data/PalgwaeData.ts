@@ -3,6 +3,7 @@ const PalgwaeData = [
     title: 'Palgwae 1',
     titleKorean: 'Il-Jang',
     id: 1,
+    image: require('../assets/images/background_photos/palgwae/palgwae1_heaven.png'),
     description:
       'Palgwae 1 introduces students to the world of traditional martial arts. This foundational form emphasizes fundamental stances, strikes, and blocks while instilling discipline and respect. Palgwae 1 lays the groundwork for a lifelong journey of self-improvement through martial arts.',
     facts: [
@@ -195,6 +196,7 @@ const PalgwaeData = [
     title: 'Palgwae 2',
     titleKorean: 'I-Jang',
     id: 2,
+    image: require('../assets/images/background_photos/palgwae/palgwae2_joy.png'),
     description:
       'Palgwae 2 builds on the skills acquired in the first form. Students refine their techniques, focusing on precision and control. This form encourages practitioners to deepen their understanding of martial arts philosophy and the importance of mental fortitude.',
     facts: [
@@ -387,6 +389,7 @@ const PalgwaeData = [
     title: 'Palgwae 3',
     titleKorean: 'Sam-Jang',
     id: 3,
+    image: require('../assets/images/background_photos/palgwae/palgwae3_fire.png'),
     description:
       'Palgwae 3 introduces more complex patterns and movements, challenging students to expand their capabilities. This form emphasizes the balance between offense and defense, preparing practitioners for more advanced techniques in their martial arts journey.',
     facts: [
@@ -595,6 +598,7 @@ const PalgwaeData = [
     title: 'Palgwae 4',
     titleKorean: 'Sa-Jang',
     id: 4,
+    image: require('../assets/images/background_photos/palgwae/palgwae4_thunder.png'),
     description:
       "Palgwae 4 marks a significant milestone in a martial artist's development. Students learn intricate combinations of strikes and blocks, requiring heightened coordination and concentration. This form represents the continued growth and dedication of the practitioner.",
     facts: [
@@ -787,6 +791,7 @@ const PalgwaeData = [
     title: 'Palgwae 5',
     titleKorean: 'Oh-Jang',
     id: 5,
+    image: require('../assets/images/background_photos/palgwae/palgwae5_wind.png'),
     description:
       'Palgwae 5 delves deeper into the philosophy of martial arts. Practitioners focus on the connection between mind and body, striving for fluidity in their techniques. This form encourages students to embrace the principles of respect and discipline.',
     facts: [
@@ -1092,6 +1097,7 @@ const PalgwaeData = [
     title: 'Palgwae 6',
     titleKorean: 'Yuk-Jang',
     id: 6,
+    image: require('../assets/images/background_photos/palgwae/palgwae6_water.png'),
     description:
       'Palgwae 6 challenges students to refine their techniques and enhance their power and speed. This advanced form incorporates dynamic movements and intricate footwork, pushing practitioners to excel in their martial arts journey.',
     facts: [
@@ -1268,6 +1274,7 @@ const PalgwaeData = [
     title: 'Palgwae 7',
     titleKorean: 'Chil-Jang',
     id: 7,
+    image: require('../assets/images/background_photos/palgwae/palgwae7_mountain.png'),
     description:
       "Palgwae 7 symbolizes the practitioner's journey towards mastery. Students execute complex techniques with precision and grace. This form represents the culmination of years of training and dedication to the martial arts.",
     facts: [
@@ -1476,6 +1483,7 @@ const PalgwaeData = [
     title: 'Palgwae 8',
     titleKorean: 'Pal-Jang',
     id: 8,
+    image: require('../assets/images/background_photos/palgwae/palgwae8_earth.png'),
     description:
       "Palgwae 8 is the pinnacle of the Palgwae forms. Practitioners demonstrate their expertise by performing advanced techniques with confidence and control. This form embodies the martial artist's commitment to self-improvement and the pursuit of excellence.",
     facts: [

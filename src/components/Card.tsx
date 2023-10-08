@@ -24,7 +24,7 @@ const Card = ({item, index, handleRowPress}) => (
 const styles = StyleSheet.create({
   container: {
     width: '48%',
-    aspectRatio: 16 / 9,
+    aspectRatio: 16 / 11,
     margin: 4,
     overflow: 'hidden',
     elevation: 4,
