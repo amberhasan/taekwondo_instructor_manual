@@ -1,6 +1,11 @@
 import palgwaeQuizSet from '../data/palgwaeQuizSet';
 import taegeukQuizSet from '../data/taegeukQuizSet';
 
+interface State {
+  taegeuk: string[];
+  palgwae: string[];
+}
+
 const initialState = {
   taegeuk: taegeukQuizSet,
   palgwae: palgwaeQuizSet,

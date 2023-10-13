@@ -5,18 +5,15 @@ import {
   StyleSheet,
   Image,
   TouchableOpacity,
-  Platform,
   Alert,
-  TextInput,
 } from 'react-native';
 import auth from '@react-native-firebase/auth';
-import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
+import {launchImageLibrary} from 'react-native-image-picker';
 import storage from '@react-native-firebase/storage';
 
 const ProfileScreen = () => {
   const user = auth().currentUser;
   const [profilePicture, setProfilePicture] = useState(user.photoURL);
-  const [description, setDescription] = useState('');
 
   const uploadImage = async (filename: string, uploadUri: string) => {
     const filePath = `profile/photos/${filename}`;
@@ -35,6 +32,8 @@ const ProfileScreen = () => {
     );
     return url;
   };
+
+  const defaultProfilePic = require('../assets/images/profile_pic_default.png');
 
   const handleProfilePictureUpload = async () => {
     try {
@@ -68,36 +67,21 @@ const ProfileScreen = () => {
 
   return (
     <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.headerText}>{user?.displayName}</Text>
+      </View>
       <TouchableOpacity
         style={styles.avatarContainer}
         onPress={handleProfilePictureUpload}>
         {profilePicture ? (
-          <Image source={{uri: profilePicture}} style={styles.profilePicture} />
+          <Image source={defaultProfilePic} style={styles.profilePicture} />
         ) : (
           <View style={styles.avatarPlaceholder}>
-            <Text style={styles.avatarText}>Upload Picture</Text>
+            <Text style={styles.avatarText}>Tap to Upload</Text>
           </View>
         )}
       </TouchableOpacity>
-
-      <View style={styles.fieldContainer}>
-        <Text style={styles.fieldLabel}>Email:</Text>
-        <Text style={styles.fieldValue}>{user?.email}</Text>
-      </View>
-
-      <View style={styles.fieldContainer}>
-        <Text style={styles.fieldLabel}>Username:</Text>
-        <Text style={styles.fieldValue}>{user?.displayName}</Text>
-      </View>
-
-      <TextInput
-        style={styles.descriptionInput}
-        placeholder="Add a description about yourself"
-        value={description}
-        onChangeText={text => setDescription(text)}
-        multiline={true}
-      />
-
+      <Text style={styles.userEmail}>{user?.email}</Text>
       <TouchableOpacity onPress={handleSignOut} style={styles.signOutButton}>
         <Text style={styles.signOutButtonText}>Sign Out</Text>
       </TouchableOpacity>
@@ -108,20 +92,26 @@ const ProfileScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'space-between',
+    backgroundColor: '#FFFFFF',
     alignItems: 'center',
-    backgroundColor: '#F5F5F5',
-    padding: 20,
-    paddingTop: 30,
+    paddingTop: 50,
+  },
+  header: {
+    marginBottom: 30,
+  },
+  headerText: {
+    fontSize: 26,
+    fontWeight: 'bold',
+    color: '#333',
   },
   avatarContainer: {
-    alignItems: 'center',
+    marginBottom: 20,
   },
   avatarPlaceholder: {
-    width: 150,
-    height: 150,
+    width: 130,
+    height: 130,
     backgroundColor: '#E1E1E1',
-    borderRadius: 75,
+    borderRadius: 65,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -131,44 +121,30 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   profilePicture: {
-    width: 150,
-    height: 150,
-    borderRadius: 75,
+    width: 130,
+    height: 130,
+    borderRadius: 65,
   },
-  fieldContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 10,
-  },
-  fieldLabel: {
-    flex: 1,
-    fontSize: 16,
-    fontWeight: 'bold',
+  userName: {
+    fontSize: 20,
+    fontWeight: '600',
     color: '#333',
+    marginBottom: 5,
   },
-  fieldValue: {
-    flex: 2,
+  userEmail: {
     fontSize: 16,
-    color: '#555',
-  },
-  descriptionInput: {
-    width: '100%',
-    height: 100,
-    borderWidth: 1,
-    borderColor: '#E1E1E1',
-    borderRadius: 8,
-    padding: 10,
-    marginBottom: 20,
+    color: '#777',
+    marginBottom: 30,
   },
   signOutButton: {
-    backgroundColor: '#007AFF',
-    padding: 10,
-    borderRadius: 8,
-    marginBottom: 20,
+    backgroundColor: '#FF6347', // Tomato color for visual appeal
+    padding: 12,
+    borderRadius: 25,
+    paddingHorizontal: 30,
+    marginTop: 20,
   },
   signOutButtonText: {
     color: '#FFF',
-    textAlign: 'center',
     fontWeight: 'bold',
   },
 });

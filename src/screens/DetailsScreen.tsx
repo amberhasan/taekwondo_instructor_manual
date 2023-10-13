@@ -10,7 +10,7 @@ import {useSelector} from 'react-redux';
 
 const DetailsScreen = ({route}) => {
   const {selectedFormIndex, formType} = route.params;
-  const [viewType, setViewType] = useState('breakdown'); // Added state for view type
+  const [viewType, setViewType] = useState<string>('breakdown'); // Added state for view type
   const quizSet = useSelector(state => state.quiz); // state.quiz
   const form =
     formType === 'taegeuk'
@@ -34,7 +34,7 @@ const DetailsScreen = ({route}) => {
     }
   };
 
-  const handleViewTypeChange = newViewType => {
+  const handleViewTypeChange = (newViewType: string) => {
     // Use newViewType to set the value
     setViewType(newViewType);
     // When the view type changes, reset the index to 0

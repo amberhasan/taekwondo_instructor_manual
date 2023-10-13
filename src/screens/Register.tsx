@@ -12,11 +12,10 @@ const Register = ({navigation}) => {
     // For simplicity, we'll just log the entered data for now
     try {
       if (email && password) {
-        const user = await auth().createUserWithEmailAndPassword(
-          email,
-          password,
-        );
-        navigation.navigate('Login');
+        await auth().createUserWithEmailAndPassword(email, password);
+        await auth().currentUser?.updateProfile({
+          displayName,
+        });
       } else {
         Alert.alert('Error', 'Email and password is required');
       }
@@ -84,3 +83,51 @@ const styles = StyleSheet.create({
 });
 
 export default Register;
+
+/**
+  let user:string  =  '123'
+
+  if(123 === user){
+
+  }else{
+
+
+  }
+
+  interface User {
+    name : string,
+    greet : function
+  }
+
+
+  const user : User = {
+    name :'xyz',
+    greet : ()=>{
+      console.log('hey', name)
+    }
+  }
+
+  user.name = 123
+
+  user.Name = 'ABC'  // error
+  const user = {
+    Name : 'ABC' 
+    name :'xyz',
+    greet : ()=>{
+      console.log('hey', name)
+    }
+  }
+
+
+
+  interface Role {
+    name  : '',
+    ....
+    ....
+    ....
+  }
+
+  interface SuperRole extends Role{
+    cardId : 1234
+  }
+ */
