@@ -1,5 +1,12 @@
 import React, {useState} from 'react';
-import {Text, View, TextInput, Button, StyleSheet, Alert} from 'react-native';
+import {
+  Text,
+  View,
+  TextInput,
+  StyleSheet,
+  Alert,
+  TouchableOpacity,
+} from 'react-native';
 import auth from '@react-native-firebase/auth';
 
 const Register = ({navigation}) => {
@@ -8,8 +15,6 @@ const Register = ({navigation}) => {
   const [password, setPassword] = useState('');
 
   const handleRegister = async () => {
-    // You can add your registration logic here
-    // For simplicity, we'll just log the entered data for now
     try {
       if (email && password) {
         await auth().createUserWithEmailAndPassword(email, password);
@@ -22,42 +27,48 @@ const Register = ({navigation}) => {
     } catch (err) {
       console.error('error', err);
     }
-
-    console.log('Display Name:', displayName);
-    console.log('Email:', email);
-    console.log('Password:', password);
   };
 
   const handleLogin = () => {
-    // You can add your authentication logic here
-    // For simplicity, we'll just log the username and password for now
     navigation.navigate('Login');
   };
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Register</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Display Name"
-        onChangeText={text => setDisplayName(text)}
-        value={displayName}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Email"
-        onChangeText={text => setEmail(text)}
-        value={email}
-        keyboardType="email-address"
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Password"
-        secureTextEntry={true}
-        onChangeText={text => setPassword(text)}
-        value={password}
-      />
-      <Button title="Register" onPress={handleRegister} />
-      <Button title="Login" onPress={handleLogin} />
+      <View style={styles.inputContainer}>
+        <TextInput
+          style={styles.input}
+          placeholder="Display Name"
+          placeholderTextColor="#aaa"
+          onChangeText={text => setDisplayName(text)}
+          value={displayName}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Email"
+          placeholderTextColor="#aaa"
+          onChangeText={text => setEmail(text)}
+          value={email}
+          keyboardType="email-address"
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Password"
+          placeholderTextColor="#aaa"
+          secureTextEntry={true}
+          onChangeText={text => setPassword(text)}
+          value={password}
+        />
+      </View>
+      <TouchableOpacity style={styles.button} onPress={handleRegister}>
+        <Text style={styles.buttonText}>Register</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={[styles.button, styles.buttonSecondary]}
+        onPress={handleLogin}>
+        <Text style={styles.buttonTextSecondary}>Login</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -67,67 +78,53 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#6A11CB',
   },
   title: {
-    fontSize: 24,
-    marginBottom: 20,
+    fontSize: 28,
+    marginBottom: 40,
+    color: 'white',
+    fontWeight: 'bold',
+  },
+  inputContainer: {
+    width: '85%',
+    marginBottom: 30,
   },
   input: {
-    width: '80%',
-    height: 40,
-    borderColor: 'gray',
+    width: '100%',
+    height: 45,
+    borderColor: '#ffffff33',
     borderWidth: 1,
-    marginBottom: 10,
-    paddingLeft: 10,
+    marginBottom: 20,
+    paddingLeft: 15,
+    borderRadius: 8,
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    color: 'white',
+  },
+  button: {
+    width: '80%',
+    height: 45,
+    backgroundColor: '#ffffff',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 8,
+    marginBottom: 15,
+  },
+  buttonSecondary: {
+    backgroundColor: 'transparent',
+    borderWidth: 1,
+    borderColor: '#ffffff',
+  },
+  buttonText: {
+    fontSize: 16,
+    fontWeight: '500',
+    color: '#6A11CB',
+  },
+  buttonTextSecondary: {
+    fontSize: 16,
+    fontWeight: '500',
+    color: 'white',
   },
 });
 
 export default Register;
-
-/**
-  let user:string  =  '123'
-
-  if(123 === user){
-
-  }else{
-
-
-  }
-
-  interface User {
-    name : string,
-    greet : function
-  }
-
-
-  const user : User = {
-    name :'xyz',
-    greet : ()=>{
-      console.log('hey', name)
-    }
-  }
-
-  user.name = 123
-
-  user.Name = 'ABC'  // error
-  const user = {
-    Name : 'ABC' 
-    name :'xyz',
-    greet : ()=>{
-      console.log('hey', name)
-    }
-  }
-
-
-
-  interface Role {
-    name  : '',
-    ....
-    ....
-    ....
-  }
-
-  interface SuperRole extends Role{
-    cardId : 1234
-  }
- */
