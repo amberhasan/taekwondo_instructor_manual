@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import {RadioButton} from 'react-native-paper';
 import Modal from 'react-native-modal';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 export interface QuizQuestion {
   question: string;
@@ -162,30 +163,36 @@ const QuizComponent: React.FC<QuizComponentProps> = ({quizData}) => {
   };
 
   const renderCorrectAnswers = () => {
-    return (
-      showCorrectAnswers && (
-        <View style={styles.results}>
-          {quizData.map((question, index) => (
-            <View key={index} style={styles.resultItem}>
-              <Text style={styles.answerText}>{question.question}</Text>
-              <Text style={styles.correctAnswer}>
-                Correct Answer: {question.options[question.correctAnswerIndex]}
-              </Text>
+    if (!showCorrectAnswers) return null;
 
-              {question.correctAnswerIndex != userAnswers[index] && (
-                <Text style={styles.incorrectAnswer}>
-                  Your Answer: {question.options[userAnswers[index]]}
-                </Text>
+    return (
+      <View style={styles.resultsContainer}>
+        {quizData.map((question, index) => (
+          <View key={index} style={styles.resultBox}>
+            <Text style={styles.questionText}>{question.question}</Text>
+
+            <View style={styles.answerSection}>
+              {question.correctAnswerIndex === userAnswers[index] ? (
+                <FontAwesome name="check" size={24} color="green" />
+              ) : (
+                <FontAwesome name="times" size={24} color="red" />
               )}
+              <Text style={styles.correctAnswerText}>
+                {question.options[question.correctAnswerIndex]}
+              </Text>
             </View>
-          ))}
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => setShowCorrectAnswers(false)}>
-            <Text style={styles.buttonText}>Hide Correct Answers</Text>
-          </TouchableOpacity>
-        </View>
-      )
+
+            {question.correctAnswerIndex !== userAnswers[index] && (
+              <View style={styles.answerSection}>
+                <FontAwesome name="times" size={24} color="red" />
+                <Text style={styles.incorrectAnswerText}>
+                  {question.options[userAnswers[index]]}
+                </Text>
+              </View>
+            )}
+          </View>
+        ))}
+      </View>
     );
   };
 
@@ -205,10 +212,14 @@ const QuizComponent: React.FC<QuizComponentProps> = ({quizData}) => {
           } Correct Answers`}</Text>
         </TouchableOpacity>
       )}
-
       <Modal isVisible={showCorrectAnswers}>
-        <View style={{flex: 0.9, backgroundColor: 'white'}}>
-          <ScrollView>{renderCorrectAnswers()}</ScrollView>
+        <View style={styles.modalContainer}>
+          <View style={styles.closeButtonContainer}>
+            <TouchableOpacity onPress={() => setShowCorrectAnswers(false)}>
+              <FontAwesome name="times-circle" size={30} color="#333" />
+            </TouchableOpacity>
+          </View>
+          <ScrollView style={{flex: 1}}>{renderCorrectAnswers()}</ScrollView>
         </View>
       </Modal>
     </ScrollView>
@@ -216,6 +227,57 @@ const QuizComponent: React.FC<QuizComponentProps> = ({quizData}) => {
 };
 
 const styles = StyleSheet.create({
+  resultsContainer: {
+    flex: 1,
+    padding: 10,
+  },
+  modalContainer: {
+    flex: 0.9,
+    backgroundColor: 'white',
+    borderRadius: 10,
+    overflow: 'hidden', // This ensures the borderRadius is applied to ScrollView content
+  },
+  closeButtonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    paddingRight: 10,
+    paddingTop: 10,
+  },
+  resultBox: {
+    borderWidth: 1,
+    borderColor: 'grey',
+    borderRadius: 5,
+    padding: 10,
+    marginBottom: 10,
+  },
+  questionText: {
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  answerSection: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 5,
+  },
+  correctAnswerText: {
+    marginLeft: 10,
+    color: 'green',
+  },
+  incorrectAnswerText: {
+    marginLeft: 10,
+    color: 'red',
+  },
+  hideButton: {
+    alignSelf: 'center',
+    marginTop: 10,
+    backgroundColor: 'grey',
+    borderRadius: 5,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+  },
+  hideButtonText: {
+    color: 'white',
+  },
   resultItem: {
     marginBottom: 10,
   },
@@ -276,11 +338,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#333',
   },
-  questionText: {
-    fontSize: 18,
-    flex: 1,
-    color: '#333',
-  },
   questionBorder: {
     borderTopWidth: 1,
     borderColor: '#ddd',
@@ -324,6 +381,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginVertical: 10,
     color: '#333',
+  },
+
+  labelText: {
+    fontSize: 16,
+    fontWeight: '500',
+    marginRight: 5,
   },
 });
 
