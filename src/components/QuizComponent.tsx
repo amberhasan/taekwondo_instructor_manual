@@ -80,7 +80,12 @@ const QuizComponent: React.FC<QuizComponentProps> = ({quizData}) => {
     return ((score / quizData.length) * 100).toFixed(2);
   };
 
+  console.log('quizData', quizData);
+  console.log('currentQuestionIndex', currentQuestionIndex);
+
   const currentQuestion = quizData[currentQuestionIndex];
+  if (!currentQuestion) return null;
+  console.log('currentQuestion', currentQuestion);
   const renderQuestion = () => {
     return (
       <View style={styles.questionContainer}>
