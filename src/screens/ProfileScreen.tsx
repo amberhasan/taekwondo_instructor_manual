@@ -9,28 +9,26 @@ import {
 } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import {launchImageLibrary} from 'react-native-image-picker';
-import storage from '@react-native-firebase/storage';
+// import storage from '@react-native-firebase/storage';
 
 const ProfileScreen = () => {
   const user = auth().currentUser;
-  const [profilePicture, setProfilePicture] = useState(user.photoURL);
+  const [profilePicture, setProfilePicture] = useState(true); //  TODO: this will hold real image path
 
   const uploadImage = async (filename: string, uploadUri: string) => {
-    const filePath = `profile/photos/${filename}`;
-    const task = storage().ref(filePath).putFile(uploadUri);
-
-    try {
-      await task;
-    } catch (e) {
-      console.error(e);
-    }
-
-    const url = await storage().ref(filePath).getDownloadURL();
-    Alert.alert(
-      'Photo uploaded!',
-      'Your photo has been uploaded to Firebase Cloud Storage!',
-    );
-    return url;
+    // const filePath = `profile/photos/${filename}`;
+    // const task = storage().ref(filePath).putFile(uploadUri);
+    // try {
+    //   await task;
+    // } catch (e) {
+    //   console.error(e);
+    // }
+    // const url = await storage().ref(filePath).getDownloadURL();
+    // Alert.alert(
+    //   'Photo uploaded!',
+    //   'Your photo has been uploaded to Firebase Cloud Storage!',
+    // );
+    // return url;
   };
 
   const defaultProfilePic = require('../assets/images/profile_pic_default.png');
@@ -71,6 +69,7 @@ const ProfileScreen = () => {
         <Text style={styles.headerText}>{user?.displayName}</Text>
       </View>
       <TouchableOpacity
+        disabled // later we will enable it
         style={styles.avatarContainer}
         onPress={handleProfilePictureUpload}>
         {profilePicture ? (

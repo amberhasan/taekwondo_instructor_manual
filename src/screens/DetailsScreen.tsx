@@ -18,7 +18,6 @@ const DetailsScreen = ({route}) => {
       : PalgwaeData[selectedFormIndex];
 
   const quiz = quizSet[formType][selectedFormIndex];
-  console.log(quiz);
 
   const [currentMoveIndex, setCurrentMoveIndex] = useState(0);
   const currentMove = form.moves[currentMoveIndex];
@@ -47,13 +46,11 @@ const DetailsScreen = ({route}) => {
 
   const handlePrevious = () => {
     let previousMoveIndex = currentMoveIndex - 1;
-    console.log(previousMoveIndex);
 
     if (previousMoveIndex < 0) {
       // If it's going to be negative, set it to the last move
       previousMoveIndex = form.moves.length - 1;
     }
-    console.log(previousMoveIndex);
 
     setCurrentMoveIndex(previousMoveIndex);
   };

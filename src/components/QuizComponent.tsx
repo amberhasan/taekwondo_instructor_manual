@@ -8,6 +8,7 @@ import {
   Alert,
 } from 'react-native';
 import {RadioButton} from 'react-native-paper';
+import Modal from 'react-native-modal';
 
 export interface QuizQuestion {
   question: string;
@@ -80,12 +81,7 @@ const QuizComponent: React.FC<QuizComponentProps> = ({quizData}) => {
     return ((score / quizData.length) * 100).toFixed(2);
   };
 
-  console.log('quizData', quizData);
-  console.log('currentQuestionIndex', currentQuestionIndex);
-
   const currentQuestion = quizData[currentQuestionIndex];
-  if (!currentQuestion) return null;
-  console.log('currentQuestion', currentQuestion);
   const renderQuestion = () => {
     return (
       <View style={styles.questionContainer}>
@@ -118,14 +114,22 @@ const QuizComponent: React.FC<QuizComponentProps> = ({quizData}) => {
 
   const renderNavigationButtons = () => {
     return (
-      <View style={styles.navigationButtons}>
+      <View
+        style={[
+          styles.navigationButtons,
+          currentQuestionIndex === 0
+            ? {alignSelf: 'flex-end'}
+            : {justifyContent: 'space-between'},
+        ]}>
         {currentQuestionIndex > 0 && (
           <TouchableOpacity style={styles.button} onPress={handlePrevQuestion}>
             <Text style={styles.buttonText}>Previous</Text>
           </TouchableOpacity>
         )}
         {currentQuestionIndex < quizData.length - 1 ? (
-          <TouchableOpacity style={styles.button} onPress={handleNextQuestion}>
+          <TouchableOpacity
+            style={[styles.button]}
+            onPress={handleNextQuestion}>
             <Text style={styles.buttonText}>Next</Text>
           </TouchableOpacity>
         ) : (
@@ -161,7 +165,6 @@ const QuizComponent: React.FC<QuizComponentProps> = ({quizData}) => {
     return (
       showCorrectAnswers && (
         <View style={styles.results}>
-          <Text style={styles.score}>Correct Answers:</Text>
           {quizData.map((question, index) => (
             <View key={index} style={styles.resultItem}>
               <Text style={styles.answerText}>{question.question}</Text>
@@ -202,7 +205,12 @@ const QuizComponent: React.FC<QuizComponentProps> = ({quizData}) => {
           } Correct Answers`}</Text>
         </TouchableOpacity>
       )}
-      {renderCorrectAnswers()}
+
+      <Modal isVisible={showCorrectAnswers}>
+        <View style={{flex: 0.9, backgroundColor: 'white'}}>
+          <ScrollView>{renderCorrectAnswers()}</ScrollView>
+        </View>
+      </Modal>
     </ScrollView>
   );
 };
@@ -226,7 +234,6 @@ const styles = StyleSheet.create({
   },
   navigationButtons: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     backgroundColor: 'white',
   },
   button: {

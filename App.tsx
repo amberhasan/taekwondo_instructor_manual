@@ -133,7 +133,6 @@ const AppNavigator = ({navigation}) => {
   const [isAuthenticated, setIsAuthenticated] = React.useState(false);
   // Handle user state changes
   function onAuthStateChanged(user) {
-    console.log('user', user);
     if (user) {
       setIsAuthenticated(true);
     } else {

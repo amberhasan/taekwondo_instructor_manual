@@ -92,7 +92,7 @@ const taegeukQuizSet = [
     {
       question: 'What is the other name for Taegeuk 2?',
       options: ['A) Ee-Jang', 'B) Sam-Jang', 'C) O-Jang', 'D) Il-Jang'],
-      correctAnswerIndex: 'A) Ee-Jang',
+      correctAnswerIndex: 0,
     },
     {
       question:
@@ -103,12 +103,12 @@ const taegeukQuizSet = [
         'C) Strong punches',
         'D) Fluid transitions and stance changes',
       ],
-      correctAnswerIndex: 'D) Fluid transitions and stance changes',
+      correctAnswerIndex: 3,
     },
     {
       question: 'In Taegeuk 2, how many movements or steps are there in total?',
       options: ['A) 18', 'B) 12', 'C) 8', 'D) 20'],
-      correctAnswerIndex: 'A) 18',
+      correctAnswerIndex: 0,
     },
     {
       question: 'Which of the following is a key feature of Taegeuk 2 forms?',
@@ -118,7 +118,7 @@ const taegeukQuizSet = [
         'C) Integration of kicks and strikes',
         'D) Ground grappling techniques',
       ],
-      correctAnswerIndex: 'C) Integration of kicks and strikes',
+      correctAnswerIndex: 2,
     },
     {
       question: 'What is the primary focus of Taegeuk 2 in Taekwondo training?',
@@ -128,7 +128,7 @@ const taegeukQuizSet = [
         'C) Balance, power, and fluidity of movement',
         'D) Traditional Korean dance',
       ],
-      correctAnswerIndex: 'C) Balance, power, and fluidity of movement',
+      correctAnswerIndex: 2,
     },
     {
       question:
@@ -139,13 +139,13 @@ const taegeukQuizSet = [
         'C) White belt',
         'D) Green belt',
       ],
-      correctAnswerIndex: 'D) Green belt',
+      correctAnswerIndex: 3,
     },
     {
       question:
         'True or False: Taegeuk 2 is usually learned after mastering Taegeuk 1.',
       options: ['A) True', 'B) False'],
-      correctAnswerIndex: 'A) True',
+      correctAnswerIndex: 0,
     },
     {
       question:
@@ -156,7 +156,7 @@ const taegeukQuizSet = [
         'C) Developing mental fortitude',
         'D) Imagining and visualizing scenarios',
       ],
-      correctAnswerIndex: 'D) Imagining and visualizing scenarios',
+      correctAnswerIndex: 3,
     },
     {
       question:
@@ -167,7 +167,7 @@ const taegeukQuizSet = [
         'C) Development of basic techniques and principles',
         'D) Ritualistic dance',
       ],
-      correctAnswerIndex: 'C) Development of basic techniques and principles',
+      correctAnswerIndex: 2,
     },
     {
       question: 'Which series follows the Taegeuk series in Taekwondo forms?',
@@ -177,7 +177,7 @@ const taegeukQuizSet = [
         'C) Palgwae series',
         'D) Koryo series',
       ],
-      correctAnswerIndex: 'A) Poomsae series',
+      correctAnswerIndex: 0,
     },
   ],
   [

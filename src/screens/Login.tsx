@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import {
   Text,
   View,
@@ -12,7 +12,7 @@ import auth from '@react-native-firebase/auth';
 const Login = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  const passwordRef = useRef();
   const handleLogin = async () => {
     try {
       if (email && password) {
@@ -21,10 +21,12 @@ const Login = ({navigation}) => {
         Alert.alert('Error', 'Email and password is required');
       }
     } catch (err) {
-      console.error('error', err);
+      // console.error('error', err);
+      // if (err.message.code('[Error: [auth/internal-error]')) {
+      //   Alert.alert('Wrong password');
+      // }
+      Alert.alert('Error', err.message);
     }
-    console.log('Username:', email);
-    console.log('Password:', password);
   };
 
   const handleRegister = () => {
@@ -41,13 +43,22 @@ const Login = ({navigation}) => {
         placeholder="Email"
         onChangeText={text => setEmail(text)}
         value={email}
+        keyboardType="email-address"
+        autoCapitalize="none"
+        autoCorrect={false}
+        returnKeyType="next"
+        onSubmitEditing={() => {
+          passwordRef.current.focus();
+        }}
       />
       <TextInput
+        ref={passwordRef}
         style={styles.input}
         placeholder="Password"
         secureTextEntry={true}
         onChangeText={text => setPassword(text)}
         value={password}
+        onSubmitEditing={handleLogin}
       />
       <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
         <Text style={styles.loginText}>Login</Text>
