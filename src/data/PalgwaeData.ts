@@ -32,7 +32,6 @@ const PalgwaeData = [
     moves: [
       {
         id: 1,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae1/palgwae1-1.mp4'),
         moveDescription: 'Low Block',
         stance: 'Front Stance',
@@ -40,7 +39,6 @@ const PalgwaeData = [
       },
       {
         id: 2,
-        image: require('../assets/images/taegeuk1/move2.png'),
         video: require('../assets/videos/palgwae/palgwae1/palgwae1-2.mp4'),
         moveDescription: 'Middle Block',
         stance: 'Front Stance',
@@ -48,7 +46,6 @@ const PalgwaeData = [
       },
       {
         id: 3,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae1/palgwae1-3.mp4'),
         moveDescription: 'Low Block',
         stance: 'Front Stance',
@@ -56,7 +53,6 @@ const PalgwaeData = [
       },
       {
         id: 4,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae1/palgwae1-4.mp4'),
         moveDescription: 'Middle Block',
         stance: 'Front Stance',
@@ -64,7 +60,6 @@ const PalgwaeData = [
       },
       {
         id: 5,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae1/palgwae1-5.mp4'),
         moveDescription: 'Low Block',
         stance: 'Front Stance',
@@ -72,7 +67,6 @@ const PalgwaeData = [
       },
       {
         id: 6,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae1/palgwae1-6.mp4'),
         moveDescription: 'Middle Block',
         stance: 'Back Stance',
@@ -80,7 +74,6 @@ const PalgwaeData = [
       },
       {
         id: 7,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae1/palgwae1-7.mp4'),
         moveDescription: 'Middle Block',
         stance: 'Back Stance',
@@ -88,7 +81,6 @@ const PalgwaeData = [
       },
       {
         id: 8,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae1/palgwae1-8.mp4'),
         moveDescription: 'Punch',
         stance: 'Front Stance',
@@ -96,7 +88,6 @@ const PalgwaeData = [
       },
       {
         id: 9,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae1/palgwae1-9.mp4'),
         moveDescription: 'Double Chop',
         stance: 'Back Stance',
@@ -104,7 +95,6 @@ const PalgwaeData = [
       },
       {
         id: 10,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae1/palgwae1-10.mp4'),
         moveDescription: 'Middle Block',
         stance: 'Back Stance',
@@ -112,7 +102,6 @@ const PalgwaeData = [
       },
       {
         id: 11,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae1/palgwae1-11.mp4'),
         moveDescription: 'Double Chop',
         stance: 'Back Stance',
@@ -120,7 +109,6 @@ const PalgwaeData = [
       },
       {
         id: 12,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae1/palgwae1-12.mp4'),
         moveDescription: 'Middle Block',
         stance: 'Back Stance',
@@ -128,7 +116,6 @@ const PalgwaeData = [
       },
       {
         id: 13,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae1/palgwae1-13.mp4'),
         moveDescription: 'Low Block',
         stance: 'Front Stance',
@@ -136,7 +123,6 @@ const PalgwaeData = [
       },
       {
         id: 14,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae1/palgwae1-14.mp4'),
         moveDescription: 'Chop',
         stance: 'Front Stance',
@@ -144,7 +130,6 @@ const PalgwaeData = [
       },
       {
         id: 15,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae1/palgwae1-15.mp4'),
         moveDescription: 'Chop',
         stance: 'Front Stance',
@@ -152,7 +137,6 @@ const PalgwaeData = [
       },
       {
         id: 16,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae1/palgwae1-16.mp4'),
         moveDescription: 'Punch',
         stance: 'Front Stance',
@@ -160,7 +144,6 @@ const PalgwaeData = [
       },
       {
         id: 17,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae1/palgwae1-17.mp4'),
         moveDescription: 'Low Block',
         stance: 'Front Stance',
@@ -168,7 +151,6 @@ const PalgwaeData = [
       },
       {
         id: 18,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae1/palgwae1-18.mp4'),
         moveDescription: 'Middle Block',
         stance: 'Front Stance',
@@ -176,7 +158,6 @@ const PalgwaeData = [
       },
       {
         id: 19,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae1/palgwae1-19.mp4'),
         moveDescription: 'Low Block',
         stance: 'Front Stance',
@@ -184,7 +165,6 @@ const PalgwaeData = [
       },
       {
         id: 20,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae1/palgwae1-20.mp4'),
         moveDescription: 'Middle Block',
         stance: 'Front Stance',
@@ -225,7 +205,6 @@ const PalgwaeData = [
     moves: [
       {
         id: 1,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae2/palgwae2-1.mp4'),
         moveDescription: 'High Block',
         stance: 'Front Stance',
@@ -233,7 +212,6 @@ const PalgwaeData = [
       },
       {
         id: 2,
-        image: require('../assets/images/taegeuk1/move2.png'),
         video: require('../assets/videos/palgwae/palgwae2/palgwae2-2.mp4'),
         moveDescription: 'Kick, Punch',
         stance: 'Front Stance',
@@ -241,7 +219,6 @@ const PalgwaeData = [
       },
       {
         id: 3,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae2/palgwae2-3.mp4'),
         moveDescription: 'High Block',
         stance: 'Front Stance',
@@ -249,7 +226,6 @@ const PalgwaeData = [
       },
       {
         id: 4,
-        image: require('../assets/images/taegeuk1/move2.png'),
         video: require('../assets/videos/palgwae/palgwae2/palgwae2-4.mp4'),
         moveDescription: 'Kick, Punch',
         stance: 'Front Stance',
@@ -257,7 +233,6 @@ const PalgwaeData = [
       },
       {
         id: 5,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae2/palgwae2-5.mp4'),
         moveDescription: 'Low Double Chop',
         stance: 'Back Stance',
@@ -265,7 +240,6 @@ const PalgwaeData = [
       },
       {
         id: 6,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae2/palgwae2-6.mp4'),
         moveDescription: 'Middle Double Block',
         stance: 'Back Stance',
@@ -273,7 +247,6 @@ const PalgwaeData = [
       },
       {
         id: 7,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae2/palgwae2-7.mp4'),
         moveDescription: 'High Block',
         stance: 'Front Stance',
@@ -281,7 +254,6 @@ const PalgwaeData = [
       },
       {
         id: 8,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae2/palgwae2-8.mp4'),
         moveDescription: 'Punch',
         stance: 'Front Stance',
@@ -289,7 +261,6 @@ const PalgwaeData = [
       },
       {
         id: 9,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae2/palgwae2-9.mp4'),
         moveDescription: 'High Block',
         stance: 'Front Stance',
@@ -297,7 +268,6 @@ const PalgwaeData = [
       },
       {
         id: 10,
-        image: require('../assets/images/taegeuk1/move2.png'),
         video: require('../assets/videos/palgwae/palgwae2/palgwae2-10.mp4'),
         moveDescription: 'Kick, Punch',
         stance: 'Front Stance',
@@ -305,7 +275,6 @@ const PalgwaeData = [
       },
       {
         id: 11,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae2/palgwae2-11.mp4'),
         moveDescription: 'High Block',
         stance: 'Front Stance',
@@ -313,7 +282,6 @@ const PalgwaeData = [
       },
       {
         id: 12,
-        image: require('../assets/images/taegeuk1/move2.png'),
         video: require('../assets/videos/palgwae/palgwae2/palgwae2-12.mp4'),
         moveDescription: 'Kick, Punch',
         stance: 'Front Stance',
@@ -321,7 +289,6 @@ const PalgwaeData = [
       },
       {
         id: 13,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae2/palgwae2-13.mp4'),
         moveDescription: 'Low Double Block',
         stance: 'Back Stance',
@@ -329,7 +296,6 @@ const PalgwaeData = [
       },
       {
         id: 14,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae2/palgwae2-14.mp4'),
         moveDescription: 'Middle Double Block',
         stance: 'Back Stance',
@@ -337,7 +303,6 @@ const PalgwaeData = [
       },
       {
         id: 15,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae2/palgwae2-15.mp4'),
         moveDescription: 'Middle Block',
         stance: 'Back Stance',
@@ -345,7 +310,6 @@ const PalgwaeData = [
       },
       {
         id: 16,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae2/palgwae2-16.mp4'),
         moveDescription: 'Punch',
         stance: 'Front Stance',
@@ -353,7 +317,6 @@ const PalgwaeData = [
       },
       {
         id: 17,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae2/palgwae2-17.mp4'),
         moveDescription: 'High Block',
         stance: 'Front Stance',
@@ -361,7 +324,6 @@ const PalgwaeData = [
       },
       {
         id: 18,
-        image: require('../assets/images/taegeuk1/move2.png'),
         video: require('../assets/videos/palgwae/palgwae2/palgwae2-18.mp4'),
         moveDescription: 'Kick, Punch',
         stance: 'Front Stance',
@@ -369,7 +331,6 @@ const PalgwaeData = [
       },
       {
         id: 19,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae2/palgwae2-19.mp4'),
         moveDescription: 'High Block',
         stance: 'Front Stance',
@@ -377,7 +338,6 @@ const PalgwaeData = [
       },
       {
         id: 20,
-        image: require('../assets/images/taegeuk1/move2.png'),
         video: require('../assets/videos/palgwae/palgwae2/palgwae2-20.mp4'),
         moveDescription: 'Kick, Punch',
         stance: 'Front Stance',
@@ -418,7 +378,6 @@ const PalgwaeData = [
     moves: [
       {
         id: 1,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae3/palgwae3-1.mp4'),
         moveDescription: 'Low Block',
         stance: 'Front Stance',
@@ -426,7 +385,6 @@ const PalgwaeData = [
       },
       {
         id: 2,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae3/palgwae3-2.mp4'),
         moveDescription: 'Punch',
         stance: 'Front Stance',
@@ -434,7 +392,6 @@ const PalgwaeData = [
       },
       {
         id: 3,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae3/palgwae3-3.mp4'),
         moveDescription: 'Low Block',
         stance: 'Front Stance',
@@ -442,7 +399,6 @@ const PalgwaeData = [
       },
       {
         id: 4,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae3/palgwae3-4.mp4'),
         moveDescription: 'Punch',
         stance: 'Front Stance',
@@ -450,7 +406,6 @@ const PalgwaeData = [
       },
       {
         id: 5,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae3/palgwae3-5.mp4'),
         moveDescription: 'Low Block',
         stance: 'Front Stance',
@@ -458,7 +413,6 @@ const PalgwaeData = [
       },
       {
         id: 6,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae3/palgwae3-6.mp4'),
         moveDescription: 'High Block',
         stance: 'Front Stance',
@@ -466,7 +420,6 @@ const PalgwaeData = [
       },
       {
         id: 7,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae3/palgwae3-7.mp4'),
         moveDescription: 'High Block',
         stance: 'Front Stance',
@@ -474,7 +427,6 @@ const PalgwaeData = [
       },
       {
         id: 8,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae3/palgwae3-8.mp4'),
         moveDescription: 'High Punch',
         stance: 'Front Stance',
@@ -482,7 +434,6 @@ const PalgwaeData = [
       },
       {
         id: 9,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae3/palgwae3-9.mp4'),
         moveDescription: 'Chop Block',
         stance: 'Back Stance',
@@ -490,7 +441,6 @@ const PalgwaeData = [
       },
       {
         id: 10,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae3/palgwae3-10.mp4'),
         moveDescription: 'Chop Block',
         stance: 'Back Stance',
@@ -498,7 +448,6 @@ const PalgwaeData = [
       },
       {
         id: 11,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae3/palgwae3-11.mp4'),
         moveDescription: 'Chop Block',
         stance: 'Back Stance',
@@ -506,7 +455,6 @@ const PalgwaeData = [
       },
       {
         id: 12,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae3/palgwae3-12.mp4'),
         moveDescription: 'Chop Block',
         stance: 'Back Stance',
@@ -514,7 +462,6 @@ const PalgwaeData = [
       },
       {
         id: 13,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae3/palgwae3-13.mp4'),
         moveDescription: 'Scissor Block',
         stance: 'Front Stance',
@@ -522,7 +469,6 @@ const PalgwaeData = [
       },
       {
         id: 14,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae3/palgwae3-14.mp4'),
         moveDescription: 'Turn, Scissor Block',
         stance: 'Front Stance',
@@ -530,7 +476,6 @@ const PalgwaeData = [
       },
       {
         id: 15,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae3/palgwae3-15.mp4'),
         moveDescription: 'Middle Block',
         stance: 'Back Stance',
@@ -538,7 +483,6 @@ const PalgwaeData = [
       },
       {
         id: 16,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae3/palgwae3-16.mp4'),
         moveDescription: 'Middle Block',
         stance: 'Back Stance',
@@ -546,7 +490,6 @@ const PalgwaeData = [
       },
       {
         id: 17,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae3/palgwae3-17.mp4'),
         moveDescription: 'Middle Block',
         stance: 'Back Stance',
@@ -554,7 +497,6 @@ const PalgwaeData = [
       },
       {
         id: 18,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae3/palgwae3-18.mp4'),
         moveDescription: 'Scissor Block',
         stance: 'Front Stance',
@@ -562,7 +504,6 @@ const PalgwaeData = [
       },
       {
         id: 19,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae3/palgwae3-19.mp4'),
         moveDescription: 'High Block',
         stance: 'Front Stance',
@@ -570,7 +511,6 @@ const PalgwaeData = [
       },
       {
         id: 20,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae3/palgwae3-20.mp4'),
         moveDescription: 'Punch',
         stance: 'Front Stance',
@@ -578,7 +518,6 @@ const PalgwaeData = [
       },
       {
         id: 21,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae3/palgwae3-21.mp4'),
         moveDescription: 'High Block',
         stance: 'Front Stance',
@@ -586,7 +525,6 @@ const PalgwaeData = [
       },
       {
         id: 22,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae3/palgwae3-22.mp4'),
         moveDescription: 'Punch',
         stance: 'Front Stance',
@@ -627,7 +565,6 @@ const PalgwaeData = [
     moves: [
       {
         id: 1,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae4/palgwae4-1.mp4'),
         moveDescription: 'Double Fist Block, Uppercut',
         stance: 'Back Stance',
@@ -635,7 +572,6 @@ const PalgwaeData = [
       },
       {
         id: 2,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae4/palgwae4-2.mp4'),
         moveDescription: 'Chop',
         stance: 'Closed Stance',
@@ -643,7 +579,6 @@ const PalgwaeData = [
       },
       {
         id: 3,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae4/palgwae4-3.mp4'),
         moveDescription: 'Double Fist Block, Uppercut',
         stance: 'Back Stance',
@@ -651,7 +586,6 @@ const PalgwaeData = [
       },
       {
         id: 4,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae4/palgwae4-4.mp4'),
         moveDescription: 'Chop',
         stance: 'Closed Stance',
@@ -659,7 +593,6 @@ const PalgwaeData = [
       },
       {
         id: 5,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae4/palgwae4-5.mp4'),
         moveDescription: 'Double Chop',
         stance: 'Back Stance',
@@ -667,7 +600,6 @@ const PalgwaeData = [
       },
       {
         id: 6,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae4/palgwae4-6.mp4'),
         moveDescription: 'Kick, Spear',
         stance: 'Front Stance',
@@ -675,7 +607,6 @@ const PalgwaeData = [
       },
       {
         id: 7,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae4/palgwae4-7.mp4'),
         moveDescription: 'Turn, Backfist',
         stance: 'Front Stance',
@@ -683,7 +614,6 @@ const PalgwaeData = [
       },
       {
         id: 8,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae4/palgwae4-8.mp4'),
         moveDescription: 'Punch',
         stance: 'Front Stance',
@@ -691,7 +621,6 @@ const PalgwaeData = [
       },
       {
         id: 9,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae4/palgwae4-9.mp4'),
         moveDescription: 'Double Fist Chop, Uppercut',
         stance: 'Back Stance',
@@ -699,7 +628,6 @@ const PalgwaeData = [
       },
       {
         id: 10,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae4/palgwae4-10.mp4'),
         moveDescription: 'Chop',
         stance: 'Closed Stance',
@@ -707,7 +635,6 @@ const PalgwaeData = [
       },
       {
         id: 11,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae4/palgwae4-11.mp4'),
         moveDescription: 'Double Fist Chop, Uppercut',
         stance: 'Back Stance',
@@ -715,7 +642,6 @@ const PalgwaeData = [
       },
       {
         id: 12,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae4/palgwae4-12.mp4'),
         moveDescription: 'Chop',
         stance: 'Closed Stance',
@@ -723,7 +649,6 @@ const PalgwaeData = [
       },
       {
         id: 13,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae4/palgwae4-13.mp4'),
         moveDescription: 'Double Chop',
         stance: 'Back Stance',
@@ -731,7 +656,6 @@ const PalgwaeData = [
       },
       {
         id: 14,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae4/palgwae4-14.mp4'),
         moveDescription: 'Kick, Spear',
         stance: 'Front Stance',
@@ -739,7 +663,6 @@ const PalgwaeData = [
       },
       {
         id: 15,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae4/palgwae4-15.mp4'),
         moveDescription: 'Turn, Backfist',
         stance: 'Front Stance',
@@ -747,7 +670,6 @@ const PalgwaeData = [
       },
       {
         id: 16,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae4/palgwae4-16.mp4'),
         moveDescription: 'Punch',
         stance: 'Front Stance',
@@ -755,7 +677,6 @@ const PalgwaeData = [
       },
       {
         id: 17,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae4/palgwae4-17.mp4'),
         moveDescription: 'Low Block',
         stance: 'Horse Stance',
@@ -763,7 +684,6 @@ const PalgwaeData = [
       },
       {
         id: 18,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae4/palgwae4-18.mp4'),
         moveDescription: 'Punch',
         stance: 'Front Stance',
@@ -771,7 +691,6 @@ const PalgwaeData = [
       },
       {
         id: 19,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae4/palgwae4-19.mp4'),
         moveDescription: 'Low Block',
         stance: 'Horse Stance',
@@ -779,7 +698,6 @@ const PalgwaeData = [
       },
       {
         id: 20,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae4/palgwae4-20.mp4'),
         moveDescription: 'Punch',
         stance: 'Front Stance',
@@ -820,7 +738,6 @@ const PalgwaeData = [
     moves: [
       {
         id: 1,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-1.mp4'),
         moveDescription: 'Scissor Block',
         stance: 'Front Stance',
@@ -828,7 +745,6 @@ const PalgwaeData = [
       },
       {
         id: 2,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-2.mp4'),
         moveDescription: 'Low Double Chop',
         stance: 'Back Stance',
@@ -836,7 +752,6 @@ const PalgwaeData = [
       },
       {
         id: 3,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-3.mp4'),
         moveDescription: 'Middle Double Chop',
         stance: 'Back Stance',
@@ -844,7 +759,6 @@ const PalgwaeData = [
       },
       {
         id: 4,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-4.mp4'),
         moveDescription: 'Palm Block',
         stance: 'Back Stance',
@@ -852,7 +766,6 @@ const PalgwaeData = [
       },
       {
         id: 5,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-5.mp4'),
         moveDescription: 'Punch',
         stance: 'Front Stance',
@@ -860,7 +773,6 @@ const PalgwaeData = [
       },
       {
         id: 6,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-6.mp4'),
         moveDescription: 'Low Double Chop',
         stance: 'Back Stance',
@@ -868,7 +780,6 @@ const PalgwaeData = [
       },
       {
         id: 7,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-7.mp4'),
         moveDescription: 'Middle Double Chop',
         stance: 'Back Stance',
@@ -876,7 +787,6 @@ const PalgwaeData = [
       },
       {
         id: 8,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-8.mp4'),
         moveDescription: 'Palm Block',
         stance: 'Back Stance',
@@ -884,7 +794,6 @@ const PalgwaeData = [
       },
       {
         id: 9,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-9.mp4'),
         moveDescription: 'Punch',
         stance: 'Front Stance',
@@ -892,7 +801,6 @@ const PalgwaeData = [
       },
       {
         id: 10,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-10.mp4'),
         moveDescription: 'Scissor',
         stance: 'Front Stance',
@@ -900,7 +808,6 @@ const PalgwaeData = [
       },
       {
         id: 11,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-11.mp4'),
         moveDescription: 'Double Fist Block',
         stance: 'Front Stance',
@@ -908,7 +815,6 @@ const PalgwaeData = [
       },
       {
         id: 12,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-12.mp4'),
         moveDescription: 'Double Fist Block',
         stance: 'Front Stance',
@@ -916,7 +822,6 @@ const PalgwaeData = [
       },
       {
         id: 13,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-13.mp4'),
         moveDescription: 'Spear',
         stance: 'Front Stance',
@@ -924,7 +829,6 @@ const PalgwaeData = [
       },
       {
         id: 14,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-14.mp4'),
         moveDescription: 'Middle Block, Punch, Punch',
         stance: 'Front Stance',
@@ -932,7 +836,6 @@ const PalgwaeData = [
       },
       {
         id: 15,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-15.mp4'),
         moveDescription: 'Side Kick, Elbow',
         stance: 'Front Stance',
@@ -940,7 +843,6 @@ const PalgwaeData = [
       },
       {
         id: 16,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-16.mp4'),
         moveDescription: 'Double Chop',
         stance: 'Front Stance',
@@ -948,7 +850,6 @@ const PalgwaeData = [
       },
       {
         id: 17,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-17.mp4'),
         moveDescription: 'Middle Block, Punch, Punch',
         stance: 'Front Stance',
@@ -957,7 +858,6 @@ const PalgwaeData = [
 
       {
         id: 18,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-18.mp4'),
         moveDescription: 'Side Kick, Elbow',
         stance: 'Front Stance',
@@ -965,7 +865,6 @@ const PalgwaeData = [
       },
       {
         id: 19,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-19.mp4'),
         moveDescription: 'Scissor Block',
         stance: 'Front Stance',
@@ -973,7 +872,6 @@ const PalgwaeData = [
       },
       {
         id: 18,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-18.mp4'),
         moveDescription: 'Low Double Fist',
         stance: 'Back Stance',
@@ -981,7 +879,6 @@ const PalgwaeData = [
       },
       {
         id: 19,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-19.mp4'),
         moveDescription: 'Low Double Fist',
         stance: 'Back Stance',
@@ -989,7 +886,6 @@ const PalgwaeData = [
       },
       {
         id: 20,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-20.mp4'),
         moveDescription: 'Punch',
         stance: 'Front Stance',
@@ -997,7 +893,6 @@ const PalgwaeData = [
       },
       {
         id: 21,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-21.mp4'),
         moveDescription: 'Low Double Chop',
         stance: 'Back Stance',
@@ -1005,7 +900,6 @@ const PalgwaeData = [
       },
       {
         id: 22,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-22.mp4'),
         moveDescription: 'Middle Double Chop',
         stance: 'Back Stance',
@@ -1013,7 +907,6 @@ const PalgwaeData = [
       },
       {
         id: 23,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-23.mp4'),
         moveDescription: 'Low Double Chop',
         stance: 'Back Stance',
@@ -1021,7 +914,6 @@ const PalgwaeData = [
       },
       {
         id: 24,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-24.mp4'),
         moveDescription: 'Middle Double Chop',
         stance: 'Back Stance',
@@ -1029,7 +921,6 @@ const PalgwaeData = [
       },
       {
         id: 25,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-25.mp4'),
         moveDescription: 'Low Double Chop',
         stance: 'Back Stance',
@@ -1037,7 +928,6 @@ const PalgwaeData = [
       },
       {
         id: 26,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-26.mp4'),
         moveDescription: 'Middle Double Chop',
         stance: 'Back Stance',
@@ -1045,7 +935,6 @@ const PalgwaeData = [
       },
       {
         id: 27,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-27.mp4'),
         moveDescription: 'Palm Block',
         stance: 'Back Stance',
@@ -1053,7 +942,6 @@ const PalgwaeData = [
       },
       {
         id: 28,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-28.mp4'),
         moveDescription: 'Punch',
         stance: 'Front Stance',
@@ -1061,7 +949,6 @@ const PalgwaeData = [
       },
       {
         id: 29,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-29.mp4'),
         moveDescription: 'Low Double Chop',
         stance: 'Back Stance',
@@ -1069,7 +956,6 @@ const PalgwaeData = [
       },
       {
         id: 30,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-30.mp4'),
         moveDescription: 'Middle Double Chop',
         stance: 'Back Stance',
@@ -1077,7 +963,6 @@ const PalgwaeData = [
       },
       {
         id: 31,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-31.mp4'),
         moveDescription: 'Palm Block',
         stance: 'Back Stance',
@@ -1085,7 +970,6 @@ const PalgwaeData = [
       },
       {
         id: 32,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae5/palgwae5-32.mp4'),
         moveDescription: 'Punch',
         stance: 'Front Stance',
@@ -1126,7 +1010,6 @@ const PalgwaeData = [
     moves: [
       {
         id: 1,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae6/palgwae6-1.mp4'),
         moveDescription: 'Double Chop',
         stance: 'Back Stance',
@@ -1134,7 +1017,6 @@ const PalgwaeData = [
       },
       {
         id: 2,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae6/palgwae6-2.mp4'),
         moveDescription: 'Kick, Punch',
         stance: 'Front Stance',
@@ -1142,7 +1024,6 @@ const PalgwaeData = [
       },
       {
         id: 3,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae6/palgwae6-3.mp4'),
         moveDescription: 'Double Chop',
         stance: 'Back Stance',
@@ -1150,7 +1031,6 @@ const PalgwaeData = [
       },
       {
         id: 4,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae6/palgwae6-4.mp4'),
         moveDescription: 'Kick, Punch',
         stance: 'Front Stance',
@@ -1158,7 +1038,6 @@ const PalgwaeData = [
       },
       {
         id: 5,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae6/palgwae6-5.mp4'),
         moveDescription: 'Low Block, Chop High Block + Chop Neck',
         stance: 'Front Stance',
@@ -1166,7 +1045,6 @@ const PalgwaeData = [
       },
       {
         id: 6,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae6/palgwae6-6.mp4'),
         moveDescription: 'Kick, Double Backfist',
         stance: 'Back Cross Stance',
@@ -1174,7 +1052,6 @@ const PalgwaeData = [
       },
       {
         id: 7,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae6/palgwae6-7.mp4'),
         moveDescription: 'Low Double Chop',
         stance: 'Back Stance',
@@ -1182,7 +1059,6 @@ const PalgwaeData = [
       },
       {
         id: 8,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae6/palgwae6-8.mp4'),
         moveDescription: 'Middle Block',
         stance: 'Front Stance',
@@ -1190,7 +1066,6 @@ const PalgwaeData = [
       },
       {
         id: 9,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae6/palgwae6-9.mp4'),
         moveDescription: 'Kick, Punch, Punch',
         stance: 'Front Stance',
@@ -1198,7 +1073,6 @@ const PalgwaeData = [
       },
       {
         id: 10,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae6/palgwae6-10.mp4'),
         moveDescription: 'Low Double Chop',
         stance: 'Back Stance',
@@ -1206,7 +1080,6 @@ const PalgwaeData = [
       },
       {
         id: 11,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae6/palgwae6-11.mp4'),
         moveDescription: 'Middle Block',
         stance: 'Front Stance',
@@ -1214,7 +1087,6 @@ const PalgwaeData = [
       },
       {
         id: 12,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae6/palgwae6-12.mp4'),
         moveDescription: 'Kick, Punch, Punch',
         stance: 'Front Stance',
@@ -1222,7 +1094,6 @@ const PalgwaeData = [
       },
       {
         id: 13,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae6/palgwae6-13.mp4'),
         moveDescription: 'Double Chop',
         stance: 'Back Stance',
@@ -1230,7 +1101,6 @@ const PalgwaeData = [
       },
       {
         id: 14,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae6/palgwae6-14.mp4'),
         moveDescription: 'Palm Attack',
         stance: 'Front Stance',
@@ -1238,7 +1108,6 @@ const PalgwaeData = [
       },
       {
         id: 15,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae6/palgwae6-15.mp4'),
         moveDescription: 'Kick, Backfist',
         stance: 'Front Stance',
@@ -1246,7 +1115,6 @@ const PalgwaeData = [
       },
       {
         id: 16,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae6/palgwae6-16.mp4'),
         moveDescription: 'Kick, High Block',
         stance: 'Front Stance',
@@ -1254,7 +1122,6 @@ const PalgwaeData = [
       },
       {
         id: 17,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae6/palgwae6-17.mp4'),
         moveDescription: 'Side Kick, Double Chop',
         stance: 'Back Stance',
@@ -1262,7 +1129,6 @@ const PalgwaeData = [
       },
       {
         id: 18,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae6/palgwae6-18.mp4'),
         moveDescription: 'Double Fist',
         stance: 'Back Stance',
@@ -1303,7 +1169,6 @@ const PalgwaeData = [
     moves: [
       {
         id: 1,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae7/palgwae7-1.mp4'),
         moveDescription: 'Double Low Block',
         stance: 'Front Stance',
@@ -1311,7 +1176,6 @@ const PalgwaeData = [
       },
       {
         id: 2,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae7/palgwae7-2.mp4'),
         moveDescription: 'Kick, Double Middle Block',
         stance: 'Front Stance',
@@ -1319,7 +1183,6 @@ const PalgwaeData = [
       },
       {
         id: 3,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae7/palgwae7-3.mp4'),
         moveDescription: 'Kick, Backfist?',
         stance: 'Front Stance',
@@ -1327,7 +1190,6 @@ const PalgwaeData = [
       },
       {
         id: 4,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae7/palgwae7-4.mp4'),
         moveDescription: 'Side Kick, Double Chop',
         stance: 'Back Stance',
@@ -1335,7 +1197,6 @@ const PalgwaeData = [
       },
       {
         id: 5,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae7/palgwae7-5.mp4'),
         moveDescription: 'Middle Block',
         stance: 'Back Stance',
@@ -1343,7 +1204,6 @@ const PalgwaeData = [
       },
       {
         id: 6,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae7/palgwae7-6.mp4'),
         moveDescription: 'High Punch',
         stance: 'Front Stance',
@@ -1351,7 +1211,6 @@ const PalgwaeData = [
       },
       {
         id: 7,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae7/palgwae7-7.mp4'),
         moveDescription: 'High Block',
         stance: 'Front Stance',
@@ -1359,7 +1218,6 @@ const PalgwaeData = [
       },
       {
         id: 8,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae7/palgwae7-8.mp4'),
         moveDescription: 'Side Kick, Double Low',
         stance: 'Back Stance',
@@ -1367,7 +1225,6 @@ const PalgwaeData = [
       },
       {
         id: 9,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae7/palgwae7-9.mp4'),
         moveDescription: 'Punch',
         stance: 'Front Stance',
@@ -1375,7 +1232,6 @@ const PalgwaeData = [
       },
       {
         id: 10,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae7/palgwae7-10.mp4'),
         moveDescription: 'Middle Block',
         stance: 'Back Stance',
@@ -1383,7 +1239,6 @@ const PalgwaeData = [
       },
       {
         id: 11,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae7/palgwae7-11.mp4'),
         moveDescription: 'High Punch',
         stance: 'Front Stance',
@@ -1391,7 +1246,6 @@ const PalgwaeData = [
       },
       {
         id: 12,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae7/palgwae7-12.mp4'),
         moveDescription: 'High Block',
         stance: 'Front Stance',
@@ -1399,7 +1253,6 @@ const PalgwaeData = [
       },
       {
         id: 13,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae7/palgwae7-13.mp4'),
         moveDescription: 'Side Kick, Double Low',
         stance: 'Back Stance',
@@ -1407,7 +1260,6 @@ const PalgwaeData = [
       },
       {
         id: 14,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae7/palgwae7-14.mp4'),
         moveDescription: 'Punch',
         stance: 'Front Stance',
@@ -1415,7 +1267,6 @@ const PalgwaeData = [
       },
       {
         id: 15,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae7/palgwae7-15.mp4'),
         moveDescription: 'Low Block',
         stance: 'Front Stance',
@@ -1423,7 +1274,6 @@ const PalgwaeData = [
       },
       {
         id: 16,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae7/palgwae7-16.mp4'),
         moveDescription: 'X, X Block, Grab, Punch Face',
         stance: 'Front Stance',
@@ -1431,7 +1281,6 @@ const PalgwaeData = [
       },
       {
         id: 17,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae7/palgwae7-17.mp4'),
         moveDescription: 'Turn, Low Block',
         stance: 'Horse Stance',
@@ -1439,7 +1288,6 @@ const PalgwaeData = [
       },
       {
         id: 18,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae7/palgwae7-18.mp4'),
         moveDescription: 'Backhand',
         stance: 'Front Stance',
@@ -1447,7 +1295,6 @@ const PalgwaeData = [
       },
       {
         id: 19,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae7/palgwae7-19.mp4'),
         moveDescription: 'Crossing Kick, Elbow',
         stance: 'Horse Stance',
@@ -1455,7 +1302,6 @@ const PalgwaeData = [
       },
       {
         id: 20,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae7/palgwae7-20.mp4'),
         moveDescription: 'Middle Block on Face + Low Block',
         stance: 'Front Stance',
@@ -1463,7 +1309,6 @@ const PalgwaeData = [
       },
       {
         id: 21,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae7/palgwae7-21.mp4'),
         moveDescription: 'Double Chop',
         stance: 'Back Stance',
@@ -1471,7 +1316,6 @@ const PalgwaeData = [
       },
       {
         id: 22,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae7/palgwae7-22.mp4'),
         moveDescription: 'Punch',
         stance: 'Front Stance',
@@ -1512,7 +1356,6 @@ const PalgwaeData = [
     moves: [
       {
         id: 1,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae8/palgwae8-1.mp4'),
         moveDescription: 'Low Block',
         stance: 'Front Stance',
@@ -1520,7 +1363,6 @@ const PalgwaeData = [
       },
       {
         id: 2,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae8/palgwae8-2.mp4'),
         moveDescription: 'Hammer Fist',
         stance: 'Closed Stance',
@@ -1528,7 +1370,6 @@ const PalgwaeData = [
       },
       {
         id: 3,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae8/palgwae8-3.mp4'),
         moveDescription: 'Punch',
         stance: 'Front Stance',
@@ -1536,7 +1377,6 @@ const PalgwaeData = [
       },
       {
         id: 4,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae8/palgwae8-4.mp4'),
         moveDescription: 'Low Block',
         stance: 'Front Stance',
@@ -1544,7 +1384,6 @@ const PalgwaeData = [
       },
       {
         id: 5,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae8/palgwae8-5.mp4'),
         moveDescription: 'Hammer Fist',
         stance: 'Closed Stance',
@@ -1552,7 +1391,6 @@ const PalgwaeData = [
       },
       {
         id: 6,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae8/palgwae8-6.mp4'),
         moveDescription: 'Punch',
         stance: 'Front Stance',
@@ -1560,7 +1398,6 @@ const PalgwaeData = [
       },
       {
         id: 7,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae8/palgwae8-7.mp4'),
         moveDescription: 'Double Chop',
         stance: 'Back Stance',
@@ -1568,7 +1405,6 @@ const PalgwaeData = [
       },
       {
         id: 8,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae8/palgwae8-8.mp4'),
         moveDescription: 'Spear Attack',
         stance: 'Front Stance',
@@ -1576,7 +1412,6 @@ const PalgwaeData = [
       },
       {
         id: 9,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae8/palgwae8-9.mp4'),
         moveDescription: 'Turn, Backfist',
         stance: 'Front Stance',
@@ -1584,7 +1419,6 @@ const PalgwaeData = [
       },
       {
         id: 10,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae8/palgwae8-10.mp4'),
         moveDescription: 'Punch',
         stance: 'Front Stance',
@@ -1592,7 +1426,6 @@ const PalgwaeData = [
       },
       {
         id: 11,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae8/palgwae8-11.mp4'),
         moveDescription: 'Chop, Elbow',
         stance: 'Horse Stance',
@@ -1600,7 +1433,6 @@ const PalgwaeData = [
       },
       {
         id: 12,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae8/palgwae8-12.mp4'),
         moveDescription: 'Backfist',
         stance: 'Back Stance',
@@ -1608,7 +1440,6 @@ const PalgwaeData = [
       },
       {
         id: 13,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae8/palgwae8-13.mp4'),
         moveDescription: 'Punch',
         stance: 'Front Stances',
@@ -1616,7 +1447,6 @@ const PalgwaeData = [
       },
       {
         id: 14,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae8/palgwae8-14.mp4'),
         moveDescription: 'Spear Attack',
         stance: 'Front Stance',
@@ -1624,7 +1454,6 @@ const PalgwaeData = [
       },
       {
         id: 15,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae8/palgwae8-15.mp4'),
         moveDescription: 'Turn, Backfist',
         stance: 'Front Stance',
@@ -1632,7 +1461,6 @@ const PalgwaeData = [
       },
       {
         id: 16,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae8/palgwae8-16.mp4'),
         moveDescription: 'Punch',
         stance: 'Front Stance',
@@ -1640,7 +1468,6 @@ const PalgwaeData = [
       },
       {
         id: 17,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae8/palgwae8-17.mp4'),
         moveDescription: 'Chop, Elbow',
         stance: 'Horse Stance',
@@ -1648,7 +1475,6 @@ const PalgwaeData = [
       },
       {
         id: 18,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae8/palgwae8-18.mp4'),
         moveDescription: 'Backfist',
         stance: 'Back Stance',
@@ -1656,7 +1482,6 @@ const PalgwaeData = [
       },
       {
         id: 19,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae8/palgwae8-19.mp4'),
         moveDescription: 'Punch',
         stance: 'Front Stance',
@@ -1664,7 +1489,6 @@ const PalgwaeData = [
       },
       {
         id: 20,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae8/palgwae8-20.mp4'),
         moveDescription: 'Side Kick Elbow',
         stance: 'Front Stance',
@@ -1672,7 +1496,6 @@ const PalgwaeData = [
       },
       {
         id: 21,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae8/palgwae8-21.mp4'),
         moveDescription: 'Side Kick Elbow',
         stance: 'Front Stance',
@@ -1680,7 +1503,6 @@ const PalgwaeData = [
       },
       {
         id: 22,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae8/palgwae8-22.mp4'),
         moveDescription: 'Middle Block, Uppercut',
         stance: 'Front Stances',
@@ -1688,7 +1510,6 @@ const PalgwaeData = [
       },
       {
         id: 23,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae8/palgwae8-23.mp4'),
         moveDescription: 'Elbow, Backfist, Punch',
         stance: 'Front Stances',
@@ -1696,7 +1517,6 @@ const PalgwaeData = [
       },
       {
         id: 24,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae8/palgwae8-24.mp4'),
         moveDescription: 'Chop',
         stance: 'Back Stances',
@@ -1704,7 +1524,6 @@ const PalgwaeData = [
       },
       {
         id: 25,
-        image: require('../assets/images/taegeuk1/move1.png'),
         video: require('../assets/videos/palgwae/palgwae8/palgwae8-25.mp4'),
         moveDescription: 'Elbow, Backfist, Punch',
         stance: 'Front Stances',

@@ -70,6 +70,10 @@ const ProfileScreen = () => {
     }
   };
 
+  const deleteUser = async () => {
+    console.log('Deleting user');
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -106,8 +110,15 @@ const ProfileScreen = () => {
           Just a random user exploring the vast world of mobile apps.
         </Text>
       </View>
-      <TouchableOpacity onPress={handleSignOut} style={styles.signOutButton}>
-        <Text style={styles.signOutButtonText}>Sign Out</Text>
+      <TouchableOpacity
+        onPress={handleSignOut}
+        style={[styles.button, styles.signOutButton]}>
+        <Text style={styles.buttonText}>Sign Out</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={deleteUser}
+        style={[styles.button, styles.deleteButton]}>
+        <Text style={styles.buttonText}>Delete Account</Text>
       </TouchableOpacity>
     </View>
   );
@@ -187,8 +198,8 @@ const styles = StyleSheet.create({
     flex: 2,
     textAlign: 'right',
   },
-  signOutButton: {
-    backgroundColor: '#FF6347',
+  button: {
+    //backgroundColor: '#FF6347',
     padding: 12,
     borderRadius: 25,
     paddingHorizontal: 30,
@@ -203,7 +214,14 @@ const styles = StyleSheet.create({
     shadowRadius: 4.65,
     elevation: 7,
   },
-  signOutButtonText: {
+
+  deleteButton: {
+    backgroundColor: 'red',
+  },
+  signOutButton: {
+    backgroundColor: '#FF6347',
+  },
+  buttonText: {
     color: '#FFF',
     fontWeight: 'bold',
     textAlign: 'center',
