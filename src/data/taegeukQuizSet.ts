@@ -189,7 +189,7 @@ const taegeukQuizSet = [
         'The Way of the Blue Snake',
         'The Way of the Green Bear',
       ],
-      correctAnswerIndex: 1, // Index of the correct option
+      correctAnswerIndex: 1,
     },
     {
       question: 'Taegeuk Sam Jang has how many movements?',
@@ -197,10 +197,9 @@ const taegeukQuizSet = [
       correctAnswerIndex: 2,
     },
     {
-      question:
-        'True or False: Taegeuk Sam Jang emphasizes circular movements.',
-      isTrueFalse: true, // Indicates a true/false question
-      correctAnswerIndex: true, // 'true' for True, 'false' for False
+      question: 'Taegeuk Sam Jang emphasizes circular movements.',
+      options: ['True', 'False'],
+      correctAnswerIndex: 0,
     },
     {
       question: 'What is the starting stance in Taegeuk Sam Jang?',
@@ -218,9 +217,9 @@ const taegeukQuizSet = [
       correctAnswerIndex: 1,
     },
     {
-      question: 'True or False: Taegeuk Sam Jang includes a jumping kick.',
-      isTrueFalse: true,
-      correctAnswerIndex: false,
+      question: 'Taegeuk Sam Jang includes a jumping kick.',
+      options: ['True', 'False'],
+      correctAnswerIndex: 1,
     },
     {
       question: 'What is the name of the block used in Taegeuk Sam Jang?',
@@ -253,7 +252,7 @@ const taegeukQuizSet = [
         'The Way of the Blue Snake',
         'The Way of the White Tiger',
       ],
-      correctAnswerIndex: 3, // Index of the correct option
+      correctAnswerIndex: 3,
     },
     {
       question: 'Taegeuk Sa Jang has how many movements?',
@@ -261,9 +260,9 @@ const taegeukQuizSet = [
       correctAnswerIndex: 2,
     },
     {
-      question: 'True or False: Taegeuk Sa Jang includes a spinning kick.',
-      isTrueFalse: true, // Indicates a true/false question
-      correctAnswerIndex: false, // 'true' for True, 'false' for False
+      question: 'Taegeuk Sa Jang includes a spinning kick.',
+      options: ['True', 'False'],
+      correctAnswerIndex: 1,
     },
     {
       question: 'What is the starting stance in Taegeuk Sa Jang?',
@@ -317,7 +316,7 @@ const taegeukQuizSet = [
         'The Way of the Yellow Serpent',
         'The Way of the Green Tiger',
       ],
-      correctAnswer: 1, // Index of the correct option
+      correctAnswer: 1,
     },
     {
       question: 'Taegeuk O Jang has how many movements?',
@@ -325,9 +324,9 @@ const taegeukQuizSet = [
       correctAnswer: 0,
     },
     {
-      question: 'True or False: Taegeuk O Jang includes a jumping kick.',
-      isTrueFalse: true, // Indicates a true/false question
-      correctAnswer: true, // 'true' for True, 'false' for False
+      question: 'Taegeuk O Jang includes a jumping kick.',
+      options: ['True', 'False'],
+      correctAnswer: 0,
     },
     {
       question: 'What is the starting stance in Taegeuk O Jang?',
@@ -381,7 +380,7 @@ const taegeukQuizSet = [
         'The Way of the Yellow Serpent',
         'The Way of the Green Tiger',
       ],
-      correctAnswerIndex: 1, // Index of the correct option
+      correctAnswerIndex: 1,
     },
     {
       question: 'Taegeuk Yuk Jang has how many movements?',
@@ -389,9 +388,9 @@ const taegeukQuizSet = [
       correctAnswerIndex: 2,
     },
     {
-      question: 'True or False: Taegeuk Yuk Jang includes a turning kick.',
-      isTrueFalse: true, // Indicates a true/false question
-      correctAnswerIndex: true, // 'true' for True, 'false' for False
+      question: 'Taegeuk Yuk Jang includes a turning kick.',
+      options: ['True', 'False'],
+      correctAnswerIndex: 0,
     },
     {
       question: 'What is the starting stance in Taegeuk Yuk Jang?',
@@ -445,7 +444,7 @@ const taegeukQuizSet = [
         'The Way of the Yellow Serpent',
         'The Way of the Green Tiger',
       ],
-      correctAnswerIndex: 1, // Index of the correct option
+      correctAnswerIndex: 1,
     },
     {
       question: 'Taegeuk Chil Jang has how many movements?',
@@ -453,9 +452,9 @@ const taegeukQuizSet = [
       correctAnswerIndex: 0,
     },
     {
-      question: 'True or False: Taegeuk Chil Jang includes a jumping kick.',
-      isTrueFalse: true, // Indicates a true/false question
-      correctAnswerIndex: true, // 'true' for True, 'false' for False
+      question: 'Taegeuk Chil Jang includes a jumping kick.',
+      options: ['True', 'False'],
+      correctAnswerIndex: 0,
     },
     {
       question: 'What is the starting stance in Taegeuk Chil Jang?',
@@ -509,7 +508,7 @@ const taegeukQuizSet = [
         'The Way of the Yellow Serpent',
         'The Way of the Black Tortoise',
       ],
-      correctAnswerIndex: 3, // Index of the correct option
+      correctAnswerIndex: 3,
     },
     {
       question: 'Taegeuk Pal Jang has how many movements?',
@@ -517,9 +516,9 @@ const taegeukQuizSet = [
       correctAnswerIndex: 2,
     },
     {
-      question: 'True or False: Taegeuk Pal Jang includes a spinning kick.',
-      isTrueFalse: true, // Indicates a true/false question
-      correctAnswerIndex: true, // 'true' for True, 'false' for False
+      question: 'Taegeuk Pal Jang includes a spinning kick.',
+      options: ['True', 'False'],
+      correctAnswerIndex: 0,
     },
     {
       question: 'What is the starting stance in Taegeuk Pal Jang?',

@@ -19,183 +19,59 @@ const NavigationComponent: React.FC<NavigationComponentProps> = ({
   return (
     <View style={styles.navigationButtons}>
       {canGoBack && (
-        <TouchableOpacity style={styles.button} onPress={onPrev}>
+        <TouchableOpacity
+          style={[styles.button, styles.prevButton]}
+          onPress={onPrev}>
           <Text style={styles.buttonText}>Previous</Text>
         </TouchableOpacity>
       )}
       {canSubmit ? (
-        <TouchableOpacity style={styles.button} onPress={onSubmit}>
+        <TouchableOpacity
+          style={[styles.button, styles.submitButton]}
+          onPress={onSubmit}>
           <Text style={styles.buttonText}>Submit</Text>
         </TouchableOpacity>
       ) : (
-        <TouchableOpacity style={styles.button} onPress={onNext}>
+        <TouchableOpacity
+          style={[styles.button, styles.nextButton]}
+          onPress={onNext}>
           <Text style={styles.buttonText}>Next</Text>
         </TouchableOpacity>
       )}
     </View>
   );
 };
+
 const styles = StyleSheet.create({
-  resultsContainer: {
-    flex: 1,
-    padding: 10,
-  },
-  modalContainer: {
-    flex: 0.9,
-    backgroundColor: 'white',
-    borderRadius: 10,
-    overflow: 'hidden', // This ensures the borderRadius is applied to ScrollView content
-  },
-  closeButtonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    paddingRight: 10,
-    paddingTop: 10,
-  },
-  resultBox: {
-    borderWidth: 1,
-    borderColor: 'grey',
-    borderRadius: 5,
-    padding: 10,
-    marginBottom: 10,
-  },
-  questionText: {
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
-  answerSection: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 5,
-  },
-  correctAnswerText: {
-    marginLeft: 10,
-    color: 'green',
-  },
-  incorrectAnswerText: {
-    marginLeft: 10,
-    color: 'red',
-  },
-  hideButton: {
-    alignSelf: 'center',
-    marginTop: 10,
-    backgroundColor: 'grey',
-    borderRadius: 5,
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-  },
-  hideButtonText: {
-    color: 'white',
-  },
-  resultItem: {
-    marginBottom: 10,
-  },
-  answerText: {
-    fontSize: 16,
-    marginBottom: 5,
-    color: '#333',
-  },
-  correctAnswer: {
-    color: 'green',
-    fontWeight: 'bold',
-  },
-  incorrectAnswer: {
-    color: 'red',
-    fontWeight: 'bold',
-  },
   navigationButtons: {
     flexDirection: 'row',
-    backgroundColor: 'white',
+    backgroundColor: '#eef2f7',
+    justifyContent: 'space-between',
+    padding: 12,
   },
   button: {
-    backgroundColor: 'blue',
-    padding: 15,
-    borderRadius: 5,
+    borderRadius: 10,
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    elevation: 3,
+    flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
-    marginVertical: 10,
-    flex: 0,
-    marginRight: 10,
-    alignSelf: 'stretch',
+    marginHorizontal: 8,
+  },
+  prevButton: {
+    backgroundColor: '#c1c7d0',
+  },
+  nextButton: {
+    backgroundColor: '#007BFF',
+  },
+  submitButton: {
+    backgroundColor: '#4CAF50',
   },
   buttonText: {
     color: 'white',
-    fontWeight: 'bold',
+    fontWeight: '700',
     fontSize: 18,
-  },
-  quizContainer: {
-    flexGrow: 1,
-    backgroundColor: '#f9f9f9',
-    paddingVertical: 20,
-    paddingHorizontal: 10,
-  },
-  questionContainer: {
-    height: 400,
-    marginBottom: 20,
-    backgroundColor: 'white',
-    borderRadius: 10,
-    padding: 15,
-    elevation: 3,
-  },
-  questionHeader: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 10,
-  },
-  questionNumber: {
-    fontSize: 16,
-    marginRight: 10,
-    fontWeight: 'bold',
-    color: '#333',
-  },
-  questionBorder: {
-    borderTopWidth: 1,
-    borderColor: '#ddd',
-    paddingTop: 10,
-  },
-  option: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginVertical: 5,
-  },
-  bubble: {
-    width: 20,
-    height: 20,
-    borderRadius: 10,
-    borderWidth: 1,
-    borderColor: '#ccc',
-    marginRight: 10,
-  },
-  bubbleFilled: {
-    backgroundColor: '#f0f0f0',
-    borderColor: '#f0f0f0',
-  },
-  optionText: {
-    fontSize: 16,
-    color: '#333',
-  },
-  selectedOption: {
-    backgroundColor: '#EDE7F6',
-    borderColor: 'blue',
-  },
-  results: {
-    marginTop: 20,
-    backgroundColor: 'white',
-    borderRadius: 10,
-    padding: 15,
-    elevation: 3,
-  },
-  score: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginVertical: 10,
-    color: '#333',
-  },
-
-  labelText: {
-    fontSize: 16,
-    fontWeight: '500',
-    marginRight: 5,
   },
 });
 

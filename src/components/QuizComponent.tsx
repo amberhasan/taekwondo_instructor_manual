@@ -1,19 +1,10 @@
 import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  ScrollView,
-  Alert,
-} from 'react-native';
+import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 
 import QuestionComponent from './QuestionComponent';
 import NavigationComponent from './NavigationComponent';
 import ResultsComponent from './ResultsComponent';
 import CorrectAnswersModal from './CorrectAnswersModal';
-import {RadioButton} from 'react-native-paper';
-import Modal from 'react-native-modal';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 export interface QuizQuestion {
@@ -63,7 +54,7 @@ const QuizComponent: React.FC<QuizComponentProps> = ({quizData}) => {
   const calculateScore = () => {
     let score = 0;
     for (let i = 0; i < quizData.length; i++) {
-      if (userAnswers[i] === quizData[i].answer) {
+      if (userAnswers[i] === quizData[i].correctAnswerIndex) {
         score++;
       }
     }
@@ -79,13 +70,16 @@ const QuizComponent: React.FC<QuizComponentProps> = ({quizData}) => {
             totalQuestions={quizData.length}
             onRestart={restartQuiz}
           />
-
-          {/* Button to toggle correct answers modal */}
           <TouchableOpacity
             style={styles.reviewButton}
             onPress={() => setIsModalVisible(true)}>
             <Text style={styles.reviewButtonText}>Review Correct Answers</Text>
-            <FontAwesome name="arrow-right" size={16} color="#fff" />
+            <FontAwesome
+              name="arrow-right"
+              size={20}
+              color="#fff"
+              style={styles.arrowIcon}
+            />
           </TouchableOpacity>
         </>
       ) : (
@@ -96,7 +90,6 @@ const QuizComponent: React.FC<QuizComponentProps> = ({quizData}) => {
             userAnswer={userAnswers[currentQuestionIndex]}
             onAnswerChange={handleAnswerChange}
           />
-
           <NavigationComponent
             onPrev={prevQuestion}
             onNext={nextQuestion}
@@ -120,22 +113,32 @@ const QuizComponent: React.FC<QuizComponentProps> = ({quizData}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
-    backgroundColor: '#fff',
+    padding: 24,
+    backgroundColor: '#eef2f7', // A soft shade of blue
   },
   reviewButton: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#007BFF', // Modify color as needed
-    padding: 10,
-    borderRadius: 5,
-    marginTop: 20,
+    backgroundColor: '#007BFF',
+    paddingVertical: 14,
+    paddingHorizontal: 25,
+    borderRadius: 8,
+    marginTop: 24,
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: 3},
+    shadowOpacity: 0.1,
+    shadowRadius: 5,
+    elevation: 3,
   },
   reviewButtonText: {
     color: '#fff',
-    fontWeight: 'bold',
+    fontWeight: '700', // Bold font weight
+    fontSize: 18,
     marginRight: 10,
+  },
+  arrowIcon: {
+    marginLeft: 10,
   },
 });
 
