@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import auth from '@react-native-firebase/auth';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Register = ({navigation}) => {
   const [displayName, setDisplayName] = useState('');
@@ -21,6 +22,10 @@ const Register = ({navigation}) => {
         await auth().currentUser?.updateProfile({
           displayName,
         });
+        // store the user email and password
+        const credentials = {email, password};
+        const credentialsStr = JSON.stringify(credentials);
+        await AsyncStorage.setItem('credentials', credentialsStr);
       } else {
         Alert.alert('Error', 'Email and password is required');
       }

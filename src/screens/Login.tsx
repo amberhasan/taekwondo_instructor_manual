@@ -8,6 +8,7 @@ import {
   Alert,
 } from 'react-native';
 import auth from '@react-native-firebase/auth';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Login = ({navigation}) => {
   const [email, setEmail] = useState('');
@@ -17,6 +18,10 @@ const Login = ({navigation}) => {
     try {
       if (email && password) {
         const user = await auth().signInWithEmailAndPassword(email, password);
+        // store the user email and password
+        const credentials = {email, password};
+        const credentialsStr = JSON.stringify(credentials);
+        await AsyncStorage.setItem('credentials', credentialsStr);
       } else {
         Alert.alert('Error', 'Email and password is required');
       }

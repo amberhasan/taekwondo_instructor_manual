@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import {launchImageLibrary} from 'react-native-image-picker';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 // import storage from '@react-native-firebase/storage';
 
 const ProfileScreen = () => {
@@ -65,13 +66,40 @@ const ProfileScreen = () => {
   const handleSignOut = async () => {
     try {
       await auth().signOut();
+      await AsyncStorage.clear(); //clear the credentials from storage when user logs out
     } catch (error) {
       console.error('Sign-out error:', error);
     }
   };
 
   const deleteUser = async () => {
-    console.log('Deleting user');
+    Alert.alert('Delete Account?', 'Are you sure you want to delete account?', [
+      {
+        text: 'Confirm',
+        onPress: async () => {
+          // retrieve the user email and password storage
+          const credentialsStr =
+            (await AsyncStorage.getItem('credentials')) || '';
+          const credentials = JSON.parse(credentialsStr);
+
+          // reauthenticate the user
+          const authCredentials = auth.EmailAuthProvider.credential(
+            credentials.email,
+            credentials.password,
+          );
+          await user?.reauthenticateWithCredential(authCredentials);
+
+          // delete the user
+          await user?.delete(); //deletes user asynchronously from firebase
+        },
+      },
+      {
+        text: 'Cancel',
+        onPress: () => {
+          Alert.alert('cancelled clicked');
+        },
+      },
+    ]);
   };
 
   return (
@@ -95,14 +123,6 @@ const ProfileScreen = () => {
       <View style={styles.infoSection}>
         <Text style={styles.infoLabel}>Location:</Text>
         <Text style={styles.infoText}>San Francisco, CA</Text>
-      </View>
-      <View style={styles.infoSection}>
-        <Text style={styles.infoLabel}>Date of Birth:</Text>
-        <Text style={styles.infoText}>January 1, 1990</Text>
-      </View>
-      <View style={styles.infoSection}>
-        <Text style={styles.infoLabel}>Joined:</Text>
-        <Text style={styles.infoText}>May 15, 2020</Text>
       </View>
       <View style={styles.infoSection}>
         <Text style={styles.infoLabel}>Bio:</Text>
