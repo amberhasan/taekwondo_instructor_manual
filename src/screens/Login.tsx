@@ -30,7 +30,7 @@ const Login = ({navigation}) => {
       // if (err.message.code('[Error: [auth/internal-error]')) {
       //   Alert.alert('Wrong password');
       // }
-      Alert.alert('Error', err.message);
+      Alert.alert('Error', 'Please enter the correct username and password');
     }
   };
 
