@@ -9,54 +9,61 @@ import {
   useImperativeHandle,
 } from 'react';
 
-const VideoPlayer = forwardRef(({source}, ref) => {
-  const videoRef = useRef(null);
-  const [isBuffering, setIsBuffering] = useState(false);
+const VideoPlayer = forwardRef(
+  ({source, useNativeControls, resetOnEnd}, ref) => {
+    const videoRef = useRef(null);
+    const [isBuffering, setIsBuffering] = useState(false);
 
-  const handlePlaybackStatusUpdate = playbackStatus => {
-    if (playbackStatus.isBuffering) {
-      setIsBuffering(true);
-    } else {
-      setIsBuffering(false);
-    }
-  };
+    const handlePlaybackStatusUpdate = playbackStatus => {
+      if (playbackStatus.isBuffering) {
+        setIsBuffering(true);
+      } else {
+        setIsBuffering(false);
+      }
 
-  // component did mount - when you click next or previous button, play the reset video
-  useEffect(() => {
-    replayVideo();
-  }, [source]);
+      if (playbackStatus.didJustFinish && resetOnEnd) {
+        videoRef.current.setPositionAsync(0);
+      }
+    };
 
-  const replayVideo = async () => {
-    await videoRef.current.setPositionAsync(0); // Set the position to the start
-    videoRef.current.playAsync(); // Play the video
-  };
+    // component did mount - when you click next or previous button, play the reset video
+    useEffect(() => {
+      replayVideo();
+    }, [source]);
 
-  useImperativeHandle(ref, () => ({
-    replay: replayVideo,
-  }));
+    const replayVideo = async () => {
+      await videoRef.current.setPositionAsync(0); // Set the position to the start
+      videoRef.current.playAsync(); // Play the video
+    };
 
-  return (
-    <View style={styles.container}>
-      <Video
-        ref={videoRef}
-        source={{uri: source}}
-        rate={1.0}
-        volume={1.0}
-        isMuted={false}
-        resizeMode="cover"
-        shouldPlay
-        isLooping={false} // You can loop video by setting this to true
-        onPlaybackStatusUpdate={handlePlaybackStatusUpdate}
-        style={styles.video}
-      />
-      {isBuffering && (
-        <View style={styles.bufferingContainer}>
-          <ActivityIndicator size="large" color="#ffffff" />
-        </View>
-      )}
-    </View>
-  );
-});
+    useImperativeHandle(ref, () => ({
+      replay: replayVideo,
+    }));
+
+    return (
+      <View style={styles.container}>
+        <Video
+          ref={videoRef}
+          source={{uri: source}}
+          rate={1.0}
+          volume={1.0}
+          isMuted={false}
+          resizeMode="cover"
+          shouldPlay
+          isLooping={false} // You can loop video by setting this to true
+          onPlaybackStatusUpdate={handlePlaybackStatusUpdate}
+          style={styles.video}
+          useNativeControls
+        />
+        {isBuffering && (
+          <View style={styles.bufferingContainer}>
+            <ActivityIndicator size="large" color="#ffffff" />
+          </View>
+        )}
+      </View>
+    );
+  },
+);
 
 const styles = StyleSheet.create({
   container: {

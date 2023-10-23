@@ -38,7 +38,12 @@ const BreakdownComponent = ({
         <Text style={styles.stanceText}>({currentMove.stance})</Text>
       </View>
       <View style={styles.imageContainer}>
-        <VideoPlayer ref={playerRef} source={currentMove.video} />
+        <VideoPlayer
+          ref={playerRef}
+          source={currentMove.video}
+          useNativeControls={false}
+          resetOnEnd={false}
+        />
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity

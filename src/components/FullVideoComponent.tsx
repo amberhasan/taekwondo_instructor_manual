@@ -8,7 +8,12 @@ const FullVideoComponent = ({fullVideo, form}) => {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
-        <VideoPlayer ref={playerRef} source={fullVideo} />
+        <VideoPlayer
+          ref={playerRef}
+          source={fullVideo}
+          useNativeControls={true}
+          resetOnEnd={true}
+        />
       </View>
 
       <View style={styles.descriptionContainer}>
