@@ -3,7 +3,8 @@ const TaegeukData = [
     title: 'Taegeuk 1',
     titleKorean: 'Il-Jang',
     id: 1,
-    image: require('../assets/images/background_photos/taegeuk/taegeuk1_heaven.png'),
+    image:
+      'https://firebasestorage.googleapis.com/v0/b/taekwondo-instructor-manual.appspot.com/o/images%2Fbackground_images%2Ftaegeuk%2Ftaegeuk1_heaven.png?alt=media&token=23c6fb57-e1e8-41d8-9bef-f678f08609b1&_gl=1*360qin*_ga*NjU2ODk4Mzc3LjE2OTgwNzkxODk.*_ga_CW55HF8NVT*MTY5ODA3OTE4OC4xLjEuMTY5ODA4MTg2MC42MC4wLjA.',
     description:
       'Taegeuk 1, also known as "Il-Jang," is the first form in the Taegeuk series of Taekwondo. It serves as the foundation for beginners, teaching them fundamental stances, blocks, and strikes. Practitioners learn the basics of balance and coordination as they embark on their Taekwondo journey.',
     facts: [
@@ -30,25 +31,28 @@ const TaegeukData = [
     ],
 
     fullVideo:
-      'https://firebasestorage.googleapis.com/v0/b/taekwondo-instructor-manual.appspot.com/o/videos%2Ftaegeuk1-full.mp4?alt=media&token=d71d1d90-5188-4722-be0b-7dfb165f9963&_gl=1*uzx710*_ga*NjU2ODk4Mzc3LjE2OTgwNzkxODk.*_ga_CW55HF8NVT*MTY5ODA3OTE4OC4xLjEuMTY5ODA3OTIwMC40OC4wLjA.',
+      'https://firebasestorage.googleapis.com/v0/b/taekwondo-instructor-manual.appspot.com/o/videos%2Ftaegeuk%2Ftaegeuk1%2Ftaegeuk1-full.mp4?alt=media&token=04e55bca-5d29-4486-ac43-f24724c53616&_gl=1*bb5inh*_ga*NjU2ODk4Mzc3LjE2OTgwNzkxODk.*_ga_CW55HF8NVT*MTY5ODA3OTE4OC4xLjEuMTY5ODA4MDI0NS4yMy4wLjA.',
     moves: [
       {
         id: 1,
-        video: require('../assets/videos/taegeuk/taegeuk1/taegeuk1-1.mp4'),
+        video:
+          'https://firebasestorage.googleapis.com/v0/b/taekwondo-instructor-manual.appspot.com/o/videos%2Ftaegeuk%2Ftaegeuk1%2Ftaegeuk1-1.mp4?alt=media&token=e0cc54b0-cefb-4273-841e-e5eddc484f3b&_gl=1*1jk3zrr*_ga*NjU2ODk4Mzc3LjE2OTgwNzkxODk.*_ga_CW55HF8NVT*MTY5ODA3OTE4OC4xLjEuMTY5ODA4MDM0Mi42MC4wLjA.',
         moveDescription: 'Low Block',
         stance: 'Walking Stance',
         kiyap: false,
       },
       {
         id: 2,
-        video: require('../assets/videos/taegeuk/taegeuk1/taegeuk1-2.mp4'),
+        video:
+          'https://firebasestorage.googleapis.com/v0/b/taekwondo-instructor-manual.appspot.com/o/videos%2Ftaegeuk%2Ftaegeuk1%2Ftaegeuk1-2.mp4?alt=media&token=62d338df-f5be-40c6-be39-c5495d9284a5&_gl=1*jgrnqz*_ga*NjU2ODk4Mzc3LjE2OTgwNzkxODk.*_ga_CW55HF8NVT*MTY5ODA3OTE4OC4xLjEuMTY5ODA4MDM2My4zOS4wLjA.',
         moveDescription: 'Punch',
         stance: 'Walking Stance',
         kiyap: false,
       },
       {
         id: 3,
-        video: require('../assets/videos/taegeuk/taegeuk1/taegeuk1-3.mp4'),
+        video:
+          'https://firebasestorage.googleapis.com/v0/b/taekwondo-instructor-manual.appspot.com/o/videos%2Ftaegeuk%2Ftaegeuk1%2Ftaegeuk1-3.mp4?alt=media&token=3d51789c-1345-4a4e-8353-03fbfc7faa2c&_gl=1*1ddqox3*_ga*NjU2ODk4Mzc3LjE2OTgwNzkxODk.*_ga_CW55HF8NVT*MTY5ODA3OTE4OC4xLjEuMTY5ODA4MDU3OS42MC4wLjA.',
         moveDescription: 'Low Block',
         stance: 'Walking Stance',
         kiyap: false,

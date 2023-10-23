@@ -51,7 +51,7 @@ const BreakdownComponent = ({
           style={styles.resetFormButton}
           onPress={async () => {
             if (playerRef.current) {
-              await playerRef.current.resetVideo();
+              await playerRef.current.replay();
             }
           }}>
           <Text style={styles.resetFormButtonText}>Replay</Text>

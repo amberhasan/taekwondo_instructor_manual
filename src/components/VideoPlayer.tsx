@@ -21,7 +21,19 @@ const VideoPlayer = forwardRef(({source}, ref) => {
     }
   };
 
-  useImperativeHandle(ref, () => ({}));
+  // component did mount - when you click next or previous button, play the reset video
+  useEffect(() => {
+    replayVideo();
+  }, [source]);
+
+  const replayVideo = async () => {
+    await videoRef.current.setPositionAsync(0); // Set the position to the start
+    videoRef.current.playAsync(); // Play the video
+  };
+
+  useImperativeHandle(ref, () => ({
+    replay: replayVideo,
+  }));
 
   return (
     <View style={styles.container}>
@@ -33,7 +45,7 @@ const VideoPlayer = forwardRef(({source}, ref) => {
         isMuted={false}
         resizeMode="cover"
         shouldPlay
-        isLooping
+        isLooping={false} // You can loop video by setting this to true
         onPlaybackStatusUpdate={handlePlaybackStatusUpdate}
         style={styles.video}
       />
