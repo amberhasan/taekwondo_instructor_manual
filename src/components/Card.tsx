@@ -7,17 +7,18 @@ import {
   StyleSheet,
 } from 'react-native';
 import {FontAwesome} from '@expo/vector-icons';
+import FastImage from 'react-native-fast-image';
 
 const Card = ({item, index, handleRowPress}) => (
   <TouchableOpacity
     onPress={() => handleRowPress(index)}
     style={styles.container}>
-    <ImageBackground source={item.image} style={styles.backgroundImage}>
+    <FastImage source={{uri: item.image}} style={styles.backgroundImage}>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>{item.title}</Text>
         <Text style={styles.titleKorean}>({item.titleKorean})</Text>
       </View>
-    </ImageBackground>
+    </FastImage>
   </TouchableOpacity>
 );
 
