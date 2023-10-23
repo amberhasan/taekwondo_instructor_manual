@@ -1,5 +1,5 @@
 import {Video} from 'expo-av';
-import {View} from 'react-native';
+import {ActivityIndicator, StyleSheet, View} from 'react-native';
 import {Asset} from 'expo-asset';
 import {
   useEffect,
@@ -10,48 +10,62 @@ import {
 } from 'react';
 
 const VideoPlayer = forwardRef(({source}, ref) => {
-  const [videoURI, setVideoURI] = useState(null);
-  const playerRef = useRef(null);
+  const videoRef = useRef(null);
+  const [isBuffering, setIsBuffering] = useState(false);
 
-  useEffect(() => {
-    async function loadVideoAsset() {
-      const asset = Asset.fromModule(source);
-      await asset.downloadAsync();
-      setVideoURI(asset);
+  const handlePlaybackStatusUpdate = playbackStatus => {
+    if (playbackStatus.isBuffering) {
+      setIsBuffering(true);
+    } else {
+      setIsBuffering(false);
     }
-
-    loadVideoAsset().then(() => {
-      resetVideo();
-    });
-  }, [source]);
-
-  const resetVideo = async () => {
-    await playerRef.current.setPositionAsync(0);
-    await playerRef.current.playAsync();
-    // if (isPlaying) {
-    //   await playerRef.current.playAsync();
-    // }
   };
 
-  useImperativeHandle(ref, () => ({
-    resetVideo: resetVideo,
-  }));
+  useImperativeHandle(ref, () => ({}));
 
   return (
-    <View>
-      {videoURI && (
-        <Video
-          ref={playerRef} // Store reference
-          source={{uri: videoURI.localUri}}
-          shouldPlay={true}
-          style={{
-            width: '100%',
-            height: '100%',
-          }}
-        />
+    <View style={styles.container}>
+      <Video
+        ref={videoRef}
+        source={{uri: source}}
+        rate={1.0}
+        volume={1.0}
+        isMuted={false}
+        resizeMode="cover"
+        shouldPlay
+        isLooping
+        onPlaybackStatusUpdate={handlePlaybackStatusUpdate}
+        style={styles.video}
+      />
+      {isBuffering && (
+        <View style={styles.bufferingContainer}>
+          <ActivityIndicator size="large" color="#ffffff" />
+        </View>
       )}
     </View>
   );
+});
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    backgroundColor: '#000',
+  },
+  video: {
+    width: '100%',
+    height: '100%',
+  },
+  bufferingContainer: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+  },
 });
 
 export default VideoPlayer;

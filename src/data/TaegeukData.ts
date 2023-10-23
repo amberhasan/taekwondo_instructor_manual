@@ -29,7 +29,8 @@ const TaegeukData = [
       'Taegeuk 1 is a fundamental pattern that lays the groundwork for more advanced forms in Taekwondo.',
     ],
 
-    fullVideo: require('../assets/videos/taegeuk/taegeuk1/taegeuk1-full.mp4'),
+    fullVideo:
+      'https://firebasestorage.googleapis.com/v0/b/taekwondo-instructor-manual.appspot.com/o/videos%2Ftaegeuk1-full.mp4?alt=media&token=d71d1d90-5188-4722-be0b-7dfb165f9963&_gl=1*uzx710*_ga*NjU2ODk4Mzc3LjE2OTgwNzkxODk.*_ga_CW55HF8NVT*MTY5ODA3OTE4OC4xLjEuMTY5ODA3OTIwMC40OC4wLjA.',
     moves: [
       {
         id: 1,

@@ -26,6 +26,9 @@ const BreakdownComponent = ({
 }) => {
   const playerRef = useRef(null);
 
+  // source = {require('../path_to_local_file')}
+  // source = {{uri : 'http://'}}
+
   return (
     <View style={styles.container}>
       <View style={styles.moveContainer}>
