@@ -7,19 +7,25 @@ const {height, width} = Dimensions.get('window');
 
 const ListScreen = ({navigation, route}) => {
   let forms = route.params.forms;
+
   const formType = route.params.formType;
   const [data, setData] = useState([]);
 
   const getData = async () => {
-    const taegeukCollection = await firestore()
-      .collection('taegeukForms')
-      .get();
-    forms = taegeukCollection.docs.map(doc => doc.data());
+    if (formType == 'taegeuk') {
+      const taegeukCollection = await firestore()
+        .collection('taegeukForms')
+        .get();
+      forms = taegeukCollection.docs.map(doc => doc.data());
+    } else {
+      const palgwaeCollection = await firestore()
+        .collection('palgwaeForms')
+        .get();
+      forms = palgwaeCollection.docs.map(doc => doc.data());
+    }
     setData(forms);
-    console.log('taegeukForms', forms);
+    console.log('forms', forms);
   };
-
-  // all table data taegeukForms
 
   useEffect(() => {
     getData();
