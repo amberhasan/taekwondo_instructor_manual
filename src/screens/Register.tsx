@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   Text,
   View,
@@ -9,11 +9,29 @@ import {
 } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import firestore from '@react-native-firebase/firestore';
+// import TaegeukData from '../data/TaegeukData';
+// import PalgwaeData from '../data/PalgwaeData';
 
 const Register = ({navigation}) => {
   const [displayName, setDisplayName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  // useEffect(() => {
+  //   PalgwaeData.forEach(form => {
+  //     firestore()
+  //       .collection('palgwaeForms')
+  //       .doc(form.id.toString()) // Use the form's ID as the document ID
+  //       .set(form)
+  //       .then(() => {
+  //         console.log(`Form ${form.title} successfully stored in Firestore`);
+  //       })
+  //       .catch(error => {
+  //         console.error(`Error storing form ${form.title}: ${error}`);
+  //       });
+  //   });
+  // }, []);
 
   const handleRegister = async () => {
     try {
@@ -22,6 +40,15 @@ const Register = ({navigation}) => {
         await auth().currentUser?.updateProfile({
           displayName,
         });
+        // store the information inside the fire store
+        const docRef = await firestore()
+          .collection('users')
+          .doc(auth().currentUser?.uid)
+          .set({
+            displayName,
+            email,
+            password,
+          });
         // store the user email and password
         const credentials = {email, password};
         const credentialsStr = JSON.stringify(credentials);
