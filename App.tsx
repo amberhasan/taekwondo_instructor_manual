@@ -6,7 +6,7 @@ import ListScreen from './src/screens/ListScreen';
 import {createStackNavigator} from '@react-navigation/stack';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import PalgwaeData from './src/data/PalgwaeData';
-import TaegeukData from './src/data/TaegeukData';
+// import TaegeukData from './src/data/TaegeukData';
 import {PaperProvider} from 'react-native-paper';
 import {Provider} from 'react-redux';
 import configureStore from './src/store/configureStore';
@@ -109,7 +109,7 @@ const TaegeukTab = () => (
       },
     })}>
     <Tab.Screen
-      initialParams={{forms: TaegeukData, formType: 'taegeuk'}}
+      initialParams={{forms: [], formType: 'taegeuk'}}
       name="Taegeuk Forms"
       component={ListScreen}
       options={{headerShown: false, tabBarLabel: 'Taegeuk'}}
