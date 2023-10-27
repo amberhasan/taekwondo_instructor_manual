@@ -3,28 +3,27 @@ import {View, FlatList, StyleSheet, Dimensions} from 'react-native';
 import auth from '@react-native-firebase/auth';
 import Card from '../components/Card'; // Import the Card component
 import firestore from '@react-native-firebase/firestore';
+import {useSelector, useDispatch} from 'react-redux';
 const {height, width} = Dimensions.get('window');
 
 const ListScreen = ({navigation, route}) => {
-  let forms = route.params.forms;
-
   const formType = route.params.formType;
   const [data, setData] = useState([]);
+  const taegeukData = useSelector(state => state.taegeukMoves.taegeukData);
+  console.log('taegeukData', taegeukData);
+  const dispatch = useDispatch();
 
   const getData = async () => {
-    if (formType == 'taegeuk') {
-      const taegeukCollection = await firestore()
-        .collection('taegeukForms')
-        .get();
-      forms = taegeukCollection.docs.map(doc => doc.data());
-    } else {
-      const palgwaeCollection = await firestore()
-        .collection('palgwaeForms')
-        .get();
-      forms = palgwaeCollection.docs.map(doc => doc.data());
-    }
+    const formCollection = await firestore()
+      .collection(formType == 'taegeuk' ? 'taegeukForms' : 'palgwaeForms')
+      .get();
+    let forms = formCollection.docs.map(doc => doc.data());
+    console.log('We got data and now dispatching an action');
+    // action -> reducer -> state -> render
+    dispatch({
+      type: 'SET_TAEGEUK_DATA',
+    });
     setData(forms);
-    console.log('forms', forms);
   };
 
   useEffect(() => {
