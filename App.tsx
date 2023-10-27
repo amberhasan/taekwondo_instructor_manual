@@ -5,7 +5,6 @@ import DetailsScreen from './src/screens/DetailsScreen';
 import ListScreen from './src/screens/ListScreen';
 import {createStackNavigator} from '@react-navigation/stack';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import PalgwaeData from './src/data/PalgwaeData';
 import {PaperProvider} from 'react-native-paper';
 import {Provider} from 'react-redux';
 import configureStore from './src/store/configureStore';

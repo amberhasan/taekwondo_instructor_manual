@@ -8,8 +8,8 @@ const {height, width} = Dimensions.get('window');
 
 const ListScreen = ({navigation, route}) => {
   const formType = route.params.formType;
-  // const [data, setData] = useState([]);
   const taegeukData = useSelector(state => state.taegeukMoves.taegeukData);
+  const palgwaeData = useSelector(state => state.palgwaeMoves.palgwaeData);
   console.log('taegeukData', taegeukData);
   const dispatch = useDispatch();
 
@@ -21,10 +21,9 @@ const ListScreen = ({navigation, route}) => {
     console.log('We got data and now dispatching an action');
     // action -> reducer -> state -> render
     dispatch({
-      type: 'SET_TAEGEUK_DATA',
+      type: formType == 'taegeuk' ? 'SET_TAEGEUK_DATA' : 'SET_PALGWAE_DATA',
       payload: forms,
     });
-    // setData(forms);
   };
 
   useEffect(() => {
@@ -41,11 +40,11 @@ const ListScreen = ({navigation, route}) => {
   const renderItem = ({item, index}) => (
     <Card item={item} index={index} handleRowPress={handleRowPress} />
   );
-
+  const flatListData = formType == 'taegeuk' ? taegeukData : palgwaeData;
   return (
     <View style={styles.container}>
       <FlatList
-        data={taegeukData}
+        data={flatListData}
         renderItem={renderItem}
         keyExtractor={item => item.id.toString()}
         contentContainerStyle={styles.contentContainer}

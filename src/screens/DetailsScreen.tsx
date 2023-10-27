@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {View, StyleSheet, SafeAreaView} from 'react-native';
 import BreakdownComponent from '../components/BreakdownComponent';
-import PalgwaeData from '../data/PalgwaeData';
 import {SegmentedButtons} from 'react-native-paper';
 import FullVideoComponent from '../components/FullVideoComponent';
 import QuizComponent from '../components/QuizComponent';
@@ -11,11 +10,12 @@ const DetailsScreen = ({route}) => {
   const {selectedFormIndex, formType} = route.params;
   const [viewType, setViewType] = useState<string>('breakdown'); // Added state for view type
   const quizSet = useSelector(state => state.quiz); // state.quiz
-  const TaegeukData = useSelector(state => state.taegeukMoves.taegeukData);
+  const taegeukData = useSelector(state => state.taegeukMoves.taegeukData);
+  const palgwaeData = useSelector(state => state.palgwaeMoves.palgwaeData); // state.root reducer.state
   const form =
     formType === 'taegeuk'
-      ? TaegeukData[selectedFormIndex]
-      : PalgwaeData[selectedFormIndex];
+      ? taegeukData[selectedFormIndex]
+      : palgwaeData[selectedFormIndex];
 
   const quiz = quizSet[formType][selectedFormIndex];
 
