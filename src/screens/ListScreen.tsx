@@ -8,7 +8,7 @@ const {height, width} = Dimensions.get('window');
 
 const ListScreen = ({navigation, route}) => {
   const formType = route.params.formType;
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
   const taegeukData = useSelector(state => state.taegeukMoves.taegeukData);
   console.log('taegeukData', taegeukData);
   const dispatch = useDispatch();
@@ -22,8 +22,9 @@ const ListScreen = ({navigation, route}) => {
     // action -> reducer -> state -> render
     dispatch({
       type: 'SET_TAEGEUK_DATA',
+      payload: forms,
     });
-    setData(forms);
+    // setData(forms);
   };
 
   useEffect(() => {
@@ -44,7 +45,7 @@ const ListScreen = ({navigation, route}) => {
   return (
     <View style={styles.container}>
       <FlatList
-        data={data}
+        data={taegeukData}
         renderItem={renderItem}
         keyExtractor={item => item.id.toString()}
         contentContainerStyle={styles.contentContainer}
