@@ -1,5 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {View, FlatList, StyleSheet, Dimensions} from 'react-native';
+import {
+  View,
+  FlatList,
+  StyleSheet,
+  Dimensions,
+  ActivityIndicator,
+} from 'react-native';
 import auth from '@react-native-firebase/auth';
 import Card from '../components/Card'; // Import the Card component
 import firestore from '@react-native-firebase/firestore';
@@ -10,7 +16,9 @@ const ListScreen = ({navigation, route}) => {
   const formType = route.params.formType;
   const taegeukData = useSelector(state => state.taegeukMoves.taegeukData);
   const palgwaeData = useSelector(state => state.palgwaeMoves.palgwaeData);
-  console.log('taegeukData', taegeukData);
+  const taegeukDataLoading = useSelector(state => state.taegeukMoves.loading);
+
+  // console.log('taegeukData', taegeukData);
   const dispatch = useDispatch();
 
   const getData = async () => {
@@ -18,12 +26,15 @@ const ListScreen = ({navigation, route}) => {
       .collection(formType == 'taegeuk' ? 'taegeukForms' : 'palgwaeForms')
       .get();
     let forms = formCollection.docs.map(doc => doc.data());
-    console.log('We got data and now dispatching an action');
+    // console.log('We got data and now dispatching an action');
     // action -> reducer -> state -> render
-    dispatch({
+    const action = {
       type: formType == 'taegeuk' ? 'SET_TAEGEUK_DATA' : 'SET_PALGWAE_DATA',
       payload: forms,
-    });
+    };
+    setTimeout(() => {
+      dispatch(action);
+    }, 3000);
   };
 
   useEffect(() => {
@@ -41,6 +52,11 @@ const ListScreen = ({navigation, route}) => {
     <Card item={item} index={index} handleRowPress={handleRowPress} />
   );
   const flatListData = formType == 'taegeuk' ? taegeukData : palgwaeData;
+
+  if (taegeukDataLoading) {
+    return <ActivityIndicator size={'large'} />;
+  }
+
   return (
     <View style={styles.container}>
       <FlatList
