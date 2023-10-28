@@ -6,18 +6,38 @@ import {
   Dimensions,
   ActivityIndicator,
 } from 'react-native';
-import auth from '@react-native-firebase/auth';
 import Card from '../components/Card'; // Import the Card component
 import firestore from '@react-native-firebase/firestore';
 import {useSelector, useDispatch} from 'react-redux';
-const {height, width} = Dimensions.get('window');
 import {setTaegeukData, setPalgwaeData, setLoading} from '../actions';
+// import palgwaeQuizSet from '../data/palgwaeQuizSet';
 
+const {height, width} = Dimensions.get('window');
 const ListScreen = ({navigation, route}) => {
   const formType = route.params.formType;
   const taegeukData = useSelector(state => state.taegeukMoves.taegeukData);
   const palgwaeData = useSelector(state => state.palgwaeMoves.palgwaeData);
   const taegeukDataLoading = useSelector(state => state.taegeukMoves.loading);
+
+  // const uploadQuiz = async () => {
+  //   // get collection we will document and on the document we update the values
+  //   try {
+  //     palgwaeQuizSet.forEach(async (quiz, index) => {
+  //       await firestore()
+  //         .collection('palgwaeForms')
+  //         .doc(String(index + 1))
+  //         .update({
+  //           quiz,
+  //         });
+  //     });
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   uploadQuiz();
+  // }, []);
 
   // console.log('taegeukData', taegeukData);
   const dispatch = useDispatch();
