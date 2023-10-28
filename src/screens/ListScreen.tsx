@@ -11,6 +11,7 @@ import Card from '../components/Card'; // Import the Card component
 import firestore from '@react-native-firebase/firestore';
 import {useSelector, useDispatch} from 'react-redux';
 const {height, width} = Dimensions.get('window');
+import {setTaegeukData, setPalgwaeData, setLoading} from '../actions';
 
 const ListScreen = ({navigation, route}) => {
   const formType = route.params.formType;
@@ -28,13 +29,10 @@ const ListScreen = ({navigation, route}) => {
     let forms = formCollection.docs.map(doc => doc.data());
     // console.log('We got data and now dispatching an action');
     // action -> reducer -> state -> render
-    const action = {
-      type: formType == 'taegeuk' ? 'SET_TAEGEUK_DATA' : 'SET_PALGWAE_DATA',
-      payload: forms,
-    };
-    setTimeout(() => {
-      dispatch(action);
-    }, 3000);
+    dispatch(
+      formType == 'taegeuk' ? setTaegeukData(forms) : setPalgwaeData(forms),
+    );
+    dispatch(setLoading(false));
   };
 
   useEffect(() => {

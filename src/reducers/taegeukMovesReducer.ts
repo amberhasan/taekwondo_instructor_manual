@@ -1,3 +1,5 @@
+import {SET_TAEGEUK_DATA, SET_LOADING} from '../actions';
+
 const initialState = {
   taegeukData: [],
   loading: true,
@@ -7,16 +9,16 @@ const initialState = {
 // Define the reducer function
 const taegeukMovesReducer = (state = initialState, action) => {
   // console.log('action', action);
-  if (action.type === 'SET_TAEGEUK_DATA') {
+  if (action.type === SET_TAEGEUK_DATA) {
     state = {
       ...state,
       taegeukData: action.payload, // update state
     };
   }
-  if (action.type === 'SET_LOADING_HIDE') {
+  if (action.type === SET_LOADING) {
     state = {
       ...state,
-      loading: false,
+      loading: action.payload,
     };
   }
   return state;
