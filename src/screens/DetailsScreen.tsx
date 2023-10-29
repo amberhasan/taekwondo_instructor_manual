@@ -9,8 +9,8 @@ import {useSelector} from 'react-redux';
 const DetailsScreen = ({route}) => {
   const {selectedFormIndex, formType} = route.params;
   const [viewType, setViewType] = useState<string>('breakdown'); // Added state for view type
-  const taegeukData = useSelector(state => state.taegeukMoves.taegeukData);
-  const palgwaeData = useSelector(state => state.palgwaeMoves.palgwaeData); // state.root reducer.state
+  const taegeukData = useSelector(state => state.taegeuk.taegeukData);
+  const palgwaeData = useSelector(state => state.palgwae.palgwaeData); // state.root reducer.state
   const form =
     formType === 'taegeuk'
       ? taegeukData[selectedFormIndex]

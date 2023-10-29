@@ -15,9 +15,9 @@ import {setTaegeukData, setPalgwaeData, setLoading} from '../actions';
 const {height, width} = Dimensions.get('window');
 const ListScreen = ({navigation, route}) => {
   const formType = route.params.formType;
-  const taegeukData = useSelector(state => state.taegeukMoves.taegeukData);
-  const palgwaeData = useSelector(state => state.palgwaeMoves.palgwaeData);
-  const taegeukDataLoading = useSelector(state => state.taegeukMoves.loading);
+  const taegeukData = useSelector(state => state.taegeuk.taegeukData);
+  const palgwaeData = useSelector(state => state.palgwae.palgwaeData);
+  const taegeukDataLoading = useSelector(state => state.taegeuk.loading);
 
   // const uploadQuiz = async () => {
   //   // get collection we will document and on the document we update the values

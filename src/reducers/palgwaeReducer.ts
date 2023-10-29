@@ -4,7 +4,7 @@ const initialState = {
   palgwaeData: [],
 };
 
-const palgwaeMovesReducer = (state = initialState, action) => {
+const palgwaeReducer = (state = initialState, action) => {
   if (action.type == SET_PALGWAE_DATA) {
     state = {
       palgwaeData: action.payload, //new state
@@ -13,4 +13,4 @@ const palgwaeMovesReducer = (state = initialState, action) => {
   return state;
 };
 
-export default palgwaeMovesReducer;
+export default palgwaeReducer;
