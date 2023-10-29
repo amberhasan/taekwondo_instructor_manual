@@ -3,7 +3,6 @@ import {SET_TAEGEUK_DATA, SET_LOADING} from '../actions';
 const initialState = {
   taegeukData: [],
   loading: true,
-  quiz: [],
 };
 
 // Define the reducer function
