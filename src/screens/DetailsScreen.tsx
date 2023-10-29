@@ -9,15 +9,12 @@ import {useSelector} from 'react-redux';
 const DetailsScreen = ({route}) => {
   const {selectedFormIndex, formType} = route.params;
   const [viewType, setViewType] = useState<string>('breakdown'); // Added state for view type
-  const quizSet = useSelector(state => state.quiz); // state.quiz
   const taegeukData = useSelector(state => state.taegeukMoves.taegeukData);
   const palgwaeData = useSelector(state => state.palgwaeMoves.palgwaeData); // state.root reducer.state
   const form =
     formType === 'taegeuk'
       ? taegeukData[selectedFormIndex]
       : palgwaeData[selectedFormIndex];
-
-  const quiz = quizSet[formType][selectedFormIndex];
 
   const [currentMoveIndex, setCurrentMoveIndex] = useState(0);
   const currentMove = form.moves[currentMoveIndex];
@@ -87,7 +84,7 @@ const DetailsScreen = ({route}) => {
           form={form}
         />
       ) : viewType === 'quiz' ? (
-        <QuizComponent quizData={quiz} />
+        <QuizComponent quizData={form.quiz} />
       ) : (
         <FullVideoComponent fullVideo={fullVideo} form={form} />
       )}
