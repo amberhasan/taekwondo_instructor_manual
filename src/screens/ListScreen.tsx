@@ -59,7 +59,7 @@ const ListScreen = ({navigation, route}) => {
     getData();
   }, []);
 
-  const handleRowPress = formIndex => {
+  const handleRowPress = (formIndex: number) => {
     navigation.navigate('DetailsScreen', {
       selectedFormIndex: formIndex,
       formType: formType,
