@@ -8,11 +8,25 @@ import {
   forwardRef,
   useImperativeHandle,
 } from 'react';
+import cache from '../utils/cache';
 
 const VideoPlayer = forwardRef(
   ({source, useNativeControls, resetOnEnd}, ref) => {
     const videoRef = useRef(null);
     const [isBuffering, setIsBuffering] = useState(false);
+    const [videoUri, setVideoUri] = useState<string>('');
+
+    const loadVideo = async () => {
+      // we will check the video url in cache
+      const uri = await cache(source);
+      setVideoUri(uri);
+    };
+
+    useEffect(() => {
+      // if the video in cache we will get the local file path
+      // if video is not in cache we will play the video and download it in background
+      loadVideo();
+    }, []);
 
     const handlePlaybackStatusUpdate = playbackStatus => {
       if (playbackStatus.isBuffering) {
@@ -44,7 +58,7 @@ const VideoPlayer = forwardRef(
       <View style={styles.container}>
         <Video
           ref={videoRef}
-          source={{uri: source}}
+          source={{uri: videoUri}}
           rate={1.0}
           volume={1.0}
           isMuted={false}
