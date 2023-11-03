@@ -1,8 +1,9 @@
 import React from 'react';
 import {TouchableOpacity, Text, View, StyleSheet} from 'react-native';
 import FastImage from 'react-native-fast-image';
+import {CardItem} from '../types';
 
-const Card = ({item, index, handleRowPress}) => (
+const Card = ({item, index, handleRowPress}: CardItem) => (
   <TouchableOpacity
     onPress={() => handleRowPress(index)}
     style={styles.container}>

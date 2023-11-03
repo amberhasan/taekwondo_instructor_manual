@@ -10,36 +10,21 @@ import Card from '../components/Card'; // Import the Card component
 import firestore from '@react-native-firebase/firestore';
 import {useSelector, useDispatch} from 'react-redux';
 import {setTaegeukData, setPalgwaeData, setLoading} from '../actions';
-// import palgwaeQuizSet from '../data/palgwaeQuizSet';
+import {Form, FormItem, PalgwaeState} from '../types';
+import {RootState} from '../reducers/rootReducer';
 
 const {height, width} = Dimensions.get('window');
 const ListScreen = ({navigation, route}) => {
   const formType = route.params.formType;
-  const taegeukData = useSelector(state => state.taegeuk.taegeukData);
-  const palgwaeData = useSelector(state => state.palgwae.palgwaeData);
-  const taegeukDataLoading = useSelector(state => state.taegeuk.loading);
-
-  // const uploadQuiz = async () => {
-  //   // get collection we will document and on the document we update the values
-  //   try {
-  //     palgwaeQuizSet.forEach(async (quiz, index) => {
-  //       await firestore()
-  //         .collection('palgwaeForms')
-  //         .doc(String(index + 1))
-  //         .update({
-  //           quiz,
-  //         });
-  //     });
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   uploadQuiz();
-  // }, []);
-
-  // console.log('taegeukData', taegeukData);
+  const taegeukData = useSelector(
+    (state: RootState) => state.taegeuk.taegeukData,
+  );
+  const palgwaeData = useSelector(
+    (state: RootState) => state.palgwae.palgwaeData,
+  );
+  const taegeukDataLoading = useSelector(
+    (state: RootState) => state.taegeuk.loading,
+  );
   const dispatch = useDispatch();
 
   const getData = async () => {
@@ -66,7 +51,7 @@ const ListScreen = ({navigation, route}) => {
     });
   };
 
-  const renderItem = ({item, index}) => (
+  const renderItem = ({item, index}: FormItem) => (
     <Card item={item} index={index} handleRowPress={handleRowPress} />
   );
   const flatListData = formType == 'taegeuk' ? taegeukData : palgwaeData;

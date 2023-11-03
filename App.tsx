@@ -10,7 +10,7 @@ import {Provider} from 'react-redux';
 import configureStore from './src/store/configureStore';
 import Login from './src/screens/Login';
 import Register from './src/screens/Register';
-import auth from '@react-native-firebase/auth';
+import auth, {FirebaseAuthTypes} from '@react-native-firebase/auth';
 import ProfileScreen from './src/screens/ProfileScreen';
 if (__DEV__) {
   import('./ReactotronConfig').then(() => console.log('Reactotron Configured'));
@@ -130,7 +130,7 @@ const AppNavigator = ({navigation}) => {
   //Test@gmail.com and Test123!!
   const [isAuthenticated, setIsAuthenticated] = React.useState(false);
   // Handle user state changes
-  function onAuthStateChanged(user) {
+  function onAuthStateChanged(user: FirebaseAuthTypes.User | null) {
     if (user) {
       setIsAuthenticated(true);
     } else {
