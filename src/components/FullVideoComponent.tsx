@@ -4,7 +4,7 @@ import VideoPlayer from './VideoPlayer';
 
 const FullVideoComponent = ({fullVideo, form}) => {
   const playerRef = useRef(null);
-
+  console.log('Full video: ', fullVideo);
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>

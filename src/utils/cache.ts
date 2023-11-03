@@ -7,6 +7,10 @@ function removeQueryString(url: string) {
 
 async function cache(uri: string) {
   try {
+    if (!uri) {
+      console.error('uri is empty, not able cache the video');
+      return uri;
+    }
     // uri = http://exmaple.com/video/a
     // localUri = file://cache/videos/a
     const trimmedUri = removeQueryString(uri);

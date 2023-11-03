@@ -1,11 +1,11 @@
-import {SET_PALGWAE_DATA} from '../actions';
+import {Action, ActionType} from '../types';
 
 const initialState = {
   palgwaeData: [],
 };
 
-const palgwaeReducer = (state = initialState, action) => {
-  if (action.type == SET_PALGWAE_DATA) {
+const palgwaeReducer = (state = initialState, action: Action) => {
+  if (action.type == ActionType.SET_PALGWAE_DATA) {
     state = {
       palgwaeData: action.payload, //new state
     };

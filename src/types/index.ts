@@ -30,6 +30,12 @@ export interface TaegeukState {
 }
 
 export interface Action {
-  type: string;
+  type: ActionType;
   payload?: any;
+}
+
+export enum ActionType {
+  SET_TAEGEUK_DATA,
+  SET_PALGWAE_DATA,
+  SET_LOADING,
 }

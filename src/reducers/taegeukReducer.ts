@@ -1,4 +1,4 @@
-import {SET_TAEGEUK_DATA, SET_LOADING} from '../actions';
+import {ActionType} from '../types';
 import {Action, TaegeukState} from '../types';
 
 const initialState: TaegeukState = {
@@ -8,13 +8,13 @@ const initialState: TaegeukState = {
 // Define the reducer function
 const taegeukReducer = (state = initialState, action: Action) => {
   // console.log('action', action);
-  if (action.type === SET_TAEGEUK_DATA) {
+  if (action.type === ActionType.SET_TAEGEUK_DATA) {
     state = {
       ...state,
       taegeukData: action.payload, // update state
     };
   }
-  if (action.type === SET_LOADING) {
+  if (action.type === ActionType.SET_LOADING) {
     state = {
       ...state,
       loading: action.payload,
